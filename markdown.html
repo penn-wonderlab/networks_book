@@ -1,0 +1,698 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Preface &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preface</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/markdown.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Preface</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preface</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-syllabus">Course Syllabus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect-each-week">What to expect each week?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-canvas-for-this-course">Why not Canvas for this course?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-tracks-of-participation">Two tracks of participation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-learning-environments">Digital learning environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ways-to-contribute-to-this-site">Ways to contribute to this site</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown Files</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="preface">
+<h1>Preface<a class="headerlink" href="#preface" title="Permalink to this heading">#</a></h1>
+<section id="course-syllabus">
+<h2>Course Syllabus<a class="headerlink" href="#course-syllabus" title="Permalink to this heading">#</a></h2>
+<p>The most up-to-date syllabus is <a href="https://docs.google.com/document/d/1Z39J9Hn-qn2iKcrVzpMz3nm60ThnGKZMZQ_cWJSlUOg/edit?usp=sharing" target="_blank">here</a>.
+Please leave comments on the syllabus if you have any questions.</p>
+<section id="what-to-expect-each-week">
+<h3>What to expect each week?<a class="headerlink" href="#what-to-expect-each-week" title="Permalink to this heading">#</a></h3>
+<p>This online class is designed to offer rich opportunities for social participation. Below is an infographic showing how a week would (typically) look like.</p>
+<ul class="simple">
+<li><p><strong>Our class meetings happen on Tuesdays.</strong> The class meetings are designed for us to chat about things we’ve learned, gaps of understanding, future plans, etc. In some weeks we will meet in Gather; in some other weeks, we will “meet” on Slack throughout Tuesday.</p></li>
+<li><p><strong>A fresh week starts on Wednesdays.</strong> Depending on your schedule, you can get started with course readings and begin to make annotations.</p></li>
+<li><p><strong>By the end of Friday</strong>, you are expected to finish reading articles assigned for the week and post your personal annotations on Hypothesis.</p></li>
+<li><p><strong>By the end of Monday</strong>, you are expected to check out what other colleagues annotated and reply to each other. You will receive an email notification when someone responds to you. It is hoped that by putting our minds together we can develop deeper understanding.</p></li>
+<li><p>On Tuesday, we chat more on Slack or Gather. Detailed guidelines will be posted each week.</p></li>
+</ul>
+<p><img alt="" src="images/weekly-schedule.png" /></p>
+</section>
+</section>
+<section id="why-not-canvas-for-this-course">
+<h2>Why not Canvas for this course?<a class="headerlink" href="#why-not-canvas-for-this-course" title="Permalink to this heading">#</a></h2>
+<p>To learn social network analysis (SNA) – and many other stuff – I believe the best way is to ‘live’ with it. That is, the best way to learn SNA is to seize every opportunity of applying SNA in one’s own learning journey. This philosophy leads to two major reasons I’m piecing together a learning environment by myself:<a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<ul class="simple">
+<li><p>First, as an instructor I wish to foster <strong>social interaction</strong> as much as possible. Traditional learning management systems, like Moodle and Canvas, do not prioritize this goal</p></li>
+<li><p>Second, to <strong>practice SNA with our own ‘learning traces’</strong>, system log data<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> need to be somehow exposed to users. Traditional systems are less transparent in this area.</p></li>
+</ul>
+<p>If you haven’t used these tools mentioned above, no worries. I will provide detailed guidelines to get you started (see the next section). <strong>Many of us would be venturing out of our comfort zones.</strong> (SO DO I – because I cannot stop trying new things :-).) I hope we will all learn a great deal about SNA and beyond.</p>
+<p>Have fun!</p>
+</section>
+<section id="two-tracks-of-participation">
+<h2>Two tracks of participation<a class="headerlink" href="#two-tracks-of-participation" title="Permalink to this heading">#</a></h2>
+<p>This course website is openly available online, reflecting my committment to ‘<a class="reference external" href="https://uark.libguides.com/openscholarship">open scholarship</a>’. So there are two tracks of participation designed for this class.</p>
+<ol class="arabic simple">
+<li><p><strong>UMN class</strong>: For UMN graduate students enrolled in the class, your participation in this class is not that different from taking another online class. You are expected to meet course requirements outlined in the course syllabus. You will have <em>private spaces</em> (on Slack and Hypothesis) for within-class communication.</p></li>
+<li><p><strong>Open participation</strong>: For ‘Open Participants’ who are following the class, you can access the same materials I curate on this website. You may need to buy the required textbook if you do not have a library access. And ways for you to participate include 1) making public Hypothesis annotations using tag <code class="docutils literal notranslate"><span class="pre">SNAEd</span></code>, and 2) tweeting out your ideas or links to your blog posts using hashtag <code class="docutils literal notranslate"><span class="pre">#SNAEd</span></code>.</p></li>
+</ol>
+<!-- Open Participants accomplishing major course requirements will be offered [Digital Badges](https://openbadges.org/). -->
+<p>If you have any feedback on the current design, please get in touch. I’d love to hear your thoughts.</p>
+</section>
+<section id="digital-learning-environments">
+<h2>Digital learning environments<a class="headerlink" href="#digital-learning-environments" title="Permalink to this heading">#</a></h2>
+<p>This is a <strong>fully online</strong> class. An online course does not need to be about watching videos and answering quizzes. To foster rich learning experiences, we will be using several technological tools to foster social, collaborative learning. Depending on your familiarity with these tools, there could be a learning curve. So please spend time this week to familiarize yourself with them.</p>
+<p>Below is a list of them and we could tweak the list when moving forward.</p>
+<p><strong>Bookdown course site</strong>. This website you’re reading is built by myself using <code class="docutils literal notranslate"><span class="pre">Bookdown</span></code>. <code class="docutils literal notranslate"><span class="pre">Bookdown</span></code> is designed for writing books. While this site may evolve into an open textbook, I’m using it as our course portal.</p>
+<p>Course resourses, usually organized by weeks, will be published here. Weekly course annoucements will be pushed to the class through Slack (more below). (If you are an ‘Open Participant’, just check this website every Tuesday!)</p>
+<p><strong>Gather</strong>. You will receive a calendar invite to all class meetings in a virtual space named <a class="reference external" href="https://gather.town/">Gather</a>. It is an alternative to Zoom but gives us more options to socialize in a more organic manner. Watch the video below to get started. Check out the <a class="reference external" href="https://gather.town/docs/">documentation page</a> if you wish to learn more.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8orexZsFRxs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p><strong>Slack</strong> (UMN Students Only). You will receive a link that invites you to join <a class="reference external" href="https://la-mn.slack.com/">our Slack community</a>. Course announcements are made on Slack. All sorts of class discussion will take place there as well. First time using Slack? Watch the video below and/or read this <a class="reference external" href="https://get.slack.help/hc/en-us/articles/115004071768-What-is-Slack-">brief introduction to Slack</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9RJZMSsH7-g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p>To get started with Slack, get familiar with a few <strong>Slack terms</strong> you need to know [^3]:</p>
+<ul class="simple">
+<li><p><strong>Messages</strong> or <strong>Updates</strong> — the basic message or status of Slack. Similar to Facebook updates, tweets, chats, etc.</p></li>
+<li><p><strong>Channels</strong> — like separate rooms within the domain. They can be <em>public</em> or <em>private</em>.</p></li>
+<li><p><strong>Direct Messages</strong> — like DMs or private messages anywhere else.</p></li>
+<li><p><strong>Posts</strong> — longer than a status update. Similar to a blog post or a Word document. Once it’s shared to a <em>Channel</em>, folks can <strong>comment</strong> on it or even <strong>edit</strong> it if the owner allows.</p></li>
+<li><p><strong>Snippets</strong> — Chunks of syntax-highlighted code for when that’s the thing you need to share. We <em>might</em> use it.</p></li>
+<li><p><strong>&#64;replies</strong> — much like on Twitter, used when you want to mention someone. You can &#64;everyone or &#64;channel.</p></li>
+<li><p><strong>emoji</strong> — just like what you see everywhere.</p></li>
+<li><p><strong>Integrations</strong> — Slack can ‘talk’ with many other systems. For example, you can post a doc from your Google Drive when submitting an assignment; you can type <code class="docutils literal notranslate"><span class="pre">/giphy</span></code> to share random gifs. I will explain more later.</p></li>
+</ul>
+<p>To learn more, check out the <a class="reference external" href="https://get.slack.help/hc/en-us/categories/200111606-Using-Slack">Slack tutorials</a>.</p>
+<p><strong>Hypothesis</strong>. If you’re a formal participant, you should have received a link that invites you to join a private <a class="reference external" href="http://Hypothes.is">Hypothes.is</a> group. <a class="reference external" href="http://Hypothes.is">Hypothes.is</a> is a web annotation tool that enables us to discuss readings in a contextual manner. When annotating, please make sure our group name (<strong>SNAEd</strong>) is properly selected.  <em>Pro Tip</em>: Please try to use a same (or at least a smilar) username for Slack and Hypo so that we can match you in two spaces.</p>
+<p><img alt="" src="images/scopeselector-groupname.png" /></p>
+<p>If you are an Open Participant, please annotate publicly and make sure to tag your annotations with <code class="docutils literal notranslate"><span class="pre">SNAEd</span></code>. Otherwise, it will not be picked up by our <a class="reference external" href="https://hypothes.is/search?q=tag%3ASNAEd">class feed</a>.</p>
+<p>To learn more, check out <a class="reference external" href="https://hypothes.is/quick-start-guide-for-students/">Hypothesis Quick Start Guide for Students</a>, and <a class="reference external" href="https://hypothes.is/student-resource-guide/">a more complete Resource Guide for Students</a>.</p>
+<!-- **Zoom**. We will host virtual meetings on Zoom from Week 7. Please make sure your computer has [Zoom](https://zoom.us/) installed (see the video below). Please test your Zoom setup in advance to make sure audio and video configurations work properly. You will receive a calendar invitation with details about joining our Zoom meetings.  -->
+<!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vFhAEoCF7jg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+<p><strong>Twitter</strong> (optional). If you tweet, like <a class="reference external" href="https://twitter.com/bod0ng">me</a>, please tag your tweets with <code class="docutils literal notranslate"><span class="pre">#SNAEd</span></code> as well.</p>
+<p>To demonstrate how Twitter could be useful, I bet you can learn more from <a class="reference external" href="http://techpizza.org/twitter.php">TechPizza</a> than from this course (set Topic to be, for example, ‘Text, Network Analysis’ –&gt; ‘network:gephi’).</p>
+<p><strong>Google Drive</strong>. Google Drive will be used for major assignment submissions. I will provide detailed feedback directly in your Google Docs, so it is important you use Google Drive. UMN offers free Drive access and unlimited storage. If you need help, check this OIT page: <a class="reference external" href="https://it.umn.edu/technology/google-drive">https://it.umn.edu/technology/google-drive</a></p>
+<!-- To submit an assignment through Slack, head to the #assignment Slack channel and click on the '+' button to pull out a menu with opitons of adding Drive files. You may need to authenticate Google Drive on Slack. See [help page](https://get.slack.help/hc/en-us/articles/205875058-Google-Drive-for-Slack). -->
+<!-- ### Integrations -->
+<!-- We are using multiple systems in this class. And I am fully aware that it may cause disorientation especially in the first one or two weeks. Please keep in mind Slack is the place for us to hang out, and other things -- course content on our course site, Hypo, Drive -- will be somehow integrated in our commucations on Slack. -->
+<!-- - **Course site -> Slack**: When new content is published (weekly in most cases), I will send out an annoucement in the `#annoucement` channel. -->
+<!-- - **Hypo -> Slack**: Hypo annotations properly posted using our `#SNAEd` tag will be notifed in Slack's `#hypo_feed` channel.  -->
+<!-- - **Drive -> Slack**: You can directly add Drive files into Slack when submitting a 'larger' assignment (e.g., project paper, presentations, essays).  -->
+<!-- - **Slack -> Email**: Depending on your preference settings, you will receive some notification emails from Slack. The default settings will email you Private Messages. You can change [your email preferences here](https://snaed.slack.com/account/notifications).  -->
+</section>
+<section id="ways-to-contribute-to-this-site">
+<h2>Ways to contribute to this site<a class="headerlink" href="#ways-to-contribute-to-this-site" title="Permalink to this heading">#</a></h2>
+<p>This is the 3rd time I am offering this course. By making this course site open, I hope it could be useful beyond the formal class and was thrilled see tweets like this one:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Very inspiring course book shared by <a href="https://twitter.com/bod0ng?ref_src=twsrc%5Etfw">\@bod0ng</a> about Social Network Analysis in Education <a href="https://t.co/w85Rf5AVs9">https://t.co/w85Rf5AVs9</a> <a href="https://twitter.com/hashtag/SNA?src=hash&amp;ref_src=twsrc%5Etfw">#SNA</a> <a href="https://twitter.com/hashtag/SNAEd?src=hash&amp;ref_src=twsrc%5Etfw">#SNAEd</a></p>&mdash; Marco Kalz (\@mkalz) <a href="https://twitter.com/mkalz/status/1346413687670763520?ref_src=twsrc%5Etfw">January 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>I’d appreciate your help to continually improve the site and here are ways you can contribute:</p>
+<ol class="arabic simple">
+<li><p>The best way to contribute to this site is to annotate it using <a class="reference external" href="https://Hypothes.is/">Hypothesis</a>. For example, to point out a possible spelling error, you can highlight the error and include two tags – <code class="docutils literal notranslate"><span class="pre">SNAEd</span></code> and <code class="docutils literal notranslate"><span class="pre">issues</span></code> – in your annotation.</p></li>
+<li><p>The second best way is to report a <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Issue</span></code> on this website’s <a class="reference external" href="https://github.com/meefen/sna-ed/issues">Github issues page</a>.</p></li>
+<li><p>If you’re Github-savvy, please consider forking the <a class="reference external" href="https://github.com/meefen/sna-ed/">Github repository</a>, making edits, and sending me a pull request.</p></li>
+<li><p>If none of those options work for you, simply drop me an email at <a class="reference external" href="mailto:chenbd&#37;&#52;&#48;umn&#46;edu">chenbd<span>&#64;</span>umn<span>&#46;</span>edu</a>.</p></li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
+<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Permalink to this heading">#</a></h1>
+<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
+in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
+called <strong>MyST Markdown</strong>.
+This is a simple file to help you get started and show off some syntax.</p>
+<section id="what-is-myst">
+<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Permalink to this heading">#</a></h2>
+<p>MyST stands for “Markedly Structured Text”. It
+is a slight variation on a flavor of markdown called “CommonMark” markdown,
+with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
+in the Sphinx ecosystem.</p>
+<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
+</section>
+<section id="sample-roles-and-directives">
+<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Permalink to this heading">#</a></h2>
+<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
+are kind of like functions, but written in a markup language. They both
+serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
+<strong>directives span many lines</strong>. They both accept different kinds of inputs,
+and what they do with those inputs depends on the specific role or directive
+that is being called.</p>
+<p>Here is a “note” directive:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is a note</p>
+</div>
+<p>It will be rendered in a special box when you build your book.</p>
+<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
+</section>
+<section id="citations">
+<h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
+<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
+the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
+this: <span id="id3">[]</span>.</p>
+<p>Moreover, you can insert a bibliography into your page with this syntax:
+The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
+render properly.
+For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
+then the bibliography is inserted with:</p>
+</section>
+<section id="learn-more">
+<h2>Learn more<a class="headerlink" href="#learn-more" title="Permalink to this heading">#</a></h2>
+<p>This is just a simple starter to get you started.
+You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>I’ve published these ideas as <a class="reference external" href="https://link.springer.com/article/10.1007/s11528-018-0284-7">a <em>design case</em> on TechTrends</a> if you’re interested in reading more.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>I treat ‘data’ as <a class="reference external" href="https://en.oxforddictionaries.com/definition/us/data">plural</a> in the course.</p>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Content with notebooks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Preface</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-syllabus">Course Syllabus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-to-expect-each-week">What to expect each week?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-canvas-for-this-course">Why not Canvas for this course?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-tracks-of-participation">Two tracks of participation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#digital-learning-environments">Digital learning environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ways-to-contribute-to-this-site">Ways to contribute to this site</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown-files">Markdown Files</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bodong Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
