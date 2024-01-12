@@ -230,6 +230,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/penn-wonderlab/networks_book/blob/master/ch1-setup-colab.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -401,8 +432,9 @@ document.write(`
 <p>We will use a Python package named <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> to run some basic network analysis in this course. There are many other powerful network analysis packages out there, such as <code class="docutils literal notranslate"><span class="pre">igraph</span></code>. <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> is very intuitive to work with and you can switch to other packages if you like.</p>
 <p>If you think you can benefit from an introduction to Python, I recommend <a class="reference external" href="https://www.py4e.com/lessons">Python for Everyone (PY4E)</a>. This course is not focused on teaching Python, but will provide some basic scaffolds for network analysis in Python.</p>
 <p>The course will provide you sample code to work with. Code will be shared as Jupyter notebooks that can be run either on your compupter (if a proper Python environment has been installed) or on Google Colab (which is usually easier for beginners).</p>
-<p>This page you’re reading is written as a Jupyter notebook. So technically you can load this page on Google Colab and try to run the code on this page.</p>
-<p>Let’s see how this can be done!</p>
+<p>This page you’re reading is written as a Jupyter notebook. You can load this page on Google Colab by clicking on the rocket icon in the upper-right corner of this page. See the screenshot below:</p>
+<p><img alt="" src="_images/open-colab.png" /></p>
+<p>With the notebook opened on Colab, you can run and edit the code yourself.</p>
 <section id="import-networkx">
 <h2>Import NetworkX<a class="headerlink" href="#import-networkx" title="Permalink to this heading">#</a></h2>
 <p>As mentioned above, we will be primarily working with NetworkX for network analysis.</p>
@@ -446,7 +478,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d3ca457d3f3413f2312ca8c096fe3a6e385c8ba4c9a13d294d90e7a5b63d4025.png" src="_images/d3ca457d3f3413f2312ca8c096fe3a6e385c8ba4c9a13d294d90e7a5b63d4025.png" />
+<img alt="_images/70bb5a6b032f22e7781b97425d23eeecde841d25de70ebe7ee25c286cac25192.png" src="_images/70bb5a6b032f22e7781b97425d23eeecde841d25de70ebe7ee25c286cac25192.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function draws the graph as a simple representation with no node labels or edge labels.</p>
@@ -458,7 +490,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c8c87332abc1006c2e2ef39999279b6257445925a0aa17445e339295d71d169c.png" src="_images/c8c87332abc1006c2e2ef39999279b6257445925a0aa17445e339295d71d169c.png" />
+<img alt="_images/31ef2758f051f017e4f64090c347b9b22b4cc2a8f6daa377f14e0ef22b9cfe5a.png" src="_images/31ef2758f051f017e4f64090c347b9b22b4cc2a8f6daa377f14e0ef22b9cfe5a.png" />
 </div>
 </div>
 </section>
@@ -475,7 +507,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/637b4dd91c00f0df5c5b1de076bb5300c92486f963f569a67a2ee3296fa60636.png" src="_images/637b4dd91c00f0df5c5b1de076bb5300c92486f963f569a67a2ee3296fa60636.png" />
+<img alt="_images/a3662358f0cbacadb90ef244813c457469a5ca25c0384dc1dbc3d46b89684849.png" src="_images/a3662358f0cbacadb90ef244813c457469a5ca25c0384dc1dbc3d46b89684849.png" />
 </div>
 </div>
 </section>
@@ -649,7 +681,7 @@ By Bodong Chen
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2024.
       <br/>
     
   </p>
