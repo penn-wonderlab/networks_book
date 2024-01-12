@@ -1,11 +1,10 @@
-# Welcome to your Jupyter Book
+# Welcome
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+This site is built for a course titled **EDUC 5910: Applied Network Analysis in Learning**, taught by **[Prof. Bodong Chen](http://bodong.ch)** at the University of Pennsylvania. 
 
-Check out the content pages bundled with this sample book to see more.
+Content on this site will be actively built and refined throughout the semester. 
+
+Check out the content pages below to see more.
 
 ```{tableofcontents}
 ```
