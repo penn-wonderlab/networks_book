@@ -23,10 +23,10 @@ Here is a high-level overview of how things would work:
 
 This online class is designed to offer rich opportunities for social participation. Below is how a week would (typically) look like. 
 
-- **Our class meetings happen on Mondays.** The class meetings are designed for us to chat about things we've learned, deepen our understanding, review code, discuss future plans, etc. Depending on each week's topic, we will meet 60-90 minutes on Zoom. 
+- **Our class meetings happen on Mondays, at 5PM ET.** The class meetings are designed for us to chat about things we've learned, deepen our understanding, review code, discuss future plans, etc. Depending on each week's topic, we will meet 60-90 minutes on Zoom. 
 - **A fresh week starts on Tuesday.** Depending on your schedule, you can get started with course readings and begin to make annotations.
-- **By the end of Friday**, you are expected to finish reading articles assigned for the week and post your personal annotations on Hypothesis.
-- **By the end of Monday**, you are expected to check out what other colleagues annotated and reply to each other. You will receive an email notification when someone responds to you. It is hoped that by putting our minds together we can develop deeper understanding. 
+- **By the end of Friday**, you are expected to finish reading articles assigned for the week and post your initial annotations.
+- **By the middle of Monday (aka. 11:59AM)**, you are expected to check out what other colleagues have annotated and reply to one other. It is hoped that by putting our minds together we can develop deeper understanding. 
 - On Monday, we meet again on Zoom. 
 
 
