@@ -1,0 +1,1285 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Lab Assignment: Analyzing Laerner Interactions in MOOC Discussion Forums &#8212; Applied Network Analysis in Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ies/5-lab_assignment';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Applied Network Analysis in Learning - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Applied Network Analysis in Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ch1-intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ch1-setup-colab.html">Use Jupyter Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Networks in Learning Analytics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ch2-networks-la.html">Networks in Learning Analytics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Learning in Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ch3-learning-in-networks.html">Learning in networks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/penn-wonderlab/networks_book/blob/master/ies/5-lab_assignment.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fies/5-lab_assignment.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ies/5-lab_assignment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lab Assignment: Analyzing Laerner Interactions in MOOC Discussion Forums</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data-and-preparing-data">Read data and preparing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep">Data prep</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-directed-network-from-data">Create a directed network from data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-directed-network">Weighted directed network</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#created-a-new-edge-list-data-frame-with-a-weight-column">Created a new edge list data frame with a <code class="docutils literal notranslate"><span class="pre">weight</span></code> column</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#created-a-weighted-directed-network">Created a weighted directed network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis">Network analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prettify-the-network-visualization">Prettify the network visualization</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lab-assignment-analyzing-laerner-interactions-in-mooc-discussion-forums">
+<h1>Lab Assignment: Analyzing Laerner Interactions in MOOC Discussion Forums<a class="headerlink" href="#lab-assignment-analyzing-laerner-interactions-in-mooc-discussion-forums" title="Permalink to this heading">#</a></h1>
+<p>In this assignment, we’ve taken the data from the forums of a previous iteration of the MOOC <em>Big Data
+and Education</em>, from week 1.</p>
+<p>The data set for this assignment has four columns:</p>
+<ul class="simple">
+<li><p>the post ID,</p></li>
+<li><p>the poster’s ID,</p></li>
+<li><p>the thread the post was in, and</p></li>
+<li><p>which post this post was a response to</p></li>
+</ul>
+<p>Python code is provided below to help you get started but you can use any tool you want to complete this assignment.</p>
+<p>Note: Different software packages may differ in how they name or calculate a specific measure (e.g., whether to normalize a centrality measure by default).</p>
+<p>This assignment is focused on getting yourself familiar with the workflow of dealing with a realworld dataset from a digital learning platform, so don’t worry about inconsistencies or “errors” when submitting your responses on ASSISTments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="read-data-and-preparing-data">
+<h2>Read data and preparing data<a class="headerlink" href="#read-data-and-preparing-data" title="Permalink to this heading">#</a></h2>
+<p>In NetworkX, you can read network data from different formats, such as <code class="docutils literal notranslate"><span class="pre">adjascency</span> <span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">adjascency</span> <span class="pre">matrix</span></code>, <code class="docutils literal notranslate"><span class="pre">edge</span> <span class="pre">list</span></code>, etc.</p>
+<p>In order to read data into NetworkX, you need to first transform your data into a proper format that is acceptable for NetworkX. This process applies to any other SNA software packages.</p>
+<p>See <a class="reference external" href="https://networkx.org/documentation/stable/reference/readwrite/index.html">this NetworkX reference page</a> for details.</p>
+<p>For the MOOC dataset we will work with, it’s already in the edge list format.</p>
+<p>Let’s read it in to a pandas dataframe and inspect its content.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://learninganalytics.upenn.edu/ryanbaker/EDM2014/ba5-data.txt&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">edge_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>poster</th>
+      <th>thread</th>
+      <th>response-to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>69497</td>
+      <td>1</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>44591</td>
+      <td>2</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>24601</td>
+      <td>2</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>74570</td>
+      <td>3</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>29022</td>
+      <td>3</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>194</td>
+      <td>73263</td>
+      <td>47</td>
+      <td>193.0</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>195</td>
+      <td>68491</td>
+      <td>47</td>
+      <td>193.0</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>196</td>
+      <td>26362</td>
+      <td>47</td>
+      <td>195.0</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>197</td>
+      <td>4582</td>
+      <td>47</td>
+      <td>195.0</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>198</td>
+      <td>22986</td>
+      <td>48</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>198 rows × 4 columns</p>
+</div></div></div>
+</div>
+<section id="data-prep">
+<h3>Data prep<a class="headerlink" href="#data-prep" title="Permalink to this heading">#</a></h3>
+<p>Even though the data structure looks good, the last column seems to be treated as a <code class="docutils literal notranslate"><span class="pre">numeric</span></code> data type.</p>
+<p>So we still need to do convert it to the <code class="docutils literal notranslate"><span class="pre">integer</span></code> type to make sure its data type is consistent with the <code class="docutils literal notranslate"><span class="pre">poster</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_list</span><span class="p">[</span><span class="s1">&#39;response-to&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">edge_list</span><span class="p">[</span><span class="s1">&#39;response-to&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">edge_list</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ID             int64
+poster         int64
+thread         int64
+response-to    int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="create-a-directed-network-from-data">
+<h2>Create a directed network from data<a class="headerlink" href="#create-a-directed-network-from-data" title="Permalink to this heading">#</a></h2>
+<p>With the cleaned edge list, we can create a directed graph, and add the edge list in.</p>
+<p>There is a function named <code class="docutils literal notranslate"><span class="pre">add_edges_from</span></code> that can be used to quickly add the edges all at once.</p>
+<p>However, we may want to keep two columns – <code class="docutils literal notranslate"><span class="pre">ID</span></code> and <code class="docutils literal notranslate"><span class="pre">thread</span></code> – as edge attributes. So we go through the edge list row by row and add one edge at a time with its attributes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="c1"># Add edges with attributes from the DataFrame to the graph</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">edge_list</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;poster&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;response-to&#39;</span><span class="p">],</span> <span class="nb">id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">],</span> <span class="n">thread</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;thread&#39;</span><span class="p">])</span>
+
+<span class="c1"># Generate a quick network visualization</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1a0e6952fc0a224258efad7c2b607137ef125eec38969b3513f7d0cbc46739f3.png" src="../_images/1a0e6952fc0a224258efad7c2b607137ef125eec38969b3513f7d0cbc46739f3.png" />
+</div>
+</div>
+<p>Let’s check attributes of the edge from <code class="docutils literal notranslate"><span class="pre">24601</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graph</span><span class="o">.</span><span class="n">get_edge_data</span><span class="p">(</span><span class="mi">24601</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: 153, &#39;thread&#39;: 37}
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s always a good idea to check the original dataset for any “bugs”.</p>
+<p>So let’s check whether edges between these two nodes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_list</span><span class="p">[(</span><span class="n">edge_list</span><span class="p">[</span><span class="s1">&#39;poster&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">24601</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">edge_list</span><span class="p">[</span><span class="s1">&#39;response-to&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>poster</th>
+      <th>thread</th>
+      <th>response-to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>112</th>
+      <td>113</td>
+      <td>24601</td>
+      <td>27</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>153</td>
+      <td>24601</td>
+      <td>37</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Interesting!!</p>
+<p>Only the edge with ID of 153 is reflected in the NetworkX graph object.</p>
+<p>This warrants additional investigation.</p>
+<p>Aha! – On the <a class="reference external" href="https://networkx.org/documentation/stable/reference/classes/digraph.html">DiGraph reference page</a>, there is one important sentence:</p>
+<blockquote>
+<div><p>DiGraphs hold directed edges. Self loops are allowed but multiple (parallel) edges are not.</p>
+</div></blockquote>
+<p>It seems DiGraph only allows one edge between any pair of nodes, so some data were thrown away when multiple edges are observed between two nodes.</p>
+<p>We need to find a solution to deal with this issue.</p>
+</section>
+<section id="weighted-directed-network">
+<h2>Weighted directed network<a class="headerlink" href="#weighted-directed-network" title="Permalink to this heading">#</a></h2>
+<p>There could be multiple solutions, depending on your goal.</p>
+<p>One possible solution is to merge multiple edges into one weighted edge.</p>
+<p>This preserves the number of occurrences but throws away the original edge attributes such as ID and thread.</p>
+<p>Whether this is a good solution, again, depends on your goal.</p>
+<section id="created-a-new-edge-list-data-frame-with-a-weight-column">
+<h3>Created a new edge list data frame with a <code class="docutils literal notranslate"><span class="pre">weight</span></code> column<a class="headerlink" href="#created-a-new-edge-list-data-frame-with-a-weight-column" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">el_weighted</span> <span class="o">=</span> <span class="n">edge_list</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;poster&#39;</span><span class="p">,</span> <span class="s1">&#39;response-to&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+<span class="n">el_weighted</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;poster&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span> <span class="c1"># Inspect the weighted edge list, sorted by weight and poster</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>poster</th>
+      <th>response-to</th>
+      <th>weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>62</th>
+      <td>22986</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>24601</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>24627</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>31345</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>85455</td>
+      <td>166</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>97013</td>
+      <td>103</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>97784</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>97784</td>
+      <td>189</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>98582</td>
+      <td>60</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>98582</td>
+      <td>66</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>193 rows × 3 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="created-a-weighted-directed-network">
+<h2>Created a weighted directed network<a class="headerlink" href="#created-a-weighted-directed-network" title="Permalink to this heading">#</a></h2>
+<p>Now, with the weighted edge list, we can follow the same process and generate a new network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wg</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+
+<span class="c1"># Add edges with attributes from the DataFrame to the graph</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">el_weighted</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">wg</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;poster&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;response-to&#39;</span><span class="p">],</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span>
+
+<span class="c1"># Generate a quick network visualization</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/12a3b7951fb6bab1f37a777f975cdc94b1e361a9e6b012f4e9ab2844f694536b.png" src="../_images/12a3b7951fb6bab1f37a777f975cdc94b1e361a9e6b012f4e9ab2844f694536b.png" />
+</div>
+</div>
+<p>Let’s check the edge from <code class="docutils literal notranslate"><span class="pre">24601</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code> just to be safe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wg</span><span class="o">.</span><span class="n">get_edge_data</span><span class="p">(</span><span class="mi">24601</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;weight&#39;: 2}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="network-analysis">
+<h2>Network analysis<a class="headerlink" href="#network-analysis" title="Permalink to this heading">#</a></h2>
+<p>With the created network, we can then conduct further analysis of the network.</p>
+<p>Below are a few analyses for illustration purposes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">shortest_path_length</span><span class="p">(</span><span class="n">wg</span><span class="p">,</span> <span class="mi">3903</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">in_degrees</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">wg</span><span class="o">.</span><span class="n">in_degree</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">))</span>
+<span class="n">in_degrees</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{432: 0,
+ 12: 1,
+ 1008: 0,
+ 68: 2,
+ 1588: 0,
+ 104: 1,
+ 109: 1,
+ 2102: 0,
+ 57: 1,
+ 2739: 0,
+ 64: 1,
+ 3903: 0,
+ 0: 48,
+ 37: 2,
+ 40: 2,
+ 48: 1,
+ 4582: 0,
+ 195: 2,
+ 8639: 0,
+ 128: 1,
+ 130: 1,
+ 9061: 0,
+ 38: 1,
+ 45: 1,
+ 9199: 0,
+ 133: 1,
+ 9936: 0,
+ 137: 1,
+ 10162: 0,
+ 10827: 0,
+ 65: 1,
+ 67: 1,
+ 11454: 0,
+ 82: 1,
+ 84: 2,
+ 12345: 0,
+ 5: 2,
+ 11: 1,
+ 16: 1,
+ 20: 1,
+ 23: 1,
+ 55: 1,
+ 75: 1,
+ 105: 1,
+ 121: 1,
+ 123: 1,
+ 125: 1,
+ 127: 1,
+ 129: 1,
+ 140: 1,
+ 143: 1,
+ 146: 1,
+ 151: 1,
+ 154: 1,
+ 162: 1,
+ 182: 1,
+ 13274: 0,
+ 87: 4,
+ 13534: 0,
+ 185: 1,
+ 186: 1,
+ 13544: 0,
+ 183: 1,
+ 14644: 0,
+ 18299: 0,
+ 107: 1,
+ 20757: 0,
+ 21090: 0,
+ 21588: 0,
+ 41: 1,
+ 43: 1,
+ 21731: 0,
+ 115: 1,
+ 22241: 0,
+ 33: 1,
+ 22696: 0,
+ 153: 1,
+ 22926: 0,
+ 135: 1,
+ 22986: 0,
+ 13: 1,
+ 23815: 0,
+ 93: 3,
+ 24601: 0,
+ 2: 1,
+ 8: 1,
+ 10: 1,
+ 14: 1,
+ 17: 1,
+ 26: 1,
+ 47: 1,
+ 49: 1,
+ 71: 1,
+ 81: 1,
+ 95: 1,
+ 100: 1,
+ 114: 1,
+ 145: 1,
+ 148: 1,
+ 157: 2,
+ 159: 1,
+ 174: 1,
+ 179: 2,
+ 192: 1,
+ 24627: 0,
+ 25133: 0,
+ 26273: 0,
+ 53: 1,
+ 26362: 0,
+ 26657: 0,
+ 141: 1,
+ 27535: 0,
+ 29022: 0,
+ 4: 1,
+ 7: 1,
+ 30026: 0,
+ 76: 4,
+ 31345: 0,
+ 18: 1,
+ 117: 1,
+ 31439: 0,
+ 61: 1,
+ 31788: 0,
+ 32231: 0,
+ 92: 1,
+ 98: 1,
+ 35708: 0,
+ 39637: 0,
+ 39873: 0,
+ 168: 1,
+ 42482: 0,
+ 136: 1,
+ 44355: 0,
+ 44438: 0,
+ 44591: 0,
+ 44865: 0,
+ 45295: 0,
+ 45835: 0,
+ 158: 1,
+ 160: 1,
+ 46544: 0,
+ 47634: 0,
+ 119: 1,
+ 122: 1,
+ 124: 1,
+ 50718: 0,
+ 42: 1,
+ 52378: 0,
+ 21: 1,
+ 52906: 0,
+ 53936: 0,
+ 55319: 0,
+ 57254: 0,
+ 46: 1,
+ 58431: 0,
+ 178: 1,
+ 58594: 0,
+ 171: 1,
+ 59490: 0,
+ 134: 1,
+ 59743: 0,
+ 111: 1,
+ 61054: 0,
+ 61247: 0,
+ 62306: 0,
+ 191: 1,
+ 64583: 0,
+ 72: 1,
+ 67949: 0,
+ 147: 1,
+ 68265: 0,
+ 108: 1,
+ 110: 1,
+ 68491: 0,
+ 193: 2,
+ 69497: 0,
+ 70592: 0,
+ 165: 1,
+ 71660: 0,
+ 72811: 0,
+ 170: 1,
+ 73263: 0,
+ 188: 1,
+ 190: 1,
+ 73981: 0,
+ 36: 1,
+ 74053: 0,
+ 58: 1,
+ 74568: 0,
+ 31: 1,
+ 83: 1,
+ 74570: 0,
+ 74577: 0,
+ 74654: 0,
+ 172: 1,
+ 76712: 0,
+ 28: 1,
+ 175: 1,
+ 77476: 0,
+ 139: 1,
+ 80033: 0,
+ 97: 1,
+ 80045: 0,
+ 59: 1,
+ 80295: 0,
+ 52: 1,
+ 80399: 0,
+ 106: 1,
+ 81734: 0,
+ 74: 1,
+ 82875: 0,
+ 35: 1,
+ 83224: 0,
+ 84726: 0,
+ 85455: 0,
+ 164: 1,
+ 166: 2,
+ 86236: 0,
+ 120: 1,
+ 86620: 0,
+ 62: 1,
+ 87525: 0,
+ 116: 1,
+ 87908: 0,
+ 89206: 0,
+ 63: 1,
+ 90999: 0,
+ 132: 1,
+ 96256: 0,
+ 97013: 0,
+ 103: 1,
+ 97784: 0,
+ 189: 1,
+ 98582: 0,
+ 60: 1,
+ 66: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">wg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0034799855751893255
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">overall_reciprocity</span><span class="p">(</span><span class="n">wg</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.0000&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="prettify-the-network-visualization">
+<h3>Prettify the network visualization<a class="headerlink" href="#prettify-the-network-visualization" title="Permalink to this heading">#</a></h3>
+<p>You can fine-tune the way the network is visualized, using features provided by NetworkX, or even other packages (such as <code class="docutils literal notranslate"><span class="pre">pyvis</span></code> that can generate interactive plots).</p>
+<p>Below is a quick attempt to adjust the node size, edge width, coloring, and graph layout.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate node degrees</span>
+<span class="n">degrees</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">wg</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span>
+
+<span class="c1"># Extract edge weights</span>
+<span class="n">edge_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">wg</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+
+<span class="c1"># Scale node sizes based on degrees for visualization</span>
+<span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">degrees</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+
+<span class="c1"># Draw the graph with customized edge width and node size</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">wg</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># You can choose a different layout algorithm</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">wg</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">node_sizes</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">edge_weights</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f332412878299c46c585c7a990e11ab21793848372d61ee9588ada70023f756a.png" src="../_images/f332412878299c46c585c7a990e11ab21793848372d61ee9588ada70023f756a.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ies"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-data-and-preparing-data">Read data and preparing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-prep">Data prep</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-directed-network-from-data">Create a directed network from data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-directed-network">Weighted directed network</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#created-a-new-edge-list-data-frame-with-a-weight-column">Created a new edge list data frame with a <code class="docutils literal notranslate"><span class="pre">weight</span></code> column</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#created-a-weighted-directed-network">Created a weighted directed network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis">Network analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prettify-the-network-visualization">Prettify the network visualization</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bodong Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
