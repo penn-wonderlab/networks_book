@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome &#8212; Applied Network Analysis in Learning</title>
+    <title>Network Science &#8212; Applied Network Analysis in Learning</title>
   
   
   
@@ -62,10 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch4-network-science';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting Started" href="ch1-intro.html" />
+    <link rel="next" title="Getting Started with Network Data" href="ch4-lab-read-data-1.html" />
+    <link rel="prev" title="Learning in networks" href="ch3-learning-in-networks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -149,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -169,8 +170,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome
                 </a>
             </li>
@@ -189,8 +190,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch3-learning-in-networks.html">Learning in networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Network Science</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Network Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
 </ul>
 
@@ -263,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch4-network-science.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/ch4-network-science.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +365,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -375,11 +378,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>Network Science</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-of-albert-laszlo-barabasi-the-hidden-networks-of-everything">Video of Albert-László Barabási, <em>The hidden networks of everything</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-getting-started-with-network-data">Lab: Getting started with network data</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -389,37 +402,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
-<p>This site is built for a course titled <strong>EDUC 5910: Applied Network Analysis in Learning</strong>, taught by <strong><a class="reference external" href="http://bodong.ch">Prof. Bodong Chen</a></strong> at the University of Pennsylvania.</p>
-<p>Content on this site will be actively built and refined throughout the semester.</p>
-<p>Check out the content pages below to see more.</p>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Getting Started</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ch1-intro.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch1-setup-colab.html">Use Jupyter Notebooks</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="network-science">
+<h1>Network Science<a class="headerlink" href="#network-science" title="Permalink to this heading">#</a></h1>
+<p>As discussed earlier in the course, networks are everywhere!</p>
+<p>This week, we will broaden up from learning and social networks to consider a wide range of networks.</p>
+<section id="video-of-albert-laszlo-barabasi-the-hidden-networks-of-everything">
+<h2>Video of Albert-László Barabási, <em>The hidden networks of everything</em><a class="headerlink" href="#video-of-albert-laszlo-barabasi-the-hidden-networks-of-everything" title="Permalink to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RfgjHoVCZwU?si=rM2LIilv4PM20f2D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Barabasi, A.-L. (2016). Network Science (1st edition) (Chapter 1). Cambridge University Press.</p></li>
+<li><p>Zweig, K. A. (2016). Graph Theory, Social Network Analysis, and Network Science. In K. A. Zweig (Ed.), Network Analysis Literacy: A Practical Approach to the Analysis of Networks (pp. 23–55). Springer. <a class="reference external" href="https://doi.org/10.1007/978-3-7091-0741-6_2">https://doi.org/10.1007/978-3-7091-0741-6_2</a></p></li>
+<li><p>[Optional] Borgatti, S. P., Mehra, A., Brass, D. J., &amp; Labianca, G. (2009). Network analysis in the social sciences. Science, 323(5916), 892–895. <a class="reference external" href="https://doi.org/10.1126/science.1165821">https://doi.org/10.1126/science.1165821</a></p></li>
 </ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Networks in Learning Analytics</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ch2-networks-la.html">Networks in Learning Analytics</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Learning in Networks</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ch3-learning-in-networks.html">Learning in networks</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Network Science</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
-</ul>
-</div>
+</section>
+<section id="lab-getting-started-with-network-data">
+<h2>Lab: Getting started with network data<a class="headerlink" href="#lab-getting-started-with-network-data" title="Permalink to this heading">#</a></h2>
+<p>As you continue to read about various ways of applying network analysis, follow the Jupyter notebook on the next page to start playing with network data.</p>
+<p>This lab activity aims to get you comfortable with the typical process of importing well-structured network data.</p>
+<p>In later weeks, we will discuss multiple ways to represent networks and data wrangling that is usually needed for a network analysis project.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -452,12 +456,21 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="ch3-learning-in-networks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Learning in networks</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="ch1-intro.html"
+       href="ch4-lab-read-data-1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-title">Getting Started with Network Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -468,7 +481,22 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-of-albert-laszlo-barabasi-the-hidden-networks-of-everything">Video of Albert-László Barabási, <em>The hidden networks of everything</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-getting-started-with-network-data">Lab: Getting started with network data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

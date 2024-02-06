@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Use Jupyter Notebooks &#8212; Applied Network Analysis in Learning</title>
+    <title>Getting Started with Network Data &#8212; Applied Network Analysis in Learning</title>
   
   
   
@@ -62,11 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1-setup-colab';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch4-lab-read-data-1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Networks in Learning Analytics" href="ch2-networks-la.html" />
-    <link rel="prev" title="Getting Started" href="ch1-intro.html" />
+    <link rel="prev" title="Network Science" href="ch4-network-science.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,9 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch1-intro.html">Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Use Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1-setup-colab.html">Use Jupyter Notebooks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Networks in Learning Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -190,9 +189,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch3-learning-in-networks.html">Learning in networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Network Science</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started with Network Data</a></li>
 </ul>
 
     </div>
@@ -247,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/penn-wonderlab/networks_book/blob/master/ch1-setup-colab.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/penn-wonderlab/networks_book/blob/master/ch4-lab-read-data-1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch1-setup-colab.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch4-lab-read-data-1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/ch1-setup-colab.ipynb" target="_blank"
+      <li><a href="_sources/ch4-lab-read-data-1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -409,7 +408,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Use Jupyter Notebooks</h1>
+    <h1>Getting Started with Network Data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,12 +418,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-networkx">Import NetworkX</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-toy-network-manually">Create a toy network manually</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-a-network">Visualize a network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-classic-network">Create a classic network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis">Network Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-networkx">Learn More about NetworkX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-graph-by-yourself">Create a graph by yourself</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-classic-network">Import a classic network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-graph-file">Import a graph file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-an-edge-list-file">Import an edge list file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-datasets">Other datasets</a></li>
 </ul>
             </nav>
         </div>
@@ -436,18 +434,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="use-jupyter-notebooks">
-<h1>Use Jupyter Notebooks<a class="headerlink" href="#use-jupyter-notebooks" title="Permalink to this heading">#</a></h1>
-<p>We will use a Python package named <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> to run some basic network analysis in this course. There are many other powerful network analysis packages out there, such as <code class="docutils literal notranslate"><span class="pre">igraph</span></code>. <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> is very intuitive to work with and you can switch to other packages if you like.</p>
-<p>If you think you can benefit from an introduction to Python, I recommend <a class="reference external" href="https://www.py4e.com/lessons">Python for Everyone (PY4E)</a>. This course is not focused on teaching Python, but will provide some basic scaffolds for network analysis in Python.</p>
-<p>The course will provide you sample code to work with. Code will be shared as Jupyter notebooks that can be run either on your compupter (if a proper Python environment has been installed) or on Google Colab (which is usually easier for beginners).</p>
-<p>This page you’re reading is written as a Jupyter notebook. You can load this page on Google Colab by clicking on the rocket icon in the upper-right corner of this page. See the screenshot below:</p>
-<p><img alt="" src="_images/open-colab.png" /></p>
-<p>With the notebook opened on Colab, you can run and edit the code yourself.</p>
-<section id="import-networkx">
-<h2>Import NetworkX<a class="headerlink" href="#import-networkx" title="Permalink to this heading">#</a></h2>
-<p>As mentioned above, we will be primarily working with NetworkX for network analysis.</p>
-<p>In Python, the first thing to do is to import the package to the runtime environment. We are giving the package a nickname <code class="docutils literal notranslate"><span class="pre">nx</span></code> so it’s easier to refer to it.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-started-with-network-data">
+<h1>Getting Started with Network Data<a class="headerlink" href="#getting-started-with-network-data" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
@@ -456,19 +444,15 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Now the package has been successfully imported.</p>
-<p>Note that we use these two words <em>network</em> and <em>graph</em> interchangeably but they could mean quite different things in different contexts.</p>
-</section>
-<section id="create-a-toy-network-manually">
-<h2>Create a toy network manually<a class="headerlink" href="#create-a-toy-network-manually" title="Permalink to this heading">#</a></h2>
-<p>Let’s create an empty network using <code class="docutils literal notranslate"><span class="pre">nx.Graph</span></code> and then manually add 3 nodes and 2 edges to the network.</p>
-<p>Below is a few lines of code to achieve this goal.</p>
+<p>NetworkX reference page: <a class="reference external" href="https://networkx.org/documentation/stable/index.html">https://networkx.org/documentation/stable/index.html</a></p>
+<section id="create-a-graph-by-yourself">
+<h2>Create a graph by yourself<a class="headerlink" href="#create-a-graph-by-yourself" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 
-<span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>             <span class="c1"># Add a single node</span>
-<span class="n">g</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># Add a list of nodes</span>
+<span class="c1"># g.add_node(1)             # Add a single node</span>
+<span class="n">g</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># Add a list of nodes</span>
 
 <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -476,22 +460,6 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="visualize-a-network">
-<h2>Visualize a network<a class="headerlink" href="#visualize-a-network" title="Permalink to this heading">#</a></h2>
-<p>You can simply call the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function to draw the network.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/e6754796f364d25379f402e4121d58f1a1c3027eff3b1caaa2226d59157b58aa.png" src="_images/e6754796f364d25379f402e4121d58f1a1c3027eff3b1caaa2226d59157b58aa.png" />
-</div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function draws the graph as a simple representation with no node labels or edge labels.</p>
-<p>To have more options such as adding node labeling and graph titles, you can use <code class="docutils literal notranslate"><span class="pre">draw_networkx()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
@@ -499,100 +467,145 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1935606209601a228a649932983b3761d99608dd0be0abd7277eca732b533abe.png" src="_images/1935606209601a228a649932983b3761d99608dd0be0abd7277eca732b533abe.png" />
+<img alt="_images/4f04d3875dfb60fe49fc01aa4e746129ee2a82ef2c3a402064c2f2d7afcd4061.png" src="_images/4f04d3875dfb60fe49fc01aa4e746129ee2a82ef2c3a402064c2f2d7afcd4061.png" />
 </div>
 </div>
 </section>
-<section id="create-a-classic-network">
-<h2>Create a classic network<a class="headerlink" href="#create-a-classic-network" title="Permalink to this heading">#</a></h2>
-<p>Instead of manually creating a network, you can also create classic graphs using NetworkX.</p>
-<p>Below, we load the classic Karate Club graph by Zachary (1977) and visualize it.</p>
+<section id="import-a-classic-network">
+<h2>Import a classic network<a class="headerlink" href="#import-a-classic-network" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_kc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_kk</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">krackhardt_kite_graph</span><span class="p">()</span>
 
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">g_kc</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">g_kk</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/622fc96b3173aea2a9ac41e495ae2e79566438cc63c9a1737190ff6c392adbf7.png" src="_images/622fc96b3173aea2a9ac41e495ae2e79566438cc63c9a1737190ff6c392adbf7.png" />
+<img alt="_images/91456010896673128f0c74d964bbae2f6f3be6c33e9f0c758cd1d505e9b74767.png" src="_images/91456010896673128f0c74d964bbae2f6f3be6c33e9f0c758cd1d505e9b74767.png" />
 </div>
 </div>
 </section>
-<section id="network-analysis">
-<h2>Network Analysis<a class="headerlink" href="#network-analysis" title="Permalink to this heading">#</a></h2>
-<p>With the graph created, we can start to run some simply network analysis.</p>
-<p>For example, what is the degree centrality of node #19 in this graph?</p>
+<section id="import-a-graph-file">
+<h2>Import a graph file<a class="headerlink" href="#import-a-graph-file" title="Permalink to this heading">#</a></h2>
+<p>In this example, we import a dataset about collaborations in network science. Read more about the network <a class="reference external" href="https://networks.skewed.de/net/netscience">here</a>.</p>
+<p>First, download a zip file containing the data from <a class="reference external" href="https://websites.umich.edu/~mejn/netdata/">this page</a>. The dataset you need is about <a class="reference external" href="https://websites.umich.edu/~mejn/netdata/netscience.zip">Coauthorships in network science</a>. After downloading, open the zip file to unzip it to a directory that you can access.</p>
+<p>If you run the notebook locally, change the <code class="docutils literal notranslate"><span class="pre">PATH_TO</span></code> below to point the path to the .gml file.</p>
+<p>If you use Google Colab, read <a class="reference external" href="https://saturncloud.io/blog/uploading-local-files-using-google-colab/">this page</a> to understand how to upload local files to Colab. The simplest solution is probably to use <code class="docutils literal notranslate"><span class="pre">files.upload()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">g_kc</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_gml</span><span class="p">(</span><span class="s2">&quot;PATH_TO/netscience.gml&quot;</span><span class="p">)</span> <span class="c1"># change PATH_TO</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_gml</span><span class="p">(</span><span class="s2">&quot;PATH_TO/netscience.gml&quot;</span><span class="p">)</span> <span class="c1"># change PATH_TO</span>
+
+<span class="nn">File ~/.pyenv/versions/3.11.1/lib/python3.11/site-packages/networkx/utils/decorators.py:766,</span> in <span class="ni">argmap.__call__.&lt;locals&gt;.func</span><span class="nt">(_argmap__wrapper, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">765</span> <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">__wrapper</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">766</span>     <span class="k">return</span> <span class="n">argmap</span><span class="o">.</span><span class="n">_lazy_compile</span><span class="p">(</span><span class="n">__wrapper</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File &lt;class &#39;networkx.utils.decorators.argmap&#39;&gt; compilation 17:3,</span> in <span class="ni">argmap_read_gml_13</span><span class="nt">(path, label, destringizer)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">bz2</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">collections</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">gzip</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">inspect</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">itertools</span>
+
+<span class="nn">File ~/.pyenv/versions/3.11.1/lib/python3.11/site-packages/networkx/utils/decorators.py:189,</span> in <span class="ni">open_file.&lt;locals&gt;._open_file</span><span class="nt">(path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="c1"># could be None, or a file handle, in which case the algorithm will deal with it</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">189</span> <span class="n">fobj</span> <span class="o">=</span> <span class="n">_dispatch_dict</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="k">return</span> <span class="n">fobj</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">fobj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;PATH_TO/netscience.gml&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Or even better, let’s print out degree for all nodes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node Degree&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">g_kc</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">g_kc</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">:</span><span class="s2">6</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Degree
-   0     16
-   1      9
-   2     10
-   3      6
-   4      3
-   5      4
-   6      4
-   7      4
-   8      5
-   9      2
-  10      3
-  11      1
-  12      2
-  13      5
-  14      2
-  15      2
-  16      2
-  17      2
-  18      2
-  19      3
-  20      2
-  21      2
-  22      2
-  23      5
-  24      3
-  25      3
-  26      2
-  27      4
-  28      3
-  29      4
-  30      4
-  31      6
-  32     12
-  33     17
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="learn-more-about-networkx">
-<h2>Learn More about NetworkX<a class="headerlink" href="#learn-more-about-networkx" title="Permalink to this heading">#</a></h2>
-<p>This notebook provides a gentle introduction to NetworkX, to demonstrate how easy it is to get started.</p>
-<p>In this course, we will work with many other areas of network analysis.</p>
-<p>If you are newer to Python programming, one important skill in the process is to learn how to check reference pages and find answers yourself.</p>
-<p>For example, NetworkX provides a very well organized reference page that can be helpful: <a class="reference external" href="https://networkx.org/documentation/stable/reference/index.html">https://networkx.org/documentation/stable/reference/index.html</a></p>
-<p>You are also encouraged to leverage ChatGPT in the process, as long as you spend time to make sense of ChatGPT outputs and be transparent and responsible for what is submitted as <em>your</em> work.</p>
+<section id="import-an-edge-list-file">
+<h2>Import an edge list file<a class="headerlink" href="#import-an-edge-list-file" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/eehh-stanford/SNA-workshop/master/hp5edgelist.txt&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;“From”&quot;</span><span class="p">:</span> <span class="s2">&quot;From&quot;</span><span class="p">,</span> <span class="s1">&#39;“To”&#39;</span><span class="p">:</span> <span class="s2">&quot;To&quot;</span><span class="p">})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;From&#39;</span><span class="p">,</span> <span class="s1">&#39;To&#39;</span><span class="p">,</span> <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">DG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">DG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">DG</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="other-datasets">
+<h2>Other datasets<a class="headerlink" href="#other-datasets" title="Permalink to this heading">#</a></h2>
+<p>If you are interested in playing with more datasets, there are many places to find network data. Below is a list of sites you can start with:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/gephi/gephi/wiki/Datasets">Gephi datasets</a></p></li>
+<li><p><a class="reference external" href="https://networks.skewed.de/">Netzschleuder</a></p></li>
+<li><p><a class="reference external" href="https://networkdata.ics.uci.edu/">UCI Network Data Repository</a></p></li>
+<li><p><a class="reference external" href="https://snap.stanford.edu/data/">Stanford Large Network Dataset Collection</a></p></li>
+</ul>
+<p>Have fun!</p>
 </section>
 </section>
 
@@ -627,22 +640,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ch1-intro.html"
+       href="ch4-network-science.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-title">Network Science</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="ch2-networks-la.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Networks in Learning Analytics</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -660,12 +664,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-networkx">Import NetworkX</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-toy-network-manually">Create a toy network manually</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-a-network">Visualize a network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-classic-network">Create a classic network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis">Network Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-networkx">Learn More about NetworkX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-graph-by-yourself">Create a graph by yourself</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-classic-network">Import a classic network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-graph-file">Import a graph file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-an-edge-list-file">Import an edge list file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-datasets">Other datasets</a></li>
 </ul>
   </nav></div>
 

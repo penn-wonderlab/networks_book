@@ -1,0 +1,53 @@
+Traceback (most recent call last):
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/site-packages/nbclient/client.py", line 650, in async_setup_kernel
+    yield
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/cbd/.pyenv/versions/3.11.1/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+G = nx.read_gml("PATH_TO/netscience.gml") # change PATH_TO
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[5], line 1[0m
+[0;32m----> 1[0m G [38;5;241m=[39m [43mnx[49m[38;5;241;43m.[39;49m[43mread_gml[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mPATH_TO/netscience.gml[39;49m[38;5;124;43m"[39;49m[43m)[49m [38;5;66;03m# change PATH_TO[39;00m
+
+File [0;32m~/.pyenv/versions/3.11.1/lib/python3.11/site-packages/networkx/utils/decorators.py:766[0m, in [0;36margmap.__call__.<locals>.func[0;34m(_argmap__wrapper, *args, **kwargs)[0m
+[1;32m    765[0m [38;5;28;01mdef[39;00m [38;5;21mfunc[39m([38;5;241m*[39margs, __wrapper[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[0;32m--> 766[0m     [38;5;28;01mreturn[39;00m [43margmap[49m[38;5;241;43m.[39;49m[43m_lazy_compile[49m[43m([49m[43m__wrapper[49m[43m)[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m<class 'networkx.utils.decorators.argmap'> compilation 17:3[0m, in [0;36margmap_read_gml_13[0;34m(path, label, destringizer)[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mbz2[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mcollections[39;00m
+[0;32m----> 3[0m [38;5;28;01mimport[39;00m [38;5;21;01mgzip[39;00m
+[1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01minspect[39;00m
+[1;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mitertools[39;00m
+
+File [0;32m~/.pyenv/versions/3.11.1/lib/python3.11/site-packages/networkx/utils/decorators.py:189[0m, in [0;36mopen_file.<locals>._open_file[0;34m(path)[0m
+[1;32m    185[0m [38;5;28;01melse[39;00m:
+[1;32m    186[0m     [38;5;66;03m# could be None, or a file handle, in which case the algorithm will deal with it[39;00m
+[1;32m    187[0m     [38;5;28;01mreturn[39;00m path, [38;5;28;01mlambda[39;00m: [38;5;28;01mNone[39;00m
+[0;32m--> 189[0m fobj [38;5;241m=[39m [43m_dispatch_dict[49m[43m[[49m[43mext[49m[43m][49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m)[49m
+[1;32m    190[0m [38;5;28;01mreturn[39;00m fobj, [38;5;28;01mlambda[39;00m: fobj[38;5;241m.[39mclose()
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'PATH_TO/netscience.gml'
+
