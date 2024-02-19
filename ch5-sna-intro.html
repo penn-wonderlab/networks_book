@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Learning in networks &#8212; Applied Network Analysis in Learning</title>
+    <title>Social Network Analysis: Theory and Concepts &#8212; Applied Network Analysis in Learning</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch3-learning-in-networks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch5-sna-intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Network Science" href="ch4-network-science.html" />
-    <link rel="prev" title="Networks in Learning Analytics" href="ch2-networks-la.html" />
+    <link rel="next" title="Collect and Manage Network Data" href="ch6-network-data-handson.html" />
+    <link rel="prev" title="Getting Started with Network Data" href="ch4-lab-read-data-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,8 +186,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch2-networks-la.html">Networks in Learning Analytics</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Learning in Networks</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Learning in networks</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch3-learning-in-networks.html">Learning in networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Network Science</span></p>
 <ul class="nav bd-sidenav">
@@ -195,8 +195,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">5. SNA Theory and Concepts</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ch5-sna-intro.html">Social Network Analysis: Theory and Concepts</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Social Network Analysis: Theory and Concepts</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Collect and Manage Network Data</span></p>
 <ul class="nav bd-sidenav">
@@ -272,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch3-learning-in-networks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch5-sna-intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/ch3-learning-in-networks.md" target="_blank"
+      <li><a href="_sources/ch5-sna-intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -386,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Learning in networks</h1>
+    <h1>Social Network Analysis: Theory and Concepts</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,12 +396,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-ideas-about-networks">Basic ideas about networks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Learning in networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theories-of-learning-in-networks">Theories of learning in networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration">Three Levels of Consideration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p">P</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m">M</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">m</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-vs-qualitative-research-a-false-dichotomy">Quantitative vs qualitative research: A false dichotomy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-sna-in-education">Examples of SNA in education</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-in-emerging-social-networks-explains-academic-failure-and-success-stadtfeld2019integration">Integration in emerging social networks explains academic failure and success <span class="xref cite">stadtfeld2019integration</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-online-the-structure-and-content-of-students-asynchronous-online-networks-in-a-blended-engineering-class-lee2021connecting">“Connecting online”: The structure and content of students’ asynchronous online networks in a blended engineering class <span class="xref cite">lee2021connecting</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-concept-networks-of-professional-education-reflections-wise2019top">Top Concept Networks of Professional Education Reflections <span class="xref cite">wise2019top</span></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -413,73 +421,102 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="learning-in-networks">
-<h1>Learning in networks<a class="headerlink" href="#learning-in-networks" title="Permalink to this heading">#</a></h1>
-<section id="basic-ideas-about-networks">
-<h2>Basic ideas about networks<a class="headerlink" href="#basic-ideas-about-networks" title="Permalink to this heading">#</a></h2>
-<p>Extending our discussions in the past week, I created a video to elaborate on a number of basic ideas about networks and social networks.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MoVtUVzLS-k?si=0BlYpaHdBybJUK3T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <section class="tex2jax_ignore mathjax_ignore" id="social-network-analysis-theory-and-concepts">
+<h1>Social Network Analysis: Theory and Concepts<a class="headerlink" href="#social-network-analysis-theory-and-concepts" title="Permalink to this heading">#</a></h1>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Scott, J. (2017). Social network analysis (4th edition) (Ch. 1). SAGE Publications.</p></li>
+<li><p>Carolan, B. V. (2014). Social network analysis and education: Theory, methods &amp; applications (Ch. 1-2). SAGE Publications.</p></li>
+</ul>
 </section>
-<section id="id1">
-<h2>Learning in networks<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>This week, we are focused on thinking about learning in or through networks.</p>
-<p>The use of network analysis to examine learning needs to be informed by theories of learning and contexts in which learning happens.</p>
-<p>During this week, you are engaged to explore several different theories that emphasize a “network worldview” and are widely applied to guide network analysis.</p>
-<p>Required readings:</p>
+<section id="three-levels-of-consideration">
+<h2>Three Levels of Consideration<a class="headerlink" href="#three-levels-of-consideration" title="Permalink to this heading">#</a></h2>
+<p>Our discussion is aluding to three levels of considerations that researchers often need to be aware of. You could find more information in text such as <span id="id1">[<a class="reference internal" href="#id11" title="Katrin Niglas. The Multidimensional Model of Research Methodology: An Integrated Set of Continua. In Abbas Tashakkori and Charles Teddlie, editors, SAGE Handbook of Mixed Methods in Social &amp; Behavioral Research, pages 215–236. SAGE, Thousand Oaks, June 2010.">Niglas, 2010</a>]</span> or some other research methodology courses. Please note that this framework was <em>constructed</em> to help us grapple with the complex terrain of research, and it is highly debatable.</p>
+<section id="p">
+<h3>P<a class="headerlink" href="#p" title="Permalink to this heading">#</a></h3>
+<p>philosophy, worldviews, paradigms</p>
+</section>
+<section id="m">
+<h3>M<a class="headerlink" href="#m" title="Permalink to this heading">#</a></h3>
+<p>methodology</p>
+</section>
+<section id="id2">
+<h3>m<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>methods/techniques</p>
+<p>Below, I try to explain these three levels of considerations:</p>
 <ul class="simple">
-<li><p>Haythornthwaite, C. (2015). Rethinking learning spaces: Networks, structures, and possibilities for learning in the twenty-first century. Communication Research and Practice, 1(4), 292–306. <a class="reference external" href="https://doi.org/10.1080/22041451.2015.1105773">https://doi.org/10.1080/22041451.2015.1105773</a></p></li>
-<li><p>Jones, C. (2015). Networked learning: An educational paradigm for the age of digital networks (Ch. 3). Springer International Publishing. <a class="reference external" href="https://doi.org/10.1007/978-3-319-01934-5">https://doi.org/10.1007/978-3-319-01934-5</a></p></li>
-<li><p>Poquet, O., &amp; Chen, B. (2023). Integrating Theories of Learning and Social Networks in Learning Analytics. In K. Bartimote, S. Howard, &amp; D. Gašević (Eds.), Theory Informing and Arising from Learning Analytics. Springer Nature.</p></li>
+<li><p><strong>m</strong>, or methods/techniques: The “small <em>m</em>” in SNA constitutes methods or techniques we apply in SNA research. Imagine we are using SNA to investigate friendship of a network of high-schoolers (think about “Gossip Girls” if you’ve watched that TV series). A technique in this SNA research could be a questionnaire used to collect friendship data among students; it could be the <a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">force-directed layout</a> we use to visualize this network; it could be the measure of <em>betweenness centrality</em> we use to characterize high-schoolers; it could also be a network modeling algorithm we apply to model the flow of gossips. In a nutshell, these techniques are more about <strong>what</strong> we concretely do in an SNA research.</p></li>
+<li><p><strong>M</strong>: When SNA is referred to as a “big <em>M</em>” Methodology, it is treated as a systematic approach of investigating a phenomenon. Beyond simply applying these techniques, a methodology is also concerned with <strong>why</strong> a technique gets used. In other words, understanding SNA as a methodology means learning to make informed decisions in any stage of an SNA project. For example, why using a questionnaire instead of observations or interviews? In which cases should one use a <em>circle layout</em> instead of a force-directed layout? Why a specific SNA measure is appropriate for addressing a research question? In a nutshell, the big <em>M</em> is concerned with <strong>how</strong> knowledge could be best gained by following many SNA methodologists and researchers have created so far.</p></li>
+<li><p><strong>P</strong>, worldviews, philosophical schools of thoughts, paradigms: In SNA, some scholars go further to argue SNA offers a unique way of “seeing the world.” In Carolan (2014) chapter 2 you will read about the <strong>relational perspective</strong> that represent a particular worldview that emphasizes relations instead of attributes. You will also read about <strong>relational realism</strong> that is referred to as an ontology grounding SNA. To a great extent, SNA offers a new research paradigm. As put by Barry Wellman, a guru in SNA from the University of Toronto, “It is a comprehensive paradigmatic way of taking social structure seriously by studying directly how patterns of ties allocate resources in a social system” (see, Carolan, 2014, p. 33).</p></li>
 </ul>
-<section id="theories-of-learning-in-networks">
-<h3>Theories of learning in networks<a class="headerlink" href="#theories-of-learning-in-networks" title="Permalink to this heading">#</a></h3>
-<p>Network analysis of learning does not necessitate network-based theories of learning. For example, researchers can assess a learner’s knowledge by analyzing concept maps generated by students <span id="id2">[<a class="reference internal" href="ch5-sna-intro.html#id10" title="Cynthia S.Q. Siew. Using network science to analyze concept maps of psychology undergraduates. Applied Cognitive Psychology, 33(4):662–668, 2019. doi:10.1002/acp.3484.">Siew, 2019</a>]</span>. This use of network analysis does not involve consideration of learning in or through networks.</p>
-<p>However, there are learning theories that conceptualize learning from a network perspective. In other words, they have distint opinions about how learning is fundamentally a network process, how networks support learning, and/or  how learning shapes networks. Exploring these theoretical ideas would help in two ways:</p>
-<ol class="arabic simple">
-<li><p>Theories of learning would help unleash the full potential of network analysis. While network analysis techniques are helpful, theories of learning that bring a network perspective provide additional tools for network analysts to grapple with the learning phenonemon.</p></li>
-<li><p>Theories of learning would provide grounding for network construction. As explained in Haythornthwaite (2015) and Poquet &amp; Chen (in press), constructing networks from learning data is not always straightforward. Theories of learning offer guidance and justification for the construciton of network models to represent learning.</p></li>
-</ol>
-<p>As illustrated by this figure from Poquet &amp; Chen (in press), a social network of learners can be constructed in different ways based on distinctive views of learning including knowledge building, networked learning, and connectivism.</p>
-<p>At the core of each network model, we ask: What is about the <em>generative processes of learning</em> according to the network-based view of learning? The answer to this question differs across these three theories.</p>
-<ul class="simple">
-<li><p>Knowledge building emphasizes the interaction between ideas and people</p></li>
-<li><p>Networked learning cares about content relationships and and situations where they form</p></li>
-<li><p>Connectivism considers learning as connecting, and cares the “pipe” more than “content in the pipe”</p></li>
-</ul>
-<p><img alt="" src="_images/wk3-models.png" /></p>
+<p>In this course, we are mostly concerned with the “big M” level. We will not dive too deep into the <strong>P</strong> level, and we will not settle with specific techniques. Together, we will learn how to apply various techniques to systematically produce knowledge about a phenomenon.</p>
 </section>
 </section>
-<section id="three-levels-of-consideration-when-applying-network-analysis-to-learning">
-<h2>Three levels of consideration when applying network analysis to learning<a class="headerlink" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning" title="Permalink to this heading">#</a></h2>
+<section id="quantitative-vs-qualitative-research-a-false-dichotomy">
+<h2>Quantitative vs qualitative research: A false dichotomy<a class="headerlink" href="#quantitative-vs-qualitative-research-a-false-dichotomy" title="Permalink to this heading">#</a></h2>
+<p>SNA was created from a rich qualitative tradition of sociology.</p>
+<p>While SNA provides quantitative means to characterise structures, positions, and network processes, the quality and content of network ties matter for many investigations.</p>
+<p>So far in this course, we have explored various ways SNA and Network Science can help us bridge qualitative and quantitative perspectives.</p>
+</section>
+<section id="examples-of-sna-in-education">
+<h2>Examples of SNA in education<a class="headerlink" href="#examples-of-sna-in-education" title="Permalink to this heading">#</a></h2>
+<section id="integration-in-emerging-social-networks-explains-academic-failure-and-success-stadtfeld2019integration">
+<h3>Integration in emerging social networks explains academic failure and success <span id="id3">[<a class="reference internal" href="#id8" title="Christoph Stadtfeld, András Vörös, Timon Elmer, Zsófia Boda, and Isabel J. Raabe. Integration in emerging social networks explains academic failure and success. Proceedings of the National Academy of Sciences, 116(3):792–797, January 2019. doi:10.1073/pnas.1811388115.">Stadtfeld <em>et al.</em>, 2019</a>]</span><a class="headerlink" href="#integration-in-emerging-social-networks-explains-academic-failure-and-success-stadtfeld2019integration" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>P: philosophy, worldviews, paradigms. This level is about how we think about “what is real” and “how people examine reality”. These questions apply to analysis of learning.</p></li>
-<li><p>M (big M): methodology. This level deals with a <em>systematic</em> body of knowledge that provide general research strategies to guide a research project. A methodology intends to coordinate every step of the process, e.g., sampling, data collection, analysis, reporting.</p></li>
-<li><p>m (small m): methods/techniques. A method is a way of reaching some predefined goal. One example of using network analysis as a method is to simply use a centrality measure to depict students in a social network.</p></li>
+<li><p>Setting: Student success in college</p></li>
+<li><p>Problem/Questions: how social networks emerge between previously unacquainted students and how integration in these networks explains academic success</p></li>
+<li><p>Data: Three waves of surveys</p></li>
+<li><p>Network construction: Student networks of multiple types of ties</p></li>
+<li><p>Analysis: 1) Descriptive network analysis; 2) bivariate correlations of social integration with GPA; 3) Linear regression models on GPA</p></li>
 </ul>
-<p>Also, SNA (or network analysis in general) does not need to be <em>quantitative</em>. As a matter of fact, SNA grew, in large part, out of the efforts of ethnographers to make sense of complex relational data. While modern SNA provides strong support for quantitative inquiry, SNA can be combined with qualitative methods in various ways.</p>
-<div class="docutils container" id="id3">
-<div class="citation" id="id7" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>LRD+21<span class="fn-bracket">]</span></span>
+<p><img alt="" src="https://www.pnas.org/cms/10.1073/pnas.1811388115/asset/0a16c6fa-faf3-42ed-8619-c193044470a5/assets/graphic/pnas.1811388115fig01.jpeg" /></p>
+</section>
+<section id="connecting-online-the-structure-and-content-of-students-asynchronous-online-networks-in-a-blended-engineering-class-lee2021connecting">
+<h3>“Connecting online”: The structure and content of students’ asynchronous online networks in a blended engineering class <span id="id4">[<a class="reference internal" href="#id10" title="Daeyeoul Lee, Ruth Rothstein, Amy Dunford, Edward Berger, Jeffrey F. Rhoads, and Jennifer DeBoer. “Connecting online”: The structure and content of students' asynchronous online networks in a blended engineering class. Computers &amp; Education, 163:104082, April 2021. doi:10.1016/j.compedu.2020.104082.">Lee <em>et al.</em>, 2021</a>]</span><a class="headerlink" href="#connecting-online-the-structure-and-content-of-students-asynchronous-online-networks-in-a-blended-engineering-class-lee2021connecting" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Setting: Student interactions in online forums</p></li>
+<li><p>Problem/Questions: What patterns of engagement are observed on the forum? How is engagement on forum related to academic performance?</p></li>
+<li><p>Data: Interaction data on the online forum, transformed to a node list and an edge list</p></li>
+<li><p>Network construction: Student networks of online interactions</p></li>
+<li><p>Analysis: 1) Network-level descriptive analysis; 2) node degree centrality; 3) content analysis on discussion content; 4) regression analysis on degree centrality and course performance</p></li>
+</ul>
+<p><img alt="" src="_images/wk5-data-ex.png" /></p>
+</section>
+<section id="top-concept-networks-of-professional-education-reflections-wise2019top">
+<h3>Top Concept Networks of Professional Education Reflections <span id="id5">[<a class="reference internal" href="#id9" title="Alyssa Friend Wise and Yi Cui. Top Concept Networks of Professional Education Reflections. In Proceedings of the 9th International Conference on Learning Analytics &amp; Knowledge, LAK19, 260–264. New York, NY, USA, 2019. ACM. doi:10.1145/3303772.3303840.">Wise and Cui, 2019</a>]</span><a class="headerlink" href="#top-concept-networks-of-professional-education-reflections-wise2019top" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Setting: A four-year dental education program</p></li>
+<li><p>Problem/Questions: How to capture a shift to a more integrated, patient-centered conceptualization of a health profession?</p></li>
+<li><p>Data: reflective statements by students from the program</p></li>
+<li><p>Network construction: Top concept networks, constructed by extracting key concepts, with a tie represents co-occurrence in a sentence</p></li>
+<li><p>Analysis: 1) Identify top concepts, 2) Identify top connections between concepts, 3) Examine changes over four years.</p></li>
+</ul>
+<p><img alt="" src="_images/wk5-wise.png" /></p>
+<div class="docutils container" id="id6">
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">LRD+21</a><span class="fn-bracket">]</span></span>
 <p>Daeyeoul Lee, Ruth Rothstein, Amy Dunford, Edward Berger, Jeffrey F. Rhoads, and Jennifer DeBoer. “Connecting online”: The structure and content of students' asynchronous online networks in a blended engineering class. <em>Computers &amp; Education</em>, 163:104082, April 2021. <a class="reference external" href="https://doi.org/10.1016/j.compedu.2020.104082">doi:10.1016/j.compedu.2020.104082</a>.</p>
 </div>
-<div class="citation" id="id8" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>Nig10<span class="fn-bracket">]</span></span>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Nig10</a><span class="fn-bracket">]</span></span>
 <p>Katrin Niglas. The Multidimensional Model of Research Methodology: An Integrated Set of Continua. In Abbas Tashakkori and Charles Teddlie, editors, <em>SAGE Handbook of Mixed Methods in Social &amp; Behavioral Research</em>, pages 215–236. SAGE, Thousand Oaks, June 2010.</p>
 </div>
-<div class="citation" id="id4" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Sie19</a><span class="fn-bracket">]</span></span>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Sie19<span class="fn-bracket">]</span></span>
 <p>Cynthia S.Q. Siew. Using network science to analyze concept maps of psychology undergraduates. <em>Applied Cognitive Psychology</em>, 33(4):662–668, 2019. <a class="reference external" href="https://doi.org/10.1002/acp.3484">doi:10.1002/acp.3484</a>.</p>
 </div>
-<div class="citation" id="id5" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>SVorosE+19<span class="fn-bracket">]</span></span>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">SVorosE+19</a><span class="fn-bracket">]</span></span>
 <p>Christoph Stadtfeld, András Vörös, Timon Elmer, Zsófia Boda, and Isabel J. Raabe. Integration in emerging social networks explains academic failure and success. <em>Proceedings of the National Academy of Sciences</em>, 116(3):792–797, January 2019. <a class="reference external" href="https://doi.org/10.1073/pnas.1811388115">doi:10.1073/pnas.1811388115</a>.</p>
 </div>
-<div class="citation" id="id6" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>WC19<span class="fn-bracket">]</span></span>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">WC19</a><span class="fn-bracket">]</span></span>
 <p>Alyssa Friend Wise and Yi Cui. Top Concept Networks of Professional Education Reflections. In <em>Proceedings of the 9th International Conference on Learning Analytics &amp; Knowledge</em>, LAK19, 260–264. New York, NY, USA, 2019. ACM. <a class="reference external" href="https://doi.org/10.1145/3303772.3303840">doi:10.1145/3303772.3303840</a>.</p>
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -514,20 +551,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ch2-networks-la.html"
+       href="ch4-lab-read-data-1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Networks in Learning Analytics</p>
+        <p class="prev-next-title">Getting Started with Network Data</p>
       </div>
     </a>
     <a class="right-next"
-       href="ch4-network-science.html"
+       href="ch6-network-data-handson.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Network Science</p>
+        <p class="prev-next-title">Collect and Manage Network Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -547,12 +584,20 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-ideas-about-networks">Basic ideas about networks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Learning in networks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theories-of-learning-in-networks">Theories of learning in networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration">Three Levels of Consideration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p">P</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m">M</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">m</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-vs-qualitative-research-a-false-dichotomy">Quantitative vs qualitative research: A false dichotomy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-sna-in-education">Examples of SNA in education</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-in-emerging-social-networks-explains-academic-failure-and-success-stadtfeld2019integration">Integration in emerging social networks explains academic failure and success <span class="xref cite">stadtfeld2019integration</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-online-the-structure-and-content-of-students-asynchronous-online-networks-in-a-blended-engineering-class-lee2021connecting">“Connecting online”: The structure and content of students’ asynchronous online networks in a blended engineering class <span class="xref cite">lee2021connecting</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#top-concept-networks-of-professional-education-reflections-wise2019top">Top Concept Networks of Professional Education Reflections <span class="xref cite">wise2019top</span></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
