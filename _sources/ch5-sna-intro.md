@@ -75,5 +75,3 @@ So far in this course, we have explored various ways SNA and Network Science can
 ![](img/wk5-wise.png)
 
 
-```{bibliography}
-```

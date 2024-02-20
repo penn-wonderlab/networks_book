@@ -49,5 +49,3 @@ At the core of each network model, we ask: What is about the *generative process
 
 Also, SNA (or network analysis in general) does not need to be *quantitative*. As a matter of fact, SNA grew, in large part, out of the efforts of ethnographers to make sense of complex relational data. While modern SNA provides strong support for quantitative inquiry, SNA can be combined with qualitative methods in various ways. 
 
-```{bibliography}
-```
