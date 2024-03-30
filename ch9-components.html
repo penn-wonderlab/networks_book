@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch9-components';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="next" title="Ego Networks" href="ch10-ego-networks.html" />
     <link rel="prev" title="Positions and Influence" href="ch8-centrality-positions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -215,6 +215,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Components, Cliques, Communities</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Components, Cliques, Communities</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">10. Ego Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch10-ego-networks.html">Ego Networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
 <ul class="nav bd-sidenav">
@@ -502,7 +506,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1a53ebeaa7a8966e490d3a571c4e8c495f5a65dc7054b752658bd780dba2b6aa.png" src="_images/1a53ebeaa7a8966e490d3a571c4e8c495f5a65dc7054b752658bd780dba2b6aa.png" />
+<img alt="_images/14c90006c5441eada6c4cf9104b2d3d1d07ce36e3eb2522d26bd779e40497d65.png" src="_images/14c90006c5441eada6c4cf9104b2d3d1d07ce36e3eb2522d26bd779e40497d65.png" />
 </div>
 </div>
 <section id="components">
@@ -555,8 +559,8 @@ document.write(`
 3
 </pre></div>
 </div>
-<img alt="_images/18a0d0a044309fcaa511bbbaceec8dadc7fb940c10ee657ae98603f49f7c84fe.png" src="_images/18a0d0a044309fcaa511bbbaceec8dadc7fb940c10ee657ae98603f49f7c84fe.png" />
-<img alt="_images/a10c91ef9f25d27ecdd2bfd562ff1cb144ecf8d41cad5507e91aa1c6fb57afb2.png" src="_images/a10c91ef9f25d27ecdd2bfd562ff1cb144ecf8d41cad5507e91aa1c6fb57afb2.png" />
+<img alt="_images/baef95f817fd01657f09daef402b32e2beb2f60a25cdc1e975c2e7f379500143.png" src="_images/baef95f817fd01657f09daef402b32e2beb2f60a25cdc1e975c2e7f379500143.png" />
+<img alt="_images/8abc20ab6697e51df9b54fd5dcccd2d27810693062abbff98661d569ca58738f.png" src="_images/8abc20ab6697e51df9b54fd5dcccd2d27810693062abbff98661d569ca58738f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -570,7 +574,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/636772a3dab7335b4c017996b8320cad72222afddc19379bc7e9aade9d0d132c.png" src="_images/636772a3dab7335b4c017996b8320cad72222afddc19379bc7e9aade9d0d132c.png" />
+<img alt="_images/e1d4a386889cec22f4c6b9b6d36dd7da35bde685bf8b4823c6980d590b30b422.png" src="_images/e1d4a386889cec22f4c6b9b6d36dd7da35bde685bf8b4823c6980d590b30b422.png" />
 </div>
 </div>
 </section>
@@ -625,11 +629,11 @@ document.write(`
 3
 </pre></div>
 </div>
-<img alt="_images/960e455a2fa3961443ce26b718b4d63e281aa78b9763e0048a72aca3102e423a.png" src="_images/960e455a2fa3961443ce26b718b4d63e281aa78b9763e0048a72aca3102e423a.png" />
-<img alt="_images/3f9c21e3f797959282c7ab7ee1f1f60bf27df4b5fce6facb86f17911939b00c5.png" src="_images/3f9c21e3f797959282c7ab7ee1f1f60bf27df4b5fce6facb86f17911939b00c5.png" />
-<img alt="_images/620beb082747277b954071a2e8d9313aa593e3533c60378d027b342876d16d3f.png" src="_images/620beb082747277b954071a2e8d9313aa593e3533c60378d027b342876d16d3f.png" />
-<img alt="_images/b3bef4d15a7de576ebb2737be1bcfba506c3355ac05a984442e20d6f1627266b.png" src="_images/b3bef4d15a7de576ebb2737be1bcfba506c3355ac05a984442e20d6f1627266b.png" />
-<img alt="_images/e0061d77dd6be38e0816dcde2a66a8122d89724dc336d0929caa22e0af1d5709.png" src="_images/e0061d77dd6be38e0816dcde2a66a8122d89724dc336d0929caa22e0af1d5709.png" />
+<img alt="_images/815812c7b6ca9f3589bf321773349f5482e3314ed3c17d4e8eaf16e670c313de.png" src="_images/815812c7b6ca9f3589bf321773349f5482e3314ed3c17d4e8eaf16e670c313de.png" />
+<img alt="_images/9fda5f8b69282b348aebe9cced19b72130291f6ba28f5c8ec0edfcb9119d450e.png" src="_images/9fda5f8b69282b348aebe9cced19b72130291f6ba28f5c8ec0edfcb9119d450e.png" />
+<img alt="_images/4bc54eac1400a86fb0d9b91ab479c0acb1dc3da47cba8a95fde79998ac734670.png" src="_images/4bc54eac1400a86fb0d9b91ab479c0acb1dc3da47cba8a95fde79998ac734670.png" />
+<img alt="_images/f9f1432cf7c437b53ce9dd7d68184d85e03ee47a6bb83d698ae7802215a57d2d.png" src="_images/f9f1432cf7c437b53ce9dd7d68184d85e03ee47a6bb83d698ae7802215a57d2d.png" />
+<img alt="_images/82a6b5e3b6dac09a8bc47be5c9f0e1de333604ce561ea922491c67b5114427ca.png" src="_images/82a6b5e3b6dac09a8bc47be5c9f0e1de333604ce561ea922491c67b5114427ca.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -807,11 +811,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="bibliography.html"
+       href="ch10-ego-networks.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Ego Networks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

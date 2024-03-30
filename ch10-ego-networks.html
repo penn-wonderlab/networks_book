@@ -1,0 +1,1242 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Ego Networks &#8212; Applied Network Analysis in Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch10-ego-networks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="Components, Cliques, Communities" href="ch9-components.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Applied Network Analysis in Learning - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Applied Network Analysis in Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1-intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1-setup-colab.html">Use Jupyter Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Networks in Learning Analytics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch2-networks-la.html">Networks in Learning Analytics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Learning in Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch3-learning-in-networks.html">Learning in networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. Network Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. SNA Theory and Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch5-sna-intro.html">Social Network Analysis: Theory and Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Collect and Manage Network Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch6-collect-manage-data.html">Collect and Manage Network Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6-understand-data-structures.html">Understanding Network Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6-network-data-handson.html">Data Hands-on</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Sociograms and Density</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch7-sociograms-density.html">Sociograms, Density, and Network Connectivity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Centrality and Centralization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch8-centrality-positions.html">Positions and Influence</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Components, Cliques, Communities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch9-components.html">Components, Cliques, Communities</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">10. Ego Networks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ego Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/penn-wonderlab/networks_book/blob/master/ch10-ego-networks.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch10-ego-networks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch10-ego-networks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ego Networks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-ego-network-data-ego-data">Collecting Ego Network Data {#ego-data}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-ego-networks-from-egos">Building ego networks from egos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-ego-networks-from-larger-networks">Extracting Ego Networks from Larger Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construct-the-full-network-with-nodes-and-edges">Construct the full network with nodes and edges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-focus-on-ego-76">Let’s focus on ego 76</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ego-networks">
+<h1>Ego Networks<a class="headerlink" href="#ego-networks" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>Ego-centric analysis shifts the analytical lens onto a sole ego actor and concentrates on the local pattern of relations in which that ego is embedded as well as the types of resources to which those relations provide access. (Carolan, 2014, ch. 7)</p>
+</div></blockquote>
+<p>The concept of <em>ego-centric networks</em> is pitched against <em>sociocentric networks</em> that we’ve been exploring in the past few weeks. Some researchers also refer to ego-centric networks as <em>ego networks</em> or <em>personal networks</em>.</p>
+<p>Ego-centric and sociocentric networks are distinct in several important ways:</p>
+<ul class="simple">
+<li><p><strong>Unbounded versus bounded networks</strong>. Sociocentric SNA attempts to collect data on ties between all members of a socially or geographically-bounded group and has limited inference beyond that group. Egocentric SNA assesses individuals’ personal networks across any number of social settings using name generators, and is therefore less limited in theoretical and substantive scope.</p></li>
+<li><p><strong>Focus on individual rather than group outcomes</strong>. Sociocentric SNA often focuses on network structures of groups as predictors of group-level outcomes (e.g. concentration of power, resource distribution, information diffusion). In contrast, egocentric SNA is concerned with how people’s patterns of interaction shape their individual-level outcomes (e.g. health, voting behavior, employment opportunities).</p></li>
+<li><p><strong>Flexibility in data collection</strong>. Because sociocentric SNA must use a census of a particular bounded group as its sampling frame, data collection is very time-consuming, expensive, and targeted to a specific set of research questions. In contrast, because egocentric SNA uses individuals as cases, potential sampling frames and data collection strategies are virtually limitless. Egocentric data collection tools can easily be incorporated into large-scale or nationally-representative surveys being fielded for a variety of other purposes.</p></li>
+</ul>
+<p>Ego-centric networks are useful when the foci of the research are individuals in a network, if capturing the complete network is less important, and/or when the researcher plan to correlate <em>attribute data</em> of individuals with their <em>relational</em> characteristics in a network. Examples of ego-centric networks’ applications abound.</p>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Carolan, B. V. (2014). Social network analysis and education: Theory, methods &amp; applications (Ch. 7). SAGE Publications.</p></li>
+<li><p>Lukács J., Á., &amp; Dávid, B. (2023). Connecting for success: Egocentric network types among underrepresented minority students at college. Social Networks, 72, 35–43. <a class="reference external" href="https://doi.org/10.1016/j.socnet.2022.09.002">https://doi.org/10.1016/j.socnet.2022.09.002</a></p></li>
+<li><p>[Optional] Marsden, P. V. (2002). Egocentric and sociocentric measures of network centrality. Social Networks, 24(4), 407–422. <a class="reference external" href="https://doi.org/10.1016/S0378-8733(02)00016-3">https://doi.org/10.1016/S0378-8733(02)00016-3</a></p></li>
+</ul>
+<!-- 
+As we explored in [Week 3](ch3.html), ego-centric networks can be used to investigate stroke patients' health behaviors. In education, for example, @Dawson2010-se studies high and low-performing students based on their ego-networks. 
+
+Below, James Cook -- a sociology professor we've been watching -- nicely explains how studying ego-centric networks would be helpful.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SM08TsCldWI" frameborder="0" allowfullscreen></iframe> 
+-->
+<p>When reading, consider this question: <strong>How ego-centric networks could be applied to your research projects?</strong> You do not necessarily need to focus on your class project but projects in your field in general.</p>
+</section>
+<section id="collecting-ego-network-data-ego-data">
+<h2>Collecting Ego Network Data {#ego-data}<a class="headerlink" href="#collecting-ego-network-data-ego-data" title="Permalink to this heading">#</a></h2>
+<p>As discussed in the reading (Carolan, 2014), there are basically two ways to construct ego-centric networks:</p>
+<ol class="arabic simple">
+<li><p><strong>Ego-centric networks by design</strong>: When a research project is initiated by asking ego-centric questions, ego-centric data are usually directed collecting. For example, when a <em>name generator questionnaire</em> is distributed to a sample of students in a large high school to study in-school friendship of students, each student’s response will be directly used to construct a network.</p></li>
+<li><p><strong>Derived ego-centric networks</strong>: When a complete network can be captured, we can also derive ego-centric networks by filtering network data. For example, if we’re analyzing our own Slack discussions, we can also create an ego-centric network for each one of us to investigate our connectedness in the class.</p></li>
+</ol>
+<p>In either of these conditions, an important decision to make is how you define the <strong>neighborhood</strong> of the ego-centric network, or how many steps does an ego can reach. This will again be informed by theories and contextual information you bring to bear.</p>
+<p>Consider this question: <strong>What definition of the <em>neighborhood</em> will make sense for your research projects?</strong></p>
+</section>
+<section id="building-ego-networks-from-egos">
+<h2>Building ego networks from egos<a class="headerlink" href="#building-ego-networks-from-egos" title="Permalink to this heading">#</a></h2>
+<p>Have you ever noticed that Google would provide autocomplete suggestions when you Google something?</p>
+<p>Below, I type ‘chatgpt vs’ and Google provides a list of suggestions.</p>
+<p><img alt="" src="_images/googlevs.png" /></p>
+<p>If we consider the initial search term (e.g. ‘chatgpt’) as the ego, the list of suggested counterparts are alters. The ego, alters, and their ties for an ego network.</p>
+<p>Using code below, we can construct such the ego network for ‘chatgpt’. Notice that we are not only interested in identifying the alters but also their inter-connections. So after getting the initial list of suggestions, we need to run the Google queries again for each alter to identify their connections.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+
+<span class="c1"># This is the ego</span>
+<span class="n">search_term</span> <span class="o">=</span> <span class="s1">&#39;chatgpt&#39;</span>
+
+<span class="c1"># Build Google search query</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://suggestqueries.google.com/complete/search?&amp;client=firefox&amp;gl=us&amp;hl=en&amp;q=</span><span class="si">{</span><span class="n">search_term</span><span class="si">}</span><span class="s1">%20vs%20&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="c1"># Make the query</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="c1"># Now &#39;data&#39; contains the JSON data from the URL</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to retrieve data:&#39;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs copilot&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs bard&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs gpt 4&#39;, &#39;chatgpt vs microsoft copilot&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs gemini vs copilot&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433, 131], [512, 433], [512, 433, 131], [512], [512], [512], [512], [512], [512], [512, 433, 131]]}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract a list of suggestions</span>
+<span class="n">initial_suggestions</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;chatgpt vs &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="c1"># Remove combo items such as &#39;gemini vs copilot&#39;</span>
+<span class="n">initial_suggestions</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">initial_suggestions</span> <span class="k">if</span> <span class="s1">&#39;vs&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">element</span><span class="p">]</span>
+<span class="c1"># print(initial_suggestions)</span>
+
+<span class="c1"># Create an edge list data frame</span>
+<span class="n">df_edge_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;chatgpt&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">initial_suggestions</span><span class="p">),</span> <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">initial_suggestions</span><span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_edge_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    source             target
+0  chatgpt            copilot
+1  chatgpt             gemini
+2  chatgpt             claude
+3  chatgpt               bard
+4  chatgpt             openai
+5  chatgpt              gpt 4
+6  chatgpt  microsoft copilot
+7  chatgpt         perplexity
+8  chatgpt       chatgpt plus
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now iterate on the list of alters, and identify their own alters</span>
+<span class="c1"># When doing so, iteratively add edge lists to the main edge list</span>
+<span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">initial_suggestions</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;vs&#39;</span> <span class="ow">in</span> <span class="n">term</span><span class="p">:</span> <span class="c1"># skip alters that have two parts (such as gemini vs copilot)</span>
+        <span class="k">continue</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;querying </span><span class="si">{</span><span class="n">term</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://suggestqueries.google.com/complete/search?&amp;client=firefox&amp;gl=us&amp;hl=en&amp;q=</span><span class="si">{</span><span class="n">term</span><span class="si">}</span><span class="s2">%20vs%20&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to retrieve data:&#39;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+    
+    <span class="n">suggestions</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">term</span><span class="si">}</span><span class="s1"> vs &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">suggestions</span> <span class="o">=</span> <span class="p">[</span><span class="n">element</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">suggestions</span> <span class="k">if</span> <span class="s1">&#39;vs&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">element</span><span class="p">]</span>
+
+    <span class="c1"># Create a DataFrame</span>
+    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">term</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">suggestions</span><span class="p">),</span> <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">suggestions</span><span class="p">})</span>
+
+    <span class="c1"># Concatenate the current DataFrame with the final DataFrame</span>
+    <span class="n">df_edge_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_edge_list</span><span class="p">,</span> <span class="n">df_tmp</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s check out the final edge list</span>
+<span class="n">df_edge_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying copilot
+querying gemini
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying claude
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying bard
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying openai
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying gpt 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying microsoft copilot
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying perplexity
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying chatgpt plus
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chatgpt</td>
+      <td>copilot</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chatgpt</td>
+      <td>gemini</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chatgpt</td>
+      <td>claude</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chatgpt</td>
+      <td>bard</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chatgpt</td>
+      <td>openai</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>chatgpt plus</td>
+      <td>team reddit</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>chatgpt plus</td>
+      <td>enterprise</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>chatgpt plus</td>
+      <td>gemini advanced</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>chatgpt plus</td>
+      <td>chatgpt</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>chatgpt plus</td>
+      <td>bard</td>
+    </tr>
+  </tbody>
+</table>
+<p>96 rows × 2 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a network object</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df_edge_list</span><span class="p">)</span>
+
+<span class="c1"># We can visualize this network, which has more than the ego network we want</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cd6bca69e73406f31e4f7a2cb45439e0aee81fe999f47b25b1c2e6d5f9f25e54.png" src="_images/cd6bca69e73406f31e4f7a2cb45439e0aee81fe999f47b25b1c2e6d5f9f25e54.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract an ego network for chatgpt</span>
+<span class="n">EG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">ego_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;chatgpt&#39;</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="s1">&#39;distance&#39;</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Visualize the ego network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">EG</span><span class="p">)</span>
+
+<span class="c1"># Run network analysis algorithms on the ego network</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">EG</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5777777777777777
+</pre></div>
+</div>
+<img alt="_images/cd145c9c9ada4c88f5adfd60ea058c2af4a18bcfe6d28f16fc6dbd50460e0b04.png" src="_images/cd145c9c9ada4c88f5adfd60ea058c2af4a18bcfe6d28f16fc6dbd50460e0b04.png" />
+</div>
+</div>
+<p>If you’d like to build an ego network of another term – say Gemini – you can start from the ego following the same approach to cover alters and ties in the neighborhood you intend to cover.</p>
+</section>
+<section id="extracting-ego-networks-from-larger-networks">
+<h2>Extracting Ego Networks from Larger Networks<a class="headerlink" href="#extracting-ego-networks-from-larger-networks" title="Permalink to this heading">#</a></h2>
+<p>Another approach is to extract ego networks from a much larger network.</p>
+<p>Below, let’s consider an open dataset about <a class="reference external" href="https://networks.skewed.de/net/sp_primary_school">Primary school dynamic contacts</a>. Here is the description of the dataset:</p>
+<blockquote>
+<div><p>Two temporal networks of contacts among students and teachers at a primary school in Lyon, France, on consecutive days of in October 2009. Each network accumulates all contacts over the course of a single day; contacts were sampled at 20-second intervals.</p>
+</div></blockquote>
+<p>Using code below, we first read the network data from the website, construct the whole network, and then derive ego networks of interested egos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">io</span>
+
+<span class="c1"># This URL is from the dataset&#39;s webpage: https://networks.skewed.de/net/sp_primary_school</span>
+<span class="n">zip_url</span> <span class="o">=</span> <span class="s1">&#39;https://networks.skewed.de/net/sp_primary_school/files/sp_primary_school.csv.zip&#39;</span>
+<span class="n">sub_dir</span> <span class="o">=</span> <span class="s1">&#39;data/sp_primary_school&#39;</span> <span class="c1"># where you&#39;d like to extract files</span>
+<span class="n">edges_file</span> <span class="o">=</span> <span class="s1">&#39;edges.csv&#39;</span> <span class="c1"># name of edges file</span>
+<span class="n">nodes_file</span> <span class="o">=</span> <span class="s1">&#39;nodes.csv&#39;</span> <span class="c1"># name of nodes file</span>
+
+<span class="c1"># Download the zip file</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">zip_url</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="c1"># Extract the zip file</span>
+    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+        <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Extraction complete.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to download the zip file:&#39;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extraction complete.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">,</span> <span class="n">nodes_file</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="c1"># nodes = nodes.rename(columns={&#39;class&#39;: &#39;group&#39;, &#39;# index&#39;: &#39;index&#39;})</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">set_axis</span><span class="p">([</span><span class="s1">&#39;ind&#39;</span><span class="p">,</span> <span class="s1">&#39;raw_id&#39;</span><span class="p">,</span> <span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;pos&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span> <span class="c1"># rename the columns</span>
+<span class="n">nodes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ind</th>
+      <th>raw_id</th>
+      <th>group</th>
+      <th>gender</th>
+      <th>pos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1558</td>
+      <td>3B</td>
+      <td>M</td>
+      <td>array([-1.74555536, -3.28500536])</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1567</td>
+      <td>3B</td>
+      <td>M</td>
+      <td>array([-1.72030544, -3.26474249])</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1560</td>
+      <td>3B</td>
+      <td>F</td>
+      <td>array([-1.71955628, -3.25207655])</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1570</td>
+      <td>3B</td>
+      <td>F</td>
+      <td>array([-1.67965811, -3.2940906 ])</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>1574</td>
+      <td>3B</td>
+      <td>F</td>
+      <td>array([-1.7003117 , -3.28849509])</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>237</td>
+      <td>1750</td>
+      <td>5B</td>
+      <td>M</td>
+      <td>array([-1.80754116, -3.07109776])</td>
+    </tr>
+    <tr>
+      <th>238</th>
+      <td>238</td>
+      <td>1715</td>
+      <td>2B</td>
+      <td>F</td>
+      <td>array([-1.91644382, -3.36835294])</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>239</td>
+      <td>1744</td>
+      <td>3B</td>
+      <td>M</td>
+      <td>array([-1.67574526, -3.31140817])</td>
+    </tr>
+    <tr>
+      <th>240</th>
+      <td>240</td>
+      <td>1799</td>
+      <td>1A</td>
+      <td>Unknown</td>
+      <td>array([-1.75033375, -3.37851526])</td>
+    </tr>
+    <tr>
+      <th>241</th>
+      <td>241</td>
+      <td>1647</td>
+      <td>2A</td>
+      <td>M</td>
+      <td>array([-1.77879562, -3.38107451])</td>
+    </tr>
+  </tbody>
+</table>
+<p>242 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edges</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sub_dir</span><span class="p">,</span> <span class="n">edges_file</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="c1"># edges = edges.rename(columns={&#39;# source&#39;: &#39;source&#39;})</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">edges</span><span class="o">.</span><span class="n">set_axis</span><span class="p">([</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span> <span class="c1"># rename the columns</span>
+<span class="n">edges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>target</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1</td>
+      <td>31220</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>31240</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>16</td>
+      <td>31260</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>1</td>
+      <td>31260</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>16</td>
+      <td>31280</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>125768</th>
+      <td>241</td>
+      <td>112</td>
+      <td>148040</td>
+    </tr>
+    <tr>
+      <th>125769</th>
+      <td>241</td>
+      <td>112</td>
+      <td>148060</td>
+    </tr>
+    <tr>
+      <th>125770</th>
+      <td>241</td>
+      <td>112</td>
+      <td>148080</td>
+    </tr>
+    <tr>
+      <th>125771</th>
+      <td>241</td>
+      <td>112</td>
+      <td>148100</td>
+    </tr>
+    <tr>
+      <th>125772</th>
+      <td>241</td>
+      <td>112</td>
+      <td>148120</td>
+    </tr>
+  </tbody>
+</table>
+<p>125773 rows × 3 columns</p>
+</div></div></div>
+</div>
+<section id="construct-the-full-network-with-nodes-and-edges">
+<h3>Construct the full network with nodes and edges<a class="headerlink" href="#construct-the-full-network-with-nodes-and-edges" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_sp</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+<span class="c1"># Add nodes -- let&#39;s add each node on by one and store &#39;position&#39; as a node attribute</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">nodes</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">G_sp</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;ind&#39;</span><span class="p">],</span> <span class="n">group</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;group&#39;</span><span class="p">],</span> <span class="n">gender</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;gender&#39;</span><span class="p">],</span> <span class="n">position</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;pos&#39;</span><span class="p">])</span>
+
+<span class="c1"># Add edges with attributes from the DataFrame to the graph</span>
+<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">edges</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">G_sp</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">time</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+
+<span class="c1"># Get unique group names</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">get_node_attributes</span><span class="p">(</span><span class="n">G_sp</span><span class="p">,</span> <span class="s1">&#39;group&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="c1"># Generate a color map</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab10&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">groups</span><span class="p">))</span>
+
+<span class="c1"># Create a color mapping based on group names</span>
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmap</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">G_sp</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;group&#39;</span><span class="p">]))</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G_sp</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+
+<span class="c1"># Draw the graph</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G_sp</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G_sp</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Display the graph</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ws/bwvb7bg1107311r6961dd1y80000gp/T/ipykernel_90894/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+  cmap = cm.get_cmap(&#39;tab10&#39;, len(groups))
+</pre></div>
+</div>
+<img alt="_images/d87c314eb9f2b61b69d591a1f56d63d7402148e05c27278d69b9b7a5e790a0fb.png" src="_images/d87c314eb9f2b61b69d591a1f56d63d7402148e05c27278d69b9b7a5e790a0fb.png" />
+</div>
+</div>
+</section>
+<section id="let-s-focus-on-ego-76">
+<h3>Let’s focus on ego 76<a class="headerlink" href="#let-s-focus-on-ego-76" title="Permalink to this heading">#</a></h3>
+<p>First, set radius to 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract an ego network for chatgpt</span>
+<span class="n">EG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">ego_graph</span><span class="p">(</span><span class="n">G_sp</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Visualize the ego network</span>
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmap</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">EG</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;group&#39;</span><span class="p">]))</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">EG</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">EG</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/da13ae3a50ddf2f445c9bc4ae39bdbf127d7842825ae37527703774144e42bc7.png" src="_images/da13ae3a50ddf2f445c9bc4ae39bdbf127d7842825ae37527703774144e42bc7.png" />
+</div>
+</div>
+<p>We can also set radius to 2 to reach a larger neighhood of the ego.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract an ego network for chatgpt</span>
+<span class="n">EG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">ego_graph</span><span class="p">(</span><span class="n">G_sp</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Visualize the ego network</span>
+<span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">cmap</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">groups</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">EG</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;group&#39;</span><span class="p">]))</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">EG</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">EG</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7a7762006438d345ca85512199ef2b2b8fe075d4fdb16e26cb48f78042c5d7cc.png" src="_images/7a7762006438d345ca85512199ef2b2b8fe075d4fdb16e26cb48f78042c5d7cc.png" />
+</div>
+</div>
+<p>Because the sample network is dense, the ego network gets large quickly when increasing the radius.</p>
+<p>Please feel free to adapt the code samples to your own projects.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch9-components.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Components, Cliques, Communities</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="bibliography.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-ego-network-data-ego-data">Collecting Ego Network Data {#ego-data}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-ego-networks-from-egos">Building ego networks from egos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-ego-networks-from-larger-networks">Extracting Ego Networks from Larger Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construct-the-full-network-with-nodes-and-edges">Construct the full network with nodes and edges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-focus-on-ego-76">Let’s focus on ego 76</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bodong Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
