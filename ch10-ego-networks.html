@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch10-ego-networks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="next" title="Cognitive and Semantic Networks" href="ch11-cognitive-semantic-networks.html" />
     <link rel="prev" title="Components, Cliques, Communities" href="ch9-components.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -219,6 +219,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">10. Ego Networks</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Ego Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Cognitive and Semantic Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch11-cognitive-semantic-networks.html">Cognitive and Semantic Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Network Dynamics and Temporality</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch12-network-dynamics.html">Network Dynamics and Temporality</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Multidimensional Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch13-multidimensional.html">MULTIDIMENSIONAL NETWORKS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">14. Ethics and Values in Network Analysis of Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch14-ethics.html">ETHICS IN NETWORK ANALYSIS OF LEARNING</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
 <ul class="nav bd-sidenav">
@@ -538,7 +554,7 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs copilot&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs bard&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs gpt 4&#39;, &#39;chatgpt vs microsoft copilot&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs gemini vs copilot&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433, 131], [512, 433], [512, 433, 131], [512], [512], [512], [512], [512], [512], [512, 433, 131]]}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs copilot&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs bard&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs gpt 4&#39;, &#39;chatgpt vs microsoft copilot&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs google&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433], [512, 433], [512, 433, 131], [512], [512], [512], [512], [512], [512], [512]]}]
 </pre></div>
 </div>
 </div>
@@ -569,6 +585,7 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 6  chatgpt  microsoft copilot
 7  chatgpt         perplexity
 8  chatgpt       chatgpt plus
+9  chatgpt             google
 </pre></div>
 </div>
 </div>
@@ -610,27 +627,19 @@ querying gemini
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying claude
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying bard
+querying bard
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying openai
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying gpt 4
+querying gpt 4
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying microsoft copilot
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying perplexity
+querying perplexity
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying chatgpt plus
+querying google
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -687,33 +696,33 @@ querying gemini
       <td>...</td>
     </tr>
     <tr>
-      <th>91</th>
-      <td>chatgpt plus</td>
-      <td>team reddit</td>
+      <th>102</th>
+      <td>google</td>
+      <td>duckduckgo</td>
     </tr>
     <tr>
-      <th>92</th>
-      <td>chatgpt plus</td>
-      <td>enterprise</td>
+      <th>103</th>
+      <td>google</td>
+      <td>bing memes</td>
     </tr>
     <tr>
-      <th>93</th>
-      <td>chatgpt plus</td>
-      <td>gemini advanced</td>
+      <th>104</th>
+      <td>google</td>
+      <td>apple</td>
     </tr>
     <tr>
-      <th>94</th>
-      <td>chatgpt plus</td>
-      <td>chatgpt</td>
+      <th>105</th>
+      <td>google</td>
+      <td>roku tv</td>
     </tr>
     <tr>
-      <th>95</th>
-      <td>chatgpt plus</td>
-      <td>bard</td>
+      <th>106</th>
+      <td>google</td>
+      <td>samsung phone</td>
     </tr>
   </tbody>
 </table>
-<p>96 rows × 2 columns</p>
+<p>107 rows × 2 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -727,7 +736,7 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cd6bca69e73406f31e4f7a2cb45439e0aee81fe999f47b25b1c2e6d5f9f25e54.png" src="_images/cd6bca69e73406f31e4f7a2cb45439e0aee81fe999f47b25b1c2e6d5f9f25e54.png" />
+<img alt="_images/fe7b7e94d83cd383e441a4d3a830ab5cb60e06f20c823e98ff33d4c03303da83.png" src="_images/fe7b7e94d83cd383e441a4d3a830ab5cb60e06f20c823e98ff33d4c03303da83.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -744,10 +753,10 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5777777777777777
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5454545454545454
 </pre></div>
 </div>
-<img alt="_images/cd145c9c9ada4c88f5adfd60ea058c2af4a18bcfe6d28f16fc6dbd50460e0b04.png" src="_images/cd145c9c9ada4c88f5adfd60ea058c2af4a18bcfe6d28f16fc6dbd50460e0b04.png" />
+<img alt="_images/b5ed67bf07e6492ec5ed3023aa30ab0be9cda75b286511ae646691be6728abee.png" src="_images/b5ed67bf07e6492ec5ed3023aa30ab0be9cda75b286511ae646691be6728abee.png" />
 </div>
 </div>
 <p>If you’d like to build an ego network of another term – say Gemini – you can start from the ego following the same approach to cover alters and ties in the neighborhood you intend to cover.</p>
@@ -1066,11 +1075,11 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ws/bwvb7bg1107311r6961dd1y80000gp/T/ipykernel_90894/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ws/bwvb7bg1107311r6961dd1y80000gp/T/ipykernel_81622/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
   cmap = cm.get_cmap(&#39;tab10&#39;, len(groups))
 </pre></div>
 </div>
-<img alt="_images/d87c314eb9f2b61b69d591a1f56d63d7402148e05c27278d69b9b7a5e790a0fb.png" src="_images/d87c314eb9f2b61b69d591a1f56d63d7402148e05c27278d69b9b7a5e790a0fb.png" />
+<img alt="_images/26176234a274490956e1bef11996373a457960f3b1d694382eb4657562b764e1.png" src="_images/26176234a274490956e1bef11996373a457960f3b1d694382eb4657562b764e1.png" />
 </div>
 </div>
 </section>
@@ -1089,7 +1098,7 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/da13ae3a50ddf2f445c9bc4ae39bdbf127d7842825ae37527703774144e42bc7.png" src="_images/da13ae3a50ddf2f445c9bc4ae39bdbf127d7842825ae37527703774144e42bc7.png" />
+<img alt="_images/b1a88d2e1ccae4a1b19a28a1df3b2528608066c6c296350e3d9685b058b99c6f.png" src="_images/b1a88d2e1ccae4a1b19a28a1df3b2528608066c6c296350e3d9685b058b99c6f.png" />
 </div>
 </div>
 <p>We can also set radius to 2 to reach a larger neighhood of the ego.</p>
@@ -1104,7 +1113,7 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7a7762006438d345ca85512199ef2b2b8fe075d4fdb16e26cb48f78042c5d7cc.png" src="_images/7a7762006438d345ca85512199ef2b2b8fe075d4fdb16e26cb48f78042c5d7cc.png" />
+<img alt="_images/658ad632551f9ec0b67ddb4c241d1ab93a1bb8c20b02e9b90bec60d34436c096.png" src="_images/658ad632551f9ec0b67ddb4c241d1ab93a1bb8c20b02e9b90bec60d34436c096.png" />
 </div>
 </div>
 <p>Because the sample network is dense, the ego network gets large quickly when increasing the radius.</p>
@@ -1153,11 +1162,11 @@ querying gemini
       </div>
     </a>
     <a class="right-next"
-       href="bibliography.html"
+       href="ch11-cognitive-semantic-networks.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliography</p>
+        <p class="prev-next-title">Cognitive and Semantic Networks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

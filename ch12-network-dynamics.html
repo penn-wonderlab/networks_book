@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Use Jupyter Notebooks &#8212; Applied Network Analysis in Learning</title>
+    <title>Network Dynamics and Temporality &#8212; Applied Network Analysis in Learning</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ch1-setup-colab';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch12-network-dynamics';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Networks in Learning Analytics" href="ch2-networks-la.html" />
-    <link rel="prev" title="Getting Started" href="ch1-intro.html" />
+    <link rel="next" title="MULTIDIMENSIONAL NETWORKS" href="ch13-multidimensional.html" />
+    <link rel="prev" title="Cognitive and Semantic Networks" href="ch11-cognitive-semantic-networks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,9 +177,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch1-intro.html">Getting Started</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Use Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1-setup-colab.html">Use Jupyter Notebooks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Networks in Learning Analytics</span></p>
 <ul class="nav bd-sidenav">
@@ -225,8 +225,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="ch11-cognitive-semantic-networks.html">Cognitive and Semantic Networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">12. Network Dynamics and Temporality</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ch12-network-dynamics.html">Network Dynamics and Temporality</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Network Dynamics and Temporality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">13. Multidimensional Networks</span></p>
 <ul class="nav bd-sidenav">
@@ -285,37 +285,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/penn-wonderlab/networks_book/blob/master/ch1-setup-colab.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -341,7 +310,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch1-setup-colab.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch12-network-dynamics.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -371,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/ch1-setup-colab.ipynb" target="_blank"
+      <li><a href="_sources/ch12-network-dynamics.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -381,7 +350,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -455,7 +424,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Use Jupyter Notebooks</h1>
+    <h1>Network Dynamics and Temporality</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,12 +434,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-networkx">Import NetworkX</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-toy-network-manually">Create a toy network manually</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-a-network">Visualize a network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-classic-network">Create a classic network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis">Network Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-networkx">Learn More about NetworkX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-network-dynamics">Getting started with network dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-temporality-in-networks-matters">Why temporality in networks matters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-considering-time-in-networks">Approaches to considering time in networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-temporal-network-analysis">Tools for temporal network analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 </ul>
             </nav>
         </div>
@@ -482,163 +452,80 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="use-jupyter-notebooks">
-<h1>Use Jupyter Notebooks<a class="headerlink" href="#use-jupyter-notebooks" title="Permalink to this heading">#</a></h1>
-<p>We will use a Python package named <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> to run some basic network analysis in this course. There are many other powerful network analysis packages out there, such as <code class="docutils literal notranslate"><span class="pre">igraph</span></code>. <code class="docutils literal notranslate"><span class="pre">NetworkX</span></code> is very intuitive to work with and you can switch to other packages if you like.</p>
-<p>If you think you can benefit from an introduction to Python, I recommend <a class="reference external" href="https://www.py4e.com/lessons">Python for Everyone (PY4E)</a>. This course is not focused on teaching Python, but will provide some basic scaffolds for network analysis in Python.</p>
-<p>The course will provide you sample code to work with. Code will be shared as Jupyter notebooks that can be run either on your compupter (if a proper Python environment has been installed) or on Google Colab (which is usually easier for beginners).</p>
-<p>This page you’re reading is written as a Jupyter notebook. You can load this page on Google Colab by clicking on the rocket icon in the upper-right corner of this page. See the screenshot below:</p>
-<p><img alt="" src="_images/open-colab.png" /></p>
-<p>With the notebook opened on Colab, you can run and edit the code yourself.</p>
-<section id="import-networkx">
-<h2>Import NetworkX<a class="headerlink" href="#import-networkx" title="Permalink to this heading">#</a></h2>
-<p>As mentioned above, we will be primarily working with NetworkX for network analysis.</p>
-<p>In Python, the first thing to do is to import the package to the runtime environment. We are giving the package a nickname <code class="docutils literal notranslate"><span class="pre">nx</span></code> so it’s easier to refer to it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now the package has been successfully imported.</p>
-<p>Note that we use these two words <em>network</em> and <em>graph</em> interchangeably but they could mean quite different things in different contexts.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="network-dynamics-and-temporality">
+<h1>Network Dynamics and Temporality<a class="headerlink" href="#network-dynamics-and-temporality" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>It’s About Time!</p>
+</div></blockquote>
+<p>So far in this class we’ve been mostly working with <code class="docutils literal notranslate"><span class="pre">static</span></code> networks or <code class="docutils literal notranslate"><span class="pre">snapshots</span></code> of dynamic networks. That’s enough for most of our needs.</p>
+<p>However, many networks are dynamic in nature. One important use of network analysis is to understand how a network would function – and evolve – given its current structure. Such a question is genuinely about network dynamics.</p>
+<p>In this week, we will:</p>
+<ul class="simple">
+<li><p>Explore ways to conceptual temporality in SNA (and network analysis in general)</p></li>
+<li><p>Learn how to construct temporal networks</p></li>
+<li><p>Learn approaches to visualizing and analyzing temporal networks</p></li>
+<li><p>Explore potential applications of temporal SNA to our projects</p></li>
+</ul>
+<p><strong>Note</strong>: You may see people using different words <em>temporal</em>, <em>dynamic</em>,  <em>longitudinal</em> interchangeably to describe social networks.</p>
+<section id="getting-started-with-network-dynamics">
+<h2>Getting started with network dynamics<a class="headerlink" href="#getting-started-with-network-dynamics" title="Permalink to this heading">#</a></h2>
+<section id="why-temporality-in-networks-matters">
+<h3>Why temporality in networks matters?<a class="headerlink" href="#why-temporality-in-networks-matters" title="Permalink to this heading">#</a></h3>
+<p>Watch a video below (also <a class="reference external" href="https://www.coursera.org/learn/model-thinking/lecture/1qEBU/schellings-segregation-model">link here</a>) about the <strong>Schelling’s -&#64;schelling1969models Segregation Model</strong> to understand the importance of understanding network dynamics.</p>
+<video controls width="100%">
+<source src="https://d18ky98rnyall9.cloudfront.net/L2B_Cropped.6e7e92c0648e11e4b597fd570fa7692c/full/360p/index.webm?Expires=1617148800&Signature=DP8hgwGfqDmn48OguTM38Wh~8IJh9Q971i75h9EFJh2~rn0DtQgcRpYkT00AP5ndtvS4mxyfcxXU3DCY4BLVPcJ6w8hHCm3NA00bMaWrd5b3cXxF3pbKahPhDZGYAlUJXdqxrsB7FKeusCY6FrZV~QwOzGwFkkl6nWhksVhwOxw_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" type="video/webm">
+<source src="https://d18ky98rnyall9.cloudfront.net/L2B_Cropped.6e7e92c0648e11e4b597fd570fa7692c/full/360p/index.webm?Expires=1617148800&Signature=DP8hgwGfqDmn48OguTM38Wh~8IJh9Q971i75h9EFJh2~rn0DtQgcRpYkT00AP5ndtvS4mxyfcxXU3DCY4BLVPcJ6w8hHCm3NA00bMaWrd5b3cXxF3pbKahPhDZGYAlUJXdqxrsB7FKeusCY6FrZV~QwOzGwFkkl6nWhksVhwOxw_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" type="video/mp4">
+</video>
+<p>To further explore the Schelling’s Segregation Model:</p>
+<ol class="arabic simple">
+<li><p>Open <a class="reference external" href="http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/">http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/</a></p></li>
+<li><p>Adjust Similarity threshold to 50% –&gt; Record rounds</p></li>
+<li><p>Adjust Similarity threshold to 75% –&gt; Record rounds</p></li>
+</ol>
+<p>How is the model related to network dynamics?</p>
+<img src="images/schelling.gif" width="480px" />
 </section>
-<section id="create-a-toy-network-manually">
-<h2>Create a toy network manually<a class="headerlink" href="#create-a-toy-network-manually" title="Permalink to this heading">#</a></h2>
-<p>Let’s create an empty network using <code class="docutils literal notranslate"><span class="pre">nx.Graph</span></code> and then manually add 3 nodes and 2 edges to the network.</p>
-<p>Below is a few lines of code to achieve this goal.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
-
-<span class="n">g</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>             <span class="c1"># Add a single node</span>
-<span class="n">g</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># Add a list of nodes</span>
-
-<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="approaches-to-considering-time-in-networks">
+<h3>Approaches to considering time in networks<a class="headerlink" href="#approaches-to-considering-time-in-networks" title="Permalink to this heading">#</a></h3>
+<p>Temporal information is reflected in networks in several ways:</p>
+<ul class="simple">
+<li><p>Timestamp of an event (when)</p></li>
+<li><p>Duration of an event (how long)</p></li>
+<li><p>Frequency of of events (how often)</p></li>
+<li><p>Time-order / contingency of events (in which temporal order)</p></li>
+</ul>
+<p>There are multiple ways to consider temporal information in network analysis:</p>
+<p><strong>1. Time‐aggregated networks</strong></p>
+<p>Consider email correspondences among members of an organization. Each week, members of the organization send each other emails. Each email has a timestamp and is directed from one member to one or several members. To generate <em>time‐aggregated networks</em>, one subsets the full record of email exchanges at different start and stop time points and retain any interactions that begin or stop within the window. One straightforward example is to create aggregate email interactions by week and create weekly aggregated networks. By doing so, one can then compare time-aggregated networks across weeks.</p>
+<p>A slightly more complex example of time-aggregated networks is to apply a <em>sliding window</em> on the dataset. To get a sense of how it works, click on the ‘Play’ button of the interactive visualization below. The slider/window will begin to slide rightward, while the window size remains constant. Each snappost you see is a time-aggregated network within its corresponding window.</p>
+<iframe src="assets/file70664c4ffc8d.html" style="width:100%; height:400px;"></iframe>
+<p>The sliding window approach can be further enriched. According to &#64;gloor2004temporal, instead of strictly restricting to events within a time window, you can choose to incorporate information about previous events to each time window. This technique is akin to adding a memory to the time-aggregated networks.</p>
+<img src="assets/gloor-2004-fig1.png" width="80%"/>
+<img src="assets/gloor-2004-fig2.png" width="80%"/>
+<p><strong>2. Time‐ordered networks</strong></p>
+<p>According to &#64;blonder2012temporal, “Time‐ordered networks represent data observed for a set of interactions that occur at certain times, thereby retaining complete information on the ordering, duration and timing of events.”</p>
+<p>This approach retains more detailed temporal information and can be used to answer various questions about flow dynamics. You will have a chance to read more in &#64;blonder2012temporal this week (see below).</p>
+<p><strong>3. SNA measures with ‘a temporal flavor’</strong></p>
+<p>SNA concepts and measures we have explored so far can be extended to temporal networks.</p>
+<p>See the following example from &#64;mascolo2013temporal. If it is a static network (the lower-right corner), the shortest path between <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> is <code class="docutils literal notranslate"><span class="pre">[A,</span> <span class="pre">B,</span> <span class="pre">D,</span> <span class="pre">E,</span> <span class="pre">G]</span></code>. When we consider the temporal network (see the time-sliced network above), A needs to go through <code class="docutils literal notranslate"><span class="pre">C</span></code> at time 2 in order to reach <code class="docutils literal notranslate"><span class="pre">G</span></code>; at time 3, the direct path between <code class="docutils literal notranslate"><span class="pre">E</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> is no longer available and <code class="docutils literal notranslate"><span class="pre">E</span></code> needs to go through <code class="docutils literal notranslate"><span class="pre">F</span></code> to reach <code class="docutils literal notranslate"><span class="pre">G</span></code>. As a result, the temporal shorted path between <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> becomes <code class="docutils literal notranslate"><span class="pre">[A,</span> <span class="pre">C,</span> <span class="pre">B,</span> <span class="pre">D,</span> <span class="pre">E,</span> <span class="pre">F,</span> <span class="pre">G]</span></code>.</p>
+<p>This is just one example concept that requires reconsideration in temporal networks.</p>
+<p><img alt="" src="assets/Mascolo-2013.png" /></p>
 </section>
-<section id="visualize-a-network">
-<h2>Visualize a network<a class="headerlink" href="#visualize-a-network" title="Permalink to this heading">#</a></h2>
-<p>You can simply call the <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function to draw the network.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/4663c4ebffb739f1547cd8a88f9d3a87040947ed5a052179ef3dd0a16c883d1c.png" src="_images/4663c4ebffb739f1547cd8a88f9d3a87040947ed5a052179ef3dd0a16c883d1c.png" />
-</div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">draw()</span></code> function draws the graph as a simple representation with no node labels or edge labels.</p>
-<p>To have more options such as adding node labeling and graph titles, you can use <code class="docutils literal notranslate"><span class="pre">draw_networkx()</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/395069bab0a036ed8a594e33b8c11883b78673810898f3420593f36be717ccc2.png" src="_images/395069bab0a036ed8a594e33b8c11883b78673810898f3420593f36be717ccc2.png" />
-</div>
-</div>
+<section id="tools-for-temporal-network-analysis">
+<h3>Tools for temporal network analysis<a class="headerlink" href="#tools-for-temporal-network-analysis" title="Permalink to this heading">#</a></h3>
+<p>In Python, the <code class="docutils literal notranslate"><span class="pre">[networkx-temporal](https://pypi.org/project/networkx-temporal/)</span></code> package extends NetworkX functions for dynamic/temporal networks.</p>
+<p>If interested, please seek relevant tutorials and learn to work with temporal networks by yourself.</p>
+<p>In R, there are a number of packages, such as <code class="docutils literal notranslate"><span class="pre">networkDynamic</span></code>, <code class="docutils literal notranslate"><span class="pre">tsna</span></code>, and <code class="docutils literal notranslate"><span class="pre">ndtv</span></code>, which are very useful for temporal network analysis and visualization.</p>
+<p>If you are interested, check out this amazing tutorial about <a class="reference external" href="https://programminghistorian.org/en/lessons/temporal-network-analysis-with-r">Temporal Network Analysis with R</a>.</p>
+<p>In addition, novel social network analysis methods such as relational event modeling (REM) are powerful for analyzing moment-to-moment event data. You will learn more about REM in this week’s readings.</p>
 </section>
-<section id="create-a-classic-network">
-<h2>Create a classic network<a class="headerlink" href="#create-a-classic-network" title="Permalink to this heading">#</a></h2>
-<p>Instead of manually creating a network, you can also create classic graphs using NetworkX.</p>
-<p>Below, we load the classic Karate Club graph by Zachary (1977) and visualize it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_kc</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
-
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">g_kc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/64e9289b2bcf145c12c49aeca3a52fcaaae99b57155511ba3f3c48920f3ee935.png" src="_images/64e9289b2bcf145c12c49aeca3a52fcaaae99b57155511ba3f3c48920f3ee935.png" />
-</div>
-</div>
 </section>
-<section id="network-analysis">
-<h2>Network Analysis<a class="headerlink" href="#network-analysis" title="Permalink to this heading">#</a></h2>
-<p>With the graph created, we can start to run some simply network analysis.</p>
-<p>For example, what is the degree centrality of node #19 in this graph?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">g_kc</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<p>Or even better, let’s print out degree for all nodes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Node Degree&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">g_kc</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">g_kc</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">:</span><span class="s2">6</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Node Degree
-   0     16
-   1      9
-   2     10
-   3      6
-   4      3
-   5      4
-   6      4
-   7      4
-   8      5
-   9      2
-  10      3
-  11      1
-  12      2
-  13      5
-  14      2
-  15      2
-  16      2
-  17      2
-  18      2
-  19      3
-  20      2
-  21      2
-  22      2
-  23      5
-  24      3
-  25      3
-  26      2
-  27      4
-  28      3
-  29      4
-  30      4
-  31      6
-  32     12
-  33     17
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="learn-more-about-networkx">
-<h2>Learn More about NetworkX<a class="headerlink" href="#learn-more-about-networkx" title="Permalink to this heading">#</a></h2>
-<p>This notebook provides a gentle introduction to NetworkX, to demonstrate how easy it is to get started.</p>
-<p>In this course, we will work with many other areas of network analysis.</p>
-<p>If you are newer to Python programming, one important skill in the process is to learn how to check reference pages and find answers yourself.</p>
-<p>For example, NetworkX provides a very well organized reference page that can be helpful: <a class="reference external" href="https://networkx.org/documentation/stable/reference/index.html">https://networkx.org/documentation/stable/reference/index.html</a></p>
-<p>You are also encouraged to leverage ChatGPT in the process, as long as you spend time to make sense of ChatGPT outputs and be transparent and responsible for what is submitted as <em>your</em> work.</p>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Stehlé, J., Voirin, N., Barrat, A., Cattuto, C., Isella, L., Pinton, J.-F., Quaggiotto, M., Broeck, W. V. den, Régis, C., Lina, B., &amp; Vanhems, P. (2011). High-Resolution Measurements of Face-to-Face Contact Patterns in a Primary School. PLOS ONE, 6(8), e23176. <a class="reference external" href="https://doi.org/10.1371/journal.pone.0023176">https://doi.org/10.1371/journal.pone.0023176</a></p></li>
+<li><p>Pilny, A., Schecter, A., Poole, M. S., &amp; Contractor, N. (2016). An illustration of the relational event model to analyze group interaction processes. Group Dynamics: Theory, Research, and Practice, 20(3), 181–195. <a class="reference external" href="https://doi.org/10.1037/gdn0000042">https://doi.org/10.1037/gdn0000042</a></p></li>
+</ol>
 </section>
 </section>
 
@@ -673,20 +560,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ch1-intro.html"
+       href="ch11-cognitive-semantic-networks.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-title">Cognitive and Semantic Networks</p>
       </div>
     </a>
     <a class="right-next"
-       href="ch2-networks-la.html"
+       href="ch13-multidimensional.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Networks in Learning Analytics</p>
+        <p class="prev-next-title">MULTIDIMENSIONAL NETWORKS</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -706,12 +593,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-networkx">Import NetworkX</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-toy-network-manually">Create a toy network manually</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-a-network">Visualize a network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-classic-network">Create a classic network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis">Network Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more-about-networkx">Learn More about NetworkX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-network-dynamics">Getting started with network dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-temporality-in-networks-matters">Why temporality in networks matters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-considering-time-in-networks">Approaches to considering time in networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-temporal-network-analysis">Tools for temporal network analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
 </ul>
   </nav></div>
 
