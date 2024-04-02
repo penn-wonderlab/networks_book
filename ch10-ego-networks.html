@@ -466,7 +466,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-ego-network-data-ego-data">Collecting Ego Network Data {#ego-data}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-ego-network-data">Collecting Ego Network Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-ego-networks-from-egos">Building ego networks from egos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-ego-networks-from-larger-networks">Extracting Ego Networks from Larger Networks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construct-the-full-network-with-nodes-and-edges">Construct the full network with nodes and edges</a></li>
@@ -513,8 +513,8 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 -->
 <p>When reading, consider this question: <strong>How ego-centric networks could be applied to your research projects?</strong> You do not necessarily need to focus on your class project but projects in your field in general.</p>
 </section>
-<section id="collecting-ego-network-data-ego-data">
-<h2>Collecting Ego Network Data {#ego-data}<a class="headerlink" href="#collecting-ego-network-data-ego-data" title="Permalink to this heading">#</a></h2>
+<section id="collecting-ego-network-data">
+<h2>Collecting Ego Network Data<a class="headerlink" href="#collecting-ego-network-data" title="Permalink to this heading">#</a></h2>
 <p>As discussed in the reading (Carolan, 2014), there are basically two ways to construct ego-centric networks:</p>
 <ol class="arabic simple">
 <li><p><strong>Ego-centric networks by design</strong>: When a research project is initiated by asking ego-centric questions, ego-centric data are usually directed collecting. For example, when a <em>name generator questionnaire</em> is distributed to a sample of students in a large high school to study in-school friendship of students, each student’s response will be directly used to construct a network.</p></li>
@@ -554,7 +554,7 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs copilot&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs bard&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs gpt 4&#39;, &#39;chatgpt vs microsoft copilot&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs google&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433], [512, 433], [512, 433, 131], [512], [512], [512], [512], [512], [512], [512]]}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs copilot&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs bard&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs gpt 4&#39;, &#39;chatgpt vs microsoft copilot&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs copilot vs gemini&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512], [512], [512], [512], [512], [512], [512], [512], [512], [512, 433, 131]]}]
 </pre></div>
 </div>
 </div>
@@ -578,14 +578,13 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    source             target
 0  chatgpt            copilot
 1  chatgpt             gemini
-2  chatgpt             claude
-3  chatgpt               bard
+2  chatgpt               bard
+3  chatgpt             claude
 4  chatgpt             openai
 5  chatgpt              gpt 4
 6  chatgpt  microsoft copilot
 7  chatgpt         perplexity
 8  chatgpt       chatgpt plus
-9  chatgpt             google
 </pre></div>
 </div>
 </div>
@@ -626,8 +625,8 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 querying gemini
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying claude
-querying bard
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying bard
+querying claude
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying openai
@@ -639,7 +638,6 @@ querying perplexity
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying chatgpt plus
-querying google
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -678,12 +676,12 @@ querying google
     <tr>
       <th>2</th>
       <td>chatgpt</td>
-      <td>claude</td>
+      <td>bard</td>
     </tr>
     <tr>
       <th>3</th>
       <td>chatgpt</td>
-      <td>bard</td>
+      <td>claude</td>
     </tr>
     <tr>
       <th>4</th>
@@ -696,33 +694,33 @@ querying google
       <td>...</td>
     </tr>
     <tr>
-      <th>102</th>
-      <td>google</td>
-      <td>duckduckgo</td>
+      <th>91</th>
+      <td>chatgpt plus</td>
+      <td>team reddit</td>
     </tr>
     <tr>
-      <th>103</th>
-      <td>google</td>
-      <td>bing memes</td>
+      <th>92</th>
+      <td>chatgpt plus</td>
+      <td>enterprise</td>
     </tr>
     <tr>
-      <th>104</th>
-      <td>google</td>
-      <td>apple</td>
+      <th>93</th>
+      <td>chatgpt plus</td>
+      <td>gemini advanced</td>
     </tr>
     <tr>
-      <th>105</th>
-      <td>google</td>
-      <td>roku tv</td>
+      <th>94</th>
+      <td>chatgpt plus</td>
+      <td>chatgpt</td>
     </tr>
     <tr>
-      <th>106</th>
-      <td>google</td>
-      <td>samsung phone</td>
+      <th>95</th>
+      <td>chatgpt plus</td>
+      <td>bard</td>
     </tr>
   </tbody>
 </table>
-<p>107 rows × 2 columns</p>
+<p>96 rows × 2 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -736,7 +734,7 @@ querying google
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fe7b7e94d83cd383e441a4d3a830ab5cb60e06f20c823e98ff33d4c03303da83.png" src="_images/fe7b7e94d83cd383e441a4d3a830ab5cb60e06f20c823e98ff33d4c03303da83.png" />
+<img alt="_images/9cbcb7ba6dbe49565297c328cda09d845ee24e32d0f7f0fa984641911decaade.png" src="_images/9cbcb7ba6dbe49565297c328cda09d845ee24e32d0f7f0fa984641911decaade.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -749,14 +747,16 @@ querying google
 
 <span class="c1"># Run network analysis algorithms on the ego network</span>
 <span class="n">nx</span><span class="o">.</span><span class="n">density</span><span class="p">(</span><span class="n">EG</span><span class="p">)</span>
+
+<span class="n">EG</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5454545454545454
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26
 </pre></div>
 </div>
-<img alt="_images/b5ed67bf07e6492ec5ed3023aa30ab0be9cda75b286511ae646691be6728abee.png" src="_images/b5ed67bf07e6492ec5ed3023aa30ab0be9cda75b286511ae646691be6728abee.png" />
+<img alt="_images/9283a49ac8ab24a254bbe652cd751f92236d5e3cc0baa421d97b0b3c4d963217.png" src="_images/9283a49ac8ab24a254bbe652cd751f92236d5e3cc0baa421d97b0b3c4d963217.png" />
 </div>
 </div>
 <p>If you’d like to build an ego network of another term – say Gemini – you can start from the ego following the same approach to cover alters and ties in the neighborhood you intend to cover.</p>
@@ -1075,11 +1075,11 @@ querying google
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ws/bwvb7bg1107311r6961dd1y80000gp/T/ipykernel_81622/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/ws/bwvb7bg1107311r6961dd1y80000gp/T/ipykernel_51289/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
   cmap = cm.get_cmap(&#39;tab10&#39;, len(groups))
 </pre></div>
 </div>
-<img alt="_images/26176234a274490956e1bef11996373a457960f3b1d694382eb4657562b764e1.png" src="_images/26176234a274490956e1bef11996373a457960f3b1d694382eb4657562b764e1.png" />
+<img alt="_images/959bada7ef488d6b36e52fa7ccfe36d907eedc659f085230b69bef6f1486105b.png" src="_images/959bada7ef488d6b36e52fa7ccfe36d907eedc659f085230b69bef6f1486105b.png" />
 </div>
 </div>
 </section>
@@ -1098,7 +1098,7 @@ querying google
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b1a88d2e1ccae4a1b19a28a1df3b2528608066c6c296350e3d9685b058b99c6f.png" src="_images/b1a88d2e1ccae4a1b19a28a1df3b2528608066c6c296350e3d9685b058b99c6f.png" />
+<img alt="_images/c8ac83cd3bb0582d5a9bc7211d6b4fea2c1646b821f81d1db80a8464f911c93c.png" src="_images/c8ac83cd3bb0582d5a9bc7211d6b4fea2c1646b821f81d1db80a8464f911c93c.png" />
 </div>
 </div>
 <p>We can also set radius to 2 to reach a larger neighhood of the ego.</p>
@@ -1113,7 +1113,7 @@ querying google
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/658ad632551f9ec0b67ddb4c241d1ab93a1bb8c20b02e9b90bec60d34436c096.png" src="_images/658ad632551f9ec0b67ddb4c241d1ab93a1bb8c20b02e9b90bec60d34436c096.png" />
+<img alt="_images/e5f837e836cf5fac0400ac5be80725c0a7a2882b549e501b4e1335675f9836f1.png" src="_images/e5f837e836cf5fac0400ac5be80725c0a7a2882b549e501b4e1335675f9836f1.png" />
 </div>
 </div>
 <p>Because the sample network is dense, the ego network gets large quickly when increasing the radius.</p>
@@ -1187,7 +1187,7 @@ querying google
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-ego-network-data-ego-data">Collecting Ego Network Data {#ego-data}</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collecting-ego-network-data">Collecting Ego Network Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-ego-networks-from-egos">Building ego networks from egos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-ego-networks-from-larger-networks">Extracting Ego Networks from Larger Networks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construct-the-full-network-with-nodes-and-edges">Construct the full network with nodes and edges</a></li>
