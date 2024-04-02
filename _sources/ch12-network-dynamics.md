@@ -79,7 +79,7 @@ The sliding window approach can be further enriched. According to {cite}`gloor20
 
 According to {cite}`blonder2012temporal`, "Time‐ordered networks represent data observed for a set of interactions that occur at certain times, thereby retaining complete information on the ordering, duration and timing of events." 
 
-This approach retains more detailed temporal information and can be used to answer various questions about flow dynamics. You will have a chance to read more in {cite}`@blonder2012temporal` this week (see below).
+This approach retains more detailed temporal information and can be used to answer various questions about flow dynamics. You can read more in {cite}`@blonder2012temporal` if interested.
 
 
 **3. SNA measures with 'a temporal flavor'**

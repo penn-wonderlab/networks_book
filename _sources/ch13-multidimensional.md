@@ -1,4 +1,4 @@
-# MULTIDIMENSIONAL NETWORKS
+# Multidimensional Networks
 
 ## Readings
 
