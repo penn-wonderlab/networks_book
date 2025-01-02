@@ -1,6 +1,6 @@
 # Welcome
 
-This site is built for a course titled **EDUC 5910: Applied Network Analysis in Learning**, taught by **[Prof. Bodong Chen](http://bodong.ch)** at the University of Pennsylvania. 
+This site is built for a course titled **EDUC 5910: Applied Network Analysis in Learning**, taught by **[Prof. Bodong Chen](http://bchen.net)** at the University of Pennsylvania. 
 
 Content on this site will be actively built and refined throughout the semester. 
 

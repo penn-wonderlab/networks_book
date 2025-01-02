@@ -2,7 +2,7 @@
 
 ## Course Syllabus
 
-The most up-to-date syllabus is <a href="https://docs.google.com/document/d/1-261mdbLdfn0CCoh_TLhNdh-uE2Ezlml/edit" target="_blank">here</a>.
+The most up-to-date syllabus is <a href="https://docs.google.com/document/d/199bzSv-dY5OkWnQ2uGuDI9O-L7jTNMwi/edit?usp=sharing&ouid=104663307403024646917&rtpof=true&sd=true" target="_blank">here</a>.
 Please leave comments on the syllabus if you have any questions.
 
 ## Learning Environments for This Course
@@ -11,7 +11,7 @@ This course is fully online and is supported by various digital learning environ
 
 Here is a high-level overview of how things would work:
 
-1. **Course content site**: The site you are reading now hosts weekly content created by the instructor, including text, instructional videos, tutorials, Jupyter notebooks, etc. This site is open to public, and is the only part of the course open to public. 
+1. **Course content site**: The site you are reading now hosts weekly content created by the instructor, including text, instructional videos, tutorials, Jupyter notebooks, etc. This site is open to public, and is the *only* part of the course open to public. Anyone is welcome to make use of the open resources provided on this website!
 2. **Course Canvas site**: Students formally registered for the course at Penn will have access to a Canvas site through which they submit course assignments. The Canvas site is only open to Penn students. 
 3. **Perusall**: Perusall is a social annotation tool that enables us to discuss readings in a contextual manner. All readings will be made available on Perusall, which is integrated in Canvas. 
 4. **Zoom**: The class meets on Mondays through Zoom. Penn students will receive a Zoom link that we use throughout the semester. 
@@ -23,7 +23,7 @@ Here is a high-level overview of how things would work:
 
 This online class is designed to offer rich opportunities for social participation. Below is how a week would (typically) look like. 
 
-- **Our class meetings happen on Mondays, at 5PM ET.** The class meetings are designed for us to chat about things we've learned, deepen our understanding, review code, discuss future plans, etc. Depending on each week's topic, we will meet 60-90 minutes on Zoom. 
+- **Our class meetings happen on Mondays, at 6:15pm ET.** The class meetings are designed for us to chat about things we've learned, deepen our understanding, review code, discuss future plans, etc. Depending on each week's topic, we will meet 75-90 minutes on Zoom. 
 - **A fresh week starts on Tuesday.** Depending on your schedule, you can get started with course readings and begin to make annotations.
 - **By the end of Friday**, you are expected to finish reading articles assigned for the week and post your initial annotations.
 - **By the middle of Monday (aka. 11:59AM)**, you are expected to check out what other colleagues have annotated and reply to one other. It is hoped that by putting our minds together we can develop deeper understanding. 
