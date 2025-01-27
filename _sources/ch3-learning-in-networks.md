@@ -18,7 +18,7 @@ Required readings:
 
 - Haythornthwaite, C. (2015). Rethinking learning spaces: Networks, structures, and possibilities for learning in the twenty-first century. Communication Research and Practice, 1(4), 292–306. https://doi.org/10.1080/22041451.2015.1105773
 - Jones, C. (2015). Networked learning: An educational paradigm for the age of digital networks (Ch. 3). Springer International Publishing. https://doi.org/10.1007/978-3-319-01934-5
-- Poquet, O., & Chen, B. (2023). Integrating Theories of Learning and Social Networks in Learning Analytics. In K. Bartimote, S. Howard, & D. Gašević (Eds.), Theory Informing and Arising from Learning Analytics. Springer Nature.
+- Poquet, O., & Chen, B. (2024). Integrating Theories of Learning and Social Networks in Learning Analytics. In K. Bartimote, S. K. Howard, & D. Gašević (Eds.), Theory Informing and Arising from Learning Analytics (pp. 139–151). Springer Nature Switzerland. https://doi.org/10.1007/978-3-031-60571-0_9 
 
 ### Theories of learning in networks
 
@@ -30,7 +30,7 @@ However, there are learning theories that conceptualize learning from a network 
 
 2. Theories of learning would provide grounding for network construction. As explained in Haythornthwaite (2015) and Poquet & Chen (in press), constructing networks from learning data is not always straightforward. Theories of learning offer guidance and justification for the construciton of network models to represent learning. 
 
-As illustrated by this figure from Poquet & Chen (in press), a social network of learners can be constructed in different ways based on distinctive views of learning including knowledge building, networked learning, and connectivism. 
+As illustrated by this figure from Poquet & Chen (2024), a social network of learners can be constructed in different ways based on distinctive views of learning including knowledge building, networked learning, and connectivism. 
 
 At the core of each network model, we ask: What is about the *generative processes of learning* according to the network-based view of learning? The answer to this question differs across these three theories. 
 
