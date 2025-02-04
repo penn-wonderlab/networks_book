@@ -18,9 +18,9 @@ parts:
   chapters:
   - file: ch4-network-science
   - file: ch4-lab-read-data-1
-# - caption: 5. SNA Theory and Concepts
-#   chapters:
-#   - file: ch5-sna-intro
+- caption: 4. SNA Theory and Concepts
+  chapters:
+  - file: ch5-sna-intro
 # - caption: 6. Collect and Manage Network Data
 #   chapters:
 #   - file: ch6-collect-manage-data

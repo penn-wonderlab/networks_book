@@ -197,6 +197,10 @@
 <li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. SNA Theory and Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch5-sna-intro.html">Social Network Analysis: Theory and Concepts</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
@@ -400,7 +404,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theories-of-learning-in-networks">Theories of learning in networks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p">P</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m">M</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">m</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -450,12 +459,30 @@ document.write(`
 </section>
 <section id="three-levels-of-consideration-when-applying-network-analysis-to-learning">
 <h2>Three levels of consideration when applying network analysis to learning<a class="headerlink" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning" title="Link to this heading">#</a></h2>
+<!-- - P: philosophy, worldviews, paradigms. This level is about how we think about "what is real" and "how people examine reality". These questions apply to analysis of learning.
+- M (big M): methodology. This level deals with a *systematic* body of knowledge that provide general research strategies to guide a research project. A methodology intends to coordinate every step of the process, e.g., sampling, data collection, analysis, reporting. 
+- m (small m): methods/techniques. A method is a way of reaching some predefined goal. One example of using network analysis as a method is to simply use a centrality measure to depict students in a social network.  -->
+<p>Our discussion is aluding to three levels of considerations that researchers often need to be aware of. You could find more information in text such as <span id="id3">[<a class="reference internal" href="bibliography.html#id6" title="Katrin Niglas. The Multidimensional Model of Research Methodology: An Integrated Set of Continua. In Abbas Tashakkori and Charles Teddlie, editors, SAGE Handbook of Mixed Methods in Social &amp; Behavioral Research, pages 215–236. SAGE, Thousand Oaks, June 2010.">Niglas, 2010</a>]</span> or some other research methodology courses. Please note that this framework was <em>constructed</em> to help us grapple with the complex terrain of research, and it is highly debatable.</p>
+<section id="p">
+<h3>P<a class="headerlink" href="#p" title="Link to this heading">#</a></h3>
+<p>philosophy, worldviews, paradigms</p>
+</section>
+<section id="m">
+<h3>M<a class="headerlink" href="#m" title="Link to this heading">#</a></h3>
+<p>methodology</p>
+</section>
+<section id="id4">
+<h3>m<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>methods/techniques</p>
+<p>Below, I try to explain these three levels of considerations:</p>
 <ul class="simple">
-<li><p>P: philosophy, worldviews, paradigms. This level is about how we think about “what is real” and “how people examine reality”. These questions apply to analysis of learning.</p></li>
-<li><p>M (big M): methodology. This level deals with a <em>systematic</em> body of knowledge that provide general research strategies to guide a research project. A methodology intends to coordinate every step of the process, e.g., sampling, data collection, analysis, reporting.</p></li>
-<li><p>m (small m): methods/techniques. A method is a way of reaching some predefined goal. One example of using network analysis as a method is to simply use a centrality measure to depict students in a social network.</p></li>
+<li><p><strong>m</strong>, or methods/techniques: The “small <em>m</em>” in SNA constitutes methods or techniques we apply in SNA research. Imagine we are using SNA to investigate friendship of a network of high-schoolers (think about “Gossip Girls” if you’ve watched that TV series). A technique in this SNA research could be a questionnaire used to collect friendship data among students; it could be the <a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">force-directed layout</a> we use to visualize this network; it could be the measure of <em>betweenness centrality</em> we use to characterize high-schoolers; it could also be a network modeling algorithm we apply to model the flow of gossips. In a nutshell, these techniques are more about <strong>what</strong> we concretely do in an SNA research.</p></li>
+<li><p><strong>M</strong>: When SNA is referred to as a “big <em>M</em>” Methodology, it is treated as a systematic approach of investigating a phenomenon. Beyond simply applying these techniques, a methodology is also concerned with <strong>why</strong> a technique gets used. In other words, understanding SNA as a methodology means learning to make informed decisions in any stage of an SNA project. For example, why using a questionnaire instead of observations or interviews? In which cases should one use a <em>circle layout</em> instead of a force-directed layout? Why a specific SNA measure is appropriate for addressing a research question? In a nutshell, the big <em>M</em> is concerned with <strong>how</strong> knowledge could be best gained by following many SNA methodologists and researchers have created so far.</p></li>
+<li><p><strong>P</strong>, worldviews, philosophical schools of thoughts, paradigms: In SNA, some scholars go further to argue SNA offers a unique way of “seeing the world.” In Carolan (2014) chapter 2 you will read about the <strong>relational perspective</strong> that represent a particular worldview that emphasizes relations instead of attributes. You will also read about <strong>relational realism</strong> that is referred to as an ontology grounding SNA. To a great extent, SNA offers a new research paradigm. As put by Barry Wellman, a guru in SNA from the University of Toronto, “It is a comprehensive paradigmatic way of taking social structure seriously by studying directly how patterns of ties allocate resources in a social system” (see, Carolan, 2014, p. 33).</p></li>
 </ul>
+<p>In this course, we are mostly concerned with the “big M” level. We will not dive too deep into the <strong>P</strong> level, and we will not settle with specific techniques. Together, we will learn how to apply various techniques to systematically produce knowledge about a phenomenon.</p>
 <p>Also, SNA (or network analysis in general) does not need to be <em>quantitative</em>. As a matter of fact, SNA grew, in large part, out of the efforts of ethnographers to make sense of complex relational data. While modern SNA provides strong support for quantitative inquiry, SNA can be combined with qualitative methods in various ways.</p>
+</section>
 </section>
 </section>
 
@@ -528,7 +555,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theories-of-learning-in-networks">Theories of learning in networks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p">P</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m">M</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">m</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
