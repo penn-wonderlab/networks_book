@@ -42,10 +42,31 @@ At the core of each network model, we ask: What is about the *generative process
 
 ## Three levels of consideration when applying network analysis to learning
 
-- P: philosophy, worldviews, paradigms. This level is about how we think about "what is real" and "how people examine reality". These questions apply to analysis of learning.
+<!-- - P: philosophy, worldviews, paradigms. This level is about how we think about "what is real" and "how people examine reality". These questions apply to analysis of learning.
 - M (big M): methodology. This level deals with a *systematic* body of knowledge that provide general research strategies to guide a research project. A methodology intends to coordinate every step of the process, e.g., sampling, data collection, analysis, reporting. 
-- m (small m): methods/techniques. A method is a way of reaching some predefined goal. One example of using network analysis as a method is to simply use a centrality measure to depict students in a social network. 
+- m (small m): methods/techniques. A method is a way of reaching some predefined goal. One example of using network analysis as a method is to simply use a centrality measure to depict students in a social network.  -->
 
+
+Our discussion is aluding to three levels of considerations that researchers often need to be aware of. You could find more information in text such as {cite}`niglas2010multidimensional` or some other research methodology courses. Please note that this framework was *constructed* to help us grapple with the complex terrain of research, and it is highly debatable. 
+
+### P  
+philosophy, worldviews, paradigms
+
+### M  
+methodology
+
+### m  
+methods/techniques
+
+Below, I try to explain these three levels of considerations:
+
+- **m**, or methods/techniques: The "small *m*" in SNA constitutes methods or techniques we apply in SNA research. Imagine we are using SNA to investigate friendship of a network of high-schoolers (think about "Gossip Girls" if you've watched that TV series). A technique in this SNA research could be a questionnaire used to collect friendship data among students; it could be the [force-directed layout](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) we use to visualize this network; it could be the measure of *betweenness centrality* we use to characterize high-schoolers; it could also be a network modeling algorithm we apply to model the flow of gossips. In a nutshell, these techniques are more about **what** we concretely do in an SNA research.
+
+- **M**: When SNA is referred to as a "big *M*" Methodology, it is treated as a systematic approach of investigating a phenomenon. Beyond simply applying these techniques, a methodology is also concerned with **why** a technique gets used. In other words, understanding SNA as a methodology means learning to make informed decisions in any stage of an SNA project. For example, why using a questionnaire instead of observations or interviews? In which cases should one use a *circle layout* instead of a force-directed layout? Why a specific SNA measure is appropriate for addressing a research question? In a nutshell, the big *M* is concerned with **how** knowledge could be best gained by following many SNA methodologists and researchers have created so far. 
+
+- **P**, worldviews, philosophical schools of thoughts, paradigms: In SNA, some scholars go further to argue SNA offers a unique way of "seeing the world." In Carolan (2014) chapter 2 you will read about the **relational perspective** that represent a particular worldview that emphasizes relations instead of attributes. You will also read about **relational realism** that is referred to as an ontology grounding SNA. To a great extent, SNA offers a new research paradigm. As put by Barry Wellman, a guru in SNA from the University of Toronto, "It is a comprehensive paradigmatic way of taking social structure seriously by studying directly how patterns of ties allocate resources in a social system" (see, Carolan, 2014, p. 33).
+
+In this course, we are mostly concerned with the "big M" level. We will not dive too deep into the **P** level, and we will not settle with specific techniques. Together, we will learn how to apply various techniques to systematically produce knowledge about a phenomenon.
 
 Also, SNA (or network analysis in general) does not need to be *quantitative*. As a matter of fact, SNA grew, in large part, out of the efforts of ethnographers to make sense of complex relational data. While modern SNA provides strong support for quantitative inquiry, SNA can be combined with qualitative methods in various ways. 
 

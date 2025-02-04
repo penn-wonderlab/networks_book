@@ -197,6 +197,10 @@
 <li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. SNA Theory and Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch5-sna-intro.html">Social Network Analysis: Theory and Concepts</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
@@ -515,7 +519,7 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs deepseek&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs copilot&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs deepseek reddit&#39;, &#39;chatgpt vs deepseek r1&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs grok&#39;, &#39;chatgpt vs chatgpt plus&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433, 131], [512, 433, 131], [512, 433, 131], [512, 433], [512, 433, 131], [3], [3], [512, 433], [512], [512]]}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs deepseek&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs copilot&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs deepseek reddit&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs grok&#39;, &#39;chatgpt vs stockfish&#39;, &#39;chatgpt vs chatgpt plus&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433, 131], [512, 433], [512, 433, 131], [512, 433], [512, 433, 131], [3], [512], [512], [512], [512]]}]
 </pre></div>
 </div>
 </div>
@@ -543,9 +547,9 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 3  chatgpt           claude
 4  chatgpt           openai
 5  chatgpt  deepseek reddit
-6  chatgpt      deepseek r1
-7  chatgpt       perplexity
-8  chatgpt             grok
+6  chatgpt       perplexity
+7  chatgpt             grok
+8  chatgpt        stockfish
 9  chatgpt     chatgpt plus
 </pre></div>
 </div>
@@ -595,11 +599,11 @@ querying claude
 querying deepseek reddit
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying deepseek r1
-querying perplexity
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying perplexity
+querying grok
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying grok
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying stockfish
 querying chatgpt plus
 </pre></div>
 </div>
@@ -657,9 +661,14 @@ querying chatgpt plus
       <td>...</td>
     </tr>
     <tr>
+      <th>89</th>
+      <td>chatgpt plus</td>
+      <td>copilot pro</td>
+    </tr>
+    <tr>
       <th>90</th>
       <td>chatgpt plus</td>
-      <td>business</td>
+      <td>gemini advanced</td>
     </tr>
     <tr>
       <th>91</th>
@@ -669,21 +678,16 @@ querying chatgpt plus
     <tr>
       <th>92</th>
       <td>chatgpt plus</td>
-      <td>api</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>chatgpt plus</td>
       <td>free reddit</td>
     </tr>
     <tr>
-      <th>94</th>
+      <th>93</th>
       <td>chatgpt plus</td>
       <td>perplexity pro</td>
     </tr>
   </tbody>
 </table>
-<p>95 rows × 2 columns</p>
+<p>94 rows × 2 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -697,7 +701,7 @@ querying chatgpt plus
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2278ae41716ff54c3f12be553b2d4771366808d03ced43bf96faaaf56338ec4b.png" src="_images/2278ae41716ff54c3f12be553b2d4771366808d03ced43bf96faaaf56338ec4b.png" />
+<img alt="_images/63f070ea5f2ca72e387caf373f223a6fb17545d2b9675b72f9298c9580f15ba3.png" src="_images/63f070ea5f2ca72e387caf373f223a6fb17545d2b9675b72f9298c9580f15ba3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -716,10 +720,10 @@ querying chatgpt plus
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26
 </pre></div>
 </div>
-<img alt="_images/4d17a0ea7954177f6c6300a4fa152cc2f28f51447fd87aba2865be3032b56f6c.png" src="_images/4d17a0ea7954177f6c6300a4fa152cc2f28f51447fd87aba2865be3032b56f6c.png" />
+<img alt="_images/92024b2821670324fc165a2bd77371a52d9616daa6b564689722a3d11273eb1c.png" src="_images/92024b2821670324fc165a2bd77371a52d9616daa6b564689722a3d11273eb1c.png" />
 </div>
 </div>
 <p>If you’d like to build an ego network of another term – say Gemini – you can start from the ego following the same approach to cover alters and ties in the neighborhood you intend to cover.</p>
@@ -1038,11 +1042,11 @@ querying chatgpt plus
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/43/_xbkk7kn1yq72t5llzy_kjz40000gq/T/ipykernel_16402/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/43/_xbkk7kn1yq72t5llzy_kjz40000gq/T/ipykernel_22305/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
   cmap = cm.get_cmap(&#39;tab10&#39;, len(groups))
 </pre></div>
 </div>
-<img alt="_images/21156682c93274d9733b4ea06063ed4f35e399b1a0d52a36b5799e183bc590dc.png" src="_images/21156682c93274d9733b4ea06063ed4f35e399b1a0d52a36b5799e183bc590dc.png" />
+<img alt="_images/e9b4b1522cce2c49e2b9ed159886d6921f8bb13e9eed38be945efbb7232d67b7.png" src="_images/e9b4b1522cce2c49e2b9ed159886d6921f8bb13e9eed38be945efbb7232d67b7.png" />
 </div>
 </div>
 </section>
@@ -1061,7 +1065,7 @@ querying chatgpt plus
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e51ef57ce702f1565a7fd81bdc2a32535561a2de984204c9cd341bd3715c96a1.png" src="_images/e51ef57ce702f1565a7fd81bdc2a32535561a2de984204c9cd341bd3715c96a1.png" />
+<img alt="_images/9c26cc234b8f08c3348625651faac63ea9f85653d6912c07d95445db4de42338.png" src="_images/9c26cc234b8f08c3348625651faac63ea9f85653d6912c07d95445db4de42338.png" />
 </div>
 </div>
 <p>We can also set radius to 2 to reach a larger neighhood of the ego.</p>
@@ -1076,7 +1080,7 @@ querying chatgpt plus
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/028e417aaa3c71bb8f99b349ca72bb598c9ce4809a45c1fd5cf91caa770df8dd.png" src="_images/028e417aaa3c71bb8f99b349ca72bb598c9ce4809a45c1fd5cf91caa770df8dd.png" />
+<img alt="_images/d6bd9c15fc3601374ced8f9dd8825f8cd5b89e3a1274ed2700d085245d27dc5f.png" src="_images/d6bd9c15fc3601374ced8f9dd8825f8cd5b89e3a1274ed2700d085245d27dc5f.png" />
 </div>
 </div>
 <p>Because the sample network is dense, the ego network gets large quickly when increasing the radius.</p>

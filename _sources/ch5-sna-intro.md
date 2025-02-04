@@ -6,41 +6,23 @@
 - Scott, J. (2017). Social network analysis (4th edition) (Ch. 1). SAGE Publications.
 - Carolan, B. V. (2014). Social network analysis and education: Theory, methods & applications (Ch. 1-2). SAGE Publications.
 
-## Three Levels of Consideration
+## Social Network Analysis
 
-Our discussion is aluding to three levels of considerations that researchers often need to be aware of. You could find more information in text such as {cite}`niglas2010multidimensional` or some other research methodology courses. Please note that this framework was *constructed* to help us grapple with the complex terrain of research, and it is highly debatable. 
+Social Network Analysis (SNA) is a research methodology used to study relationships, structures, and interactions within a network of individuals, groups, or entities. It provides both qualitative and quantitative insights into how connections influence behavior, information flow, and social dynamics.
 
-### P  
-philosophy, worldviews, paradigms
+As a *methodology*, SNA offers systemic guidance how to use empirical data to examine relationships, interactions, and network structures. Due to its roots in sociology, SNA reframes research questions to focus on relational patterns rather than isolated individuals. This systemic perspective ensures that researchers consider the broader context of social structures when analyzing phenomena such as collaboration, information flow, or influence. SNA offers guidance on how to define and collect relational data. It provides a systematic set of metrics that help researchers understand network properties at different levels. 
 
-### M  
-methodology
+SNA is not purely *quantitative*. SNA offers both quantitative and qualitative approaches to studying relationships, structures, and interactions. While quantitative SNA focuses on measuring and modeling network properties, qualitative SNA emphasizes the interpretation of meanings, contexts, and processes within networks.
 
-### m  
-methods/techniques
-
-Below, I try to explain these three levels of considerations:
-
-- **m**, or methods/techniques: The "small *m*" in SNA constitutes methods or techniques we apply in SNA research. Imagine we are using SNA to investigate friendship of a network of high-schoolers (think about "Gossip Girls" if you've watched that TV series). A technique in this SNA research could be a questionnaire used to collect friendship data among students; it could be the [force-directed layout](https://en.wikipedia.org/wiki/Force-directed_graph_drawing) we use to visualize this network; it could be the measure of *betweenness centrality* we use to characterize high-schoolers; it could also be a network modeling algorithm we apply to model the flow of gossips. In a nutshell, these techniques are more about **what** we concretely do in an SNA research.
-
-- **M**: When SNA is referred to as a "big *M*" Methodology, it is treated as a systematic approach of investigating a phenomenon. Beyond simply applying these techniques, a methodology is also concerned with **why** a technique gets used. In other words, understanding SNA as a methodology means learning to make informed decisions in any stage of an SNA project. For example, why using a questionnaire instead of observations or interviews? In which cases should one use a *circle layout* instead of a force-directed layout? Why a specific SNA measure is appropriate for addressing a research question? In a nutshell, the big *M* is concerned with **how** knowledge could be best gained by following many SNA methodologists and researchers have created so far. 
-
-- **P**, worldviews, philosophical schools of thoughts, paradigms: In SNA, some scholars go further to argue SNA offers a unique way of "seeing the world." In Carolan (2014) chapter 2 you will read about the **relational perspective** that represent a particular worldview that emphasizes relations instead of attributes. You will also read about **relational realism** that is referred to as an ontology grounding SNA. To a great extent, SNA offers a new research paradigm. As put by Barry Wellman, a guru in SNA from the University of Toronto, "It is a comprehensive paradigmatic way of taking social structure seriously by studying directly how patterns of ties allocate resources in a social system" (see, Carolan, 2014, p. 33).
-
-In this course, we are mostly concerned with the "big M" level. We will not dive too deep into the **P** level, and we will not settle with specific techniques. Together, we will learn how to apply various techniques to systematically produce knowledge about a phenomenon.
+Qualitative SNA explores the meaning behind network ties, social roles, and relational dynamics. It often involves interviews, ethnographic observations, and discourse analysis to complement network graphs. There are researchers who conducts mixed-methods social network analysis. For instance, a researcher first maps a teacher collaboration network in a school using SNA. After identifying key 'influencers' (high degree centrality) and isolated teachers, they conduct qualitative interviews to explore: Why some teachers are less connected? How informal conversations impact professional development? 
 
 
-## Quantitative vs qualitative research: A false dichotomy
 
-SNA was created from a rich qualitative tradition of sociology. 
+## Examples of SNA and network analysis in education
 
-While SNA provides quantitative means to characterise structures, positions, and network processes, the quality and content of network ties matter for many investigations. 
+As you start to define your course project, please spend time to search example use of network analysis in areas you are interested in. 
 
-So far in this course, we have explored various ways SNA and Network Science can help us bridge qualitative and quantitative perspectives. 
-
-## Examples of SNA in education
-
-
+To illustrate possibilities, below are three distinct examples of using SNA and word networks. As you seek to define your own project, please spend time to think about the problem you try to solve, specific questions you'd like to answer, and data that will be needed to answer these questions. Doing so will prepare you for the upcoming project pitch. 
 
 ### Integration in emerging social networks explains academic failure and success {cite}`stadtfeld2019integration`
 
