@@ -21,11 +21,11 @@ parts:
 - caption: 4. SNA Theory and Concepts
   chapters:
   - file: ch5-sna-intro
-# - caption: 6. Collect and Manage Network Data
-#   chapters:
-#   - file: ch6-collect-manage-data
-#   - file: ch6-understand-data-structures
-#   - file: ch6-network-data-handson
+- caption: 5. Collect and Manage Network Data
+  chapters:
+  - file: ch6-collect-manage-data
+  - file: ch6-understand-data-structures
+  - file: ch6-network-data-handson
 # - caption: 7. Sociograms and Density
 #   chapters:
 #   - file: ch7-sociograms-density
