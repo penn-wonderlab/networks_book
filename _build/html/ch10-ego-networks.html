@@ -207,6 +207,10 @@
 <li class="toctree-l1"><a class="reference internal" href="ch6-understand-data-structures.html">Understanding Network Data Structures</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch6-network-data-handson.html">Data Hands-on</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Sociograms and Density</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch7-sociograms-density.html">Sociograms, Density, and Network Connectivity</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
@@ -525,7 +529,7 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs deepseek&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs copilot&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs grok&#39;, &#39;chatgpt vs deepseek chess&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs gemini vs copilot&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433, 131], [512, 433, 131], [512, 433], [512, 433], [512, 433, 131], [512, 433], [512], [3], [512], [512]]}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs deepseek&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs copilot&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs grok&#39;, &#39;chatgpt vs gemini vs copilot&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs claude vs gemini&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433, 131], [512, 433], [512, 433], [512, 433], [512, 433, 131], [512, 433, 131], [512], [512], [512], [512]]}]
 </pre></div>
 </div>
 </div>
@@ -546,16 +550,15 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    source          target
-0  chatgpt        deepseek
-1  chatgpt          gemini
-2  chatgpt         copilot
-3  chatgpt          claude
-4  chatgpt          openai
-5  chatgpt      perplexity
-6  chatgpt            grok
-7  chatgpt  deepseek chess
-8  chatgpt    chatgpt plus
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    source        target
+0  chatgpt      deepseek
+1  chatgpt        gemini
+2  chatgpt       copilot
+3  chatgpt        claude
+4  chatgpt        openai
+5  chatgpt    perplexity
+6  chatgpt          grok
+7  chatgpt  chatgpt plus
 </pre></div>
 </div>
 </div>
@@ -605,10 +608,7 @@ querying perplexity
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying grok
-querying deepseek chess
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying chatgpt plus
+querying chatgpt plus
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -665,33 +665,33 @@ querying deepseek chess
       <td>...</td>
     </tr>
     <tr>
-      <th>79</th>
+      <th>78</th>
       <td>chatgpt plus</td>
       <td>business</td>
     </tr>
     <tr>
-      <th>80</th>
+      <th>79</th>
       <td>chatgpt plus</td>
       <td>copilot pro</td>
     </tr>
     <tr>
-      <th>81</th>
+      <th>80</th>
       <td>chatgpt plus</td>
       <td>chatgpt 4</td>
     </tr>
     <tr>
-      <th>82</th>
+      <th>81</th>
       <td>chatgpt plus</td>
       <td>free reddit</td>
     </tr>
     <tr>
-      <th>83</th>
+      <th>82</th>
       <td>chatgpt plus</td>
-      <td>perplexity pro</td>
+      <td>api</td>
     </tr>
   </tbody>
 </table>
-<p>84 rows × 2 columns</p>
+<p>83 rows × 2 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -705,7 +705,7 @@ querying deepseek chess
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1cabd3542f816f96b526e1fd54592d2a4eeb95818d86d04e1e8ca4cd0cd11c2d.png" src="_images/1cabd3542f816f96b526e1fd54592d2a4eeb95818d86d04e1e8ca4cd0cd11c2d.png" />
+<img alt="_images/e7e77eaf3e4c4d0e5b349d48c03e122905cc209f9cae25ef4aa68d03af59bd7f.png" src="_images/e7e77eaf3e4c4d0e5b349d48c03e122905cc209f9cae25ef4aa68d03af59bd7f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -724,10 +724,10 @@ querying deepseek chess
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
 </pre></div>
 </div>
-<img alt="_images/1624d002f579897e38ef4c74b31a0049d0fe55f6335ce870282ce9636078ee6e.png" src="_images/1624d002f579897e38ef4c74b31a0049d0fe55f6335ce870282ce9636078ee6e.png" />
+<img alt="_images/409489b72c79edb3b7acdcdfed2ba27f7d7a4d165260e73cfb41d71327d089a0.png" src="_images/409489b72c79edb3b7acdcdfed2ba27f7d7a4d165260e73cfb41d71327d089a0.png" />
 </div>
 </div>
 <p>If you’d like to build an ego network of another term – say Gemini – you can start from the ego following the same approach to cover alters and ties in the neighborhood you intend to cover.</p>
@@ -1046,11 +1046,11 @@ querying deepseek chess
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/43/_xbkk7kn1yq72t5llzy_kjz40000gq/T/ipykernel_36532/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/43/_xbkk7kn1yq72t5llzy_kjz40000gq/T/ipykernel_95070/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
   cmap = cm.get_cmap(&#39;tab10&#39;, len(groups))
 </pre></div>
 </div>
-<img alt="_images/9a89c27c95f33ecbc927ec08285017f8e1a281b11defb4bafadba18b8911a239.png" src="_images/9a89c27c95f33ecbc927ec08285017f8e1a281b11defb4bafadba18b8911a239.png" />
+<img alt="_images/72efa29f36c8f70d24b7f6e34796d02d5e164e63274f2783c128d12ae9cd6da2.png" src="_images/72efa29f36c8f70d24b7f6e34796d02d5e164e63274f2783c128d12ae9cd6da2.png" />
 </div>
 </div>
 </section>
@@ -1069,7 +1069,7 @@ querying deepseek chess
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/11b54ba3f870e17de5ff180637dd7de74bee08ac8f1cb5ca1bd1a6f676e1a459.png" src="_images/11b54ba3f870e17de5ff180637dd7de74bee08ac8f1cb5ca1bd1a6f676e1a459.png" />
+<img alt="_images/79445ff486b147a3cd16f795a6ac228efbaf2887f0a9f4e8f884c5e249a3f32d.png" src="_images/79445ff486b147a3cd16f795a6ac228efbaf2887f0a9f4e8f884c5e249a3f32d.png" />
 </div>
 </div>
 <p>We can also set radius to 2 to reach a larger neighhood of the ego.</p>
@@ -1084,7 +1084,7 @@ querying deepseek chess
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4b5bd943da00bfe9a7c4ad7d77bc309f232d961b02fc8a7559a30f381cdde450.png" src="_images/4b5bd943da00bfe9a7c4ad7d77bc309f232d961b02fc8a7559a30f381cdde450.png" />
+<img alt="_images/e0ae478fc3f8882518eae33f0b523e35f521d9a721e9f7c8640f418ec074c2d6.png" src="_images/e0ae478fc3f8882518eae33f0b523e35f521d9a721e9f7c8640f418ec074c2d6.png" />
 </div>
 </div>
 <p>Because the sample network is dense, the ego network gets large quickly when increasing the radius.</p>

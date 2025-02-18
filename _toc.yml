@@ -26,9 +26,9 @@ parts:
   - file: ch6-collect-manage-data
   - file: ch6-understand-data-structures
   - file: ch6-network-data-handson
-# - caption: 7. Sociograms and Density
-#   chapters:
-#   - file: ch7-sociograms-density
+- caption: 7. Sociograms and Density
+  chapters:
+  - file: ch7-sociograms-density
 # - caption: 8. Centrality and Centralization
 #   chapters:
 #   - file: ch8-centrality-positions
