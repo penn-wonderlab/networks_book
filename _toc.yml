@@ -26,19 +26,19 @@ parts:
   - file: ch6-collect-manage-data
   - file: ch6-understand-data-structures
   - file: ch6-network-data-handson
-- caption: 7. Sociograms and Density
+- caption: 6. Sociograms and Density
   chapters:
   - file: ch7-sociograms-density
-# - caption: 8. Centrality and Centralization
-#   chapters:
-#   - file: ch8-centrality-positions
-# - caption: 9. Components, Cliques, Communities
+- caption: 7. Centrality and Centralization
+  chapters:
+  - file: ch8-centrality-positions
+# - caption: 8. Components, Cliques, Communities
 #   chapters:
 #   - file: ch9-components
-# - caption: 10. Ego Networks
+# - caption: 9. Ego Networks
 #   chapters:
 #   - file: ch10-ego-networks
-# - caption: 11. Cognitive and Semantic Networks
+# - caption: 10. Cognitive and Semantic Networks
 #   chapters:
 #   - file: ch11-cognitive-semantic-networks
 # - caption: 12. Network Dynamics and Temporality
