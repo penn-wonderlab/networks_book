@@ -32,9 +32,9 @@ parts:
 - caption: 7. Centrality and Centralization
   chapters:
   - file: ch8-centrality-positions
-# - caption: 8. Components, Cliques, Communities
-#   chapters:
-#   - file: ch9-components
+- caption: 8. Components, Cliques, Communities
+  chapters:
+  - file: ch9-components
 # - caption: 9. Ego Networks
 #   chapters:
 #   - file: ch10-ego-networks
