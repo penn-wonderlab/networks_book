@@ -35,9 +35,9 @@ parts:
 - caption: 8. Components, Cliques, Communities
   chapters:
   - file: ch9-components
-# - caption: 9. Ego Networks
-#   chapters:
-#   - file: ch10-ego-networks
+- caption: 9. Ego Networks
+  chapters:
+  - file: ch10-ego-networks
 # - caption: 10. Cognitive and Semantic Networks
 #   chapters:
 #   - file: ch11-cognitive-semantic-networks
