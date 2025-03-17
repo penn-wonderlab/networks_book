@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch10-ego-networks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="Components, Cliques, Communities" href="ch9-components.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,8 +123,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -218,6 +218,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Components, Cliques, Communities</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch9-components.html">Components, Cliques, Communities</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Ego Networks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ego Networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
 <ul class="nav bd-sidenav">
@@ -537,7 +541,7 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs deepseek&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs copilot&#39;, &#39;chatgpt vs grok&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs gemini vs copilot&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs stockfish&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433], [512, 433], [512, 433], [512, 433, 131], [512, 433, 131], [512], [512, 433], [512], [512], [512]]}]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;chatgpt vs &#39;, [&#39;chatgpt vs deepseek&#39;, &#39;chatgpt vs gemini&#39;, &#39;chatgpt vs grok&#39;, &#39;chatgpt vs copilot&#39;, &#39;chatgpt vs claude&#39;, &#39;chatgpt vs openai&#39;, &#39;chatgpt vs perplexity&#39;, &#39;chatgpt vs gemini vs copilot&#39;, &#39;chatgpt vs chatgpt plus&#39;, &#39;chatgpt vs claude for coding&#39;], [], {&#39;google:suggestsubtypes&#39;: [[512, 433], [512, 433], [512, 433, 131], [512, 433], [512, 433], [512], [512], [512], [512], [512]]}]
 </pre></div>
 </div>
 </div>
@@ -558,16 +562,16 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    source        target
-0  chatgpt      deepseek
-1  chatgpt        gemini
-2  chatgpt       copilot
-3  chatgpt          grok
-4  chatgpt        claude
-5  chatgpt        openai
-6  chatgpt    perplexity
-7  chatgpt  chatgpt plus
-8  chatgpt     stockfish
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    source             target
+0  chatgpt           deepseek
+1  chatgpt             gemini
+2  chatgpt               grok
+3  chatgpt            copilot
+4  chatgpt             claude
+5  chatgpt             openai
+6  chatgpt         perplexity
+7  chatgpt       chatgpt plus
+8  chatgpt  claude for coding
 </pre></div>
 </div>
 </div>
@@ -608,28 +612,17 @@ Below, James Cook -- a sociology professor we've been watching -- nicely explain
 querying gemini
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying copilot
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying grok
+querying copilot
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying claude
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying openai
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying perplexity
+querying openai
+querying perplexity
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying chatgpt plus
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>querying stockfish
+querying claude for coding
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -668,12 +661,12 @@ querying gemini
     <tr>
       <th>2</th>
       <td>chatgpt</td>
-      <td>copilot</td>
+      <td>grok</td>
     </tr>
     <tr>
       <th>3</th>
       <td>chatgpt</td>
-      <td>grok</td>
+      <td>copilot</td>
     </tr>
     <tr>
       <th>4</th>
@@ -686,33 +679,33 @@ querying gemini
       <td>...</td>
     </tr>
     <tr>
-      <th>88</th>
-      <td>stockfish</td>
-      <td>torch</td>
+      <th>78</th>
+      <td>chatgpt plus</td>
+      <td>copilot pro</td>
     </tr>
     <tr>
-      <th>89</th>
-      <td>stockfish</td>
-      <td>mittens</td>
+      <th>79</th>
+      <td>chatgpt plus</td>
+      <td>pro reddit</td>
     </tr>
     <tr>
-      <th>90</th>
-      <td>stockfish</td>
-      <td>leela 2024</td>
+      <th>80</th>
+      <td>chatgpt plus</td>
+      <td>deepseek</td>
     </tr>
     <tr>
-      <th>91</th>
-      <td>stockfish</td>
-      <td>alphazero 2024</td>
+      <th>81</th>
+      <td>chatgpt plus</td>
+      <td>perplexity pro</td>
     </tr>
     <tr>
-      <th>92</th>
-      <td>stockfish</td>
-      <td>lc0</td>
+      <th>82</th>
+      <td>claude for coding</td>
+      <td>chatgpt</td>
     </tr>
   </tbody>
 </table>
-<p>93 rows × 2 columns</p>
+<p>83 rows × 2 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -726,7 +719,7 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5dd68139bf79c367f2518ea55ef7735c26cad15f2d5d771083d7741621cddf63.png" src="_images/5dd68139bf79c367f2518ea55ef7735c26cad15f2d5d771083d7741621cddf63.png" />
+<img alt="_images/0a35566da67c0c466c6361264ac74415f60f16a15c72570423c0406fc0f8d207.png" src="_images/0a35566da67c0c466c6361264ac74415f60f16a15c72570423c0406fc0f8d207.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -748,7 +741,7 @@ querying gemini
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27
 </pre></div>
 </div>
-<img alt="_images/7d2a98a37ca1e2f2406c2b314a69b9b1514abf0456c3c44ff4c72991b61bfac6.png" src="_images/7d2a98a37ca1e2f2406c2b314a69b9b1514abf0456c3c44ff4c72991b61bfac6.png" />
+<img alt="_images/21410b22974a16846c06561f532b2ee5ec4f2946182520e68e691943fd8661ac.png" src="_images/21410b22974a16846c06561f532b2ee5ec4f2946182520e68e691943fd8661ac.png" />
 </div>
 </div>
 <p>If you’d like to build an ego network of another term – say Gemini – you can start from the ego following the same approach to cover alters and ties in the neighborhood you intend to cover.</p>
@@ -1067,11 +1060,11 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/43/_xbkk7kn1yq72t5llzy_kjz40000gq/T/ipykernel_77244/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/43/_xbkk7kn1yq72t5llzy_kjz40000gq/T/ipykernel_72705/3968682777.py:8: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
   cmap = cm.get_cmap(&#39;tab10&#39;, len(groups))
 </pre></div>
 </div>
-<img alt="_images/ade0220dfadefb574a8d98a22c9ed8d595d4e63d25d9a5a1429fef89e73ec216.png" src="_images/ade0220dfadefb574a8d98a22c9ed8d595d4e63d25d9a5a1429fef89e73ec216.png" />
+<img alt="_images/ec7ca9a99251fc67156f5e1492db8695e94f8d0baaa384c3dd2c544d4884d3af.png" src="_images/ec7ca9a99251fc67156f5e1492db8695e94f8d0baaa384c3dd2c544d4884d3af.png" />
 </div>
 </div>
 </section>
@@ -1090,7 +1083,7 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/70bda9355f99717d2627fbd3ec5c618aa74b0c6c2b982c34d2047f3999fc3104.png" src="_images/70bda9355f99717d2627fbd3ec5c618aa74b0c6c2b982c34d2047f3999fc3104.png" />
+<img alt="_images/4649d541d3e66329e1d43cc9d2d7cee754451f60f9f8b8cb30d9eb89e02e3e24.png" src="_images/4649d541d3e66329e1d43cc9d2d7cee754451f60f9f8b8cb30d9eb89e02e3e24.png" />
 </div>
 </div>
 <p>We can also set radius to 2 to reach a larger neighhood of the ego.</p>
@@ -1105,7 +1098,7 @@ querying gemini
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3d658a0155ec76a15d20e8b730a64b5bd92381b8adb4939501c106b147c8601c.png" src="_images/3d658a0155ec76a15d20e8b730a64b5bd92381b8adb4939501c106b147c8601c.png" />
+<img alt="_images/82bf1481ec1731a702676b26c5824ddec8e5b51f98532b390077e8a5c76cd62e.png" src="_images/82bf1481ec1731a702676b26c5824ddec8e5b51f98532b390077e8a5c76cd62e.png" />
 </div>
 </div>
 <p>Because the sample network is dense, the ego network gets large quickly when increasing the radius.</p>
@@ -1144,6 +1137,24 @@ querying gemini
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="ch9-components.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Components, Cliques, Communities</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="bibliography.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
