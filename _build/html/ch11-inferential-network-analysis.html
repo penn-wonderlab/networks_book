@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Cognitive and Semantic Networks &#8212; Applied Network Analysis in Learning</title>
+    <title>Inferential Network Analysis &#8212; Applied Network Analysis in Learning</title>
   
   
   
@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'ch11-inferential-network-analysis';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bibliography" href="bibliography.html" />
+    <link rel="prev" title="Cognitive and Semantic Networks" href="ch11-cognitive-semantic-networks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,8 +123,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -226,6 +226,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">10. Cognitive and Semantic Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch11-cognitive-semantic-networks.html">Cognitive and Semantic Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">11. Inferential Network Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inferential Network Analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
 <ul class="nav bd-sidenav">
@@ -415,7 +419,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Cognitive and Semantic Networks</h1>
+    <h1>Inferential Network Analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,7 +430,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-exploration">Tool Exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-inferential-network-analysis">Why Inferential Network Analysis?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-random-graph-models-ergms">Exponential Random Graph Models (ERGMs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-ergm-analysis">Running ERGM analysis</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -438,25 +446,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cognitive-and-semantic-networks">
-<h1>Cognitive and Semantic Networks<a class="headerlink" href="#cognitive-and-semantic-networks" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="inferential-network-analysis">
+<h1>Inferential Network Analysis<a class="headerlink" href="#inferential-network-analysis" title="Link to this heading">#</a></h1>
 <section id="readings">
 <h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Stella, M. (2022). Network psychometrics and cognitive network science open new ways for understanding math anxiety as a complex system. Journal of Complex Networks, 10(3), cnac012. <a class="reference external" href="https://doi.org/10.1093/comnet/cnac012">https://doi.org/10.1093/comnet/cnac012</a></p></li>
-<li><p>Siew, C. S. Q., Wulff, D. U., Beckage, N. M., &amp; Kenett, Y. N. (2019). Cognitive Network Science: A Review of Research on Cognition through the Lens of Network Representations, Processes, and Dynamics. Complexity, 2019, e2108423. <a class="reference external" href="https://doi.org/10.1155/2019/2108423">https://doi.org/10.1155/2019/2108423</a></p></li>
-<li><p>Oshima, J., Oshima, R., &amp; Fujita, W. (2018). A Mixed-Methods Approach to Analyze Shared Epistemic Agency in Jigsaw Instruction at Multiple Scales of Temporality. Journal of Learning Analytics, 5(1), Article 1. <a class="reference external" href="https://doi.org/10.18608/jla.2018.51.2">https://doi.org/10.18608/jla.2018.51.2</a></p></li>
+<li><p>Robins, G., Pattison, P., Kalish, Y., &amp; Lusher, D. (2007). An introduction to exponential random graph (p*) models for social networks. Social Networks, 29(2), 173–191. <a class="reference external" href="https://doi.org/10.1016/j.socnet.2006.08.002">https://doi.org/10.1016/j.socnet.2006.08.002</a></p></li>
+<li><p>Del Valle, M. E., Gruzd, A., Kumar, P., &amp; Gilbert, S. (2020). Learning in the Wild: Understanding Networked Ties in Reddit. In Mobility, Data and Learner Agency in Networked Learning (pp. 51–68). Springer, Cham. <a class="reference external" href="https://doi.org/10.1007/978-3-030-36911-8_4">https://doi.org/10.1007/978-3-030-36911-8_4</a></p></li>
 </ul>
 </section>
-<section id="tool-exploration">
-<h2>Tool Exploration<a class="headerlink" href="#tool-exploration" title="Link to this heading">#</a></h2>
-<p>This week, you are encouraged to explore various tools that can be used for text network analysis.</p>
-<ul class="simple">
-<li><p>A no-code <a class="reference external" href="https://nocodefunctions.com/cowo/semantic_networks_tool.html">free tool to turn your texts into semantic graphs</a></p></li>
-<li><p><a class="reference external" href="https://infranodus.com/">InfraNodus</a> is a network thinking tool that reveals the relations and patterns in data</p></li>
-</ul>
-<p>Of course, you can use Python packages to develop even more advanced workflows.</p>
-<p>Please share what you learn back to the class.</p>
+<section id="why-inferential-network-analysis">
+<h2>Why Inferential Network Analysis?<a class="headerlink" href="#why-inferential-network-analysis" title="Link to this heading">#</a></h2>
+<p><strong>Inferential network analysis</strong> is a powerful approach for drawing conclusions about the processes that generate network ties. Instead of simply describing an observed network through measures like centrality or clustering, inferential methods ask <em>why</em> certain ties occur and how local structures can help explain global patterns. When properly applied, these methods can demonstrate whether, for instance, the network shows more reciprocity or clustering (triangles) than we would anticipate by chance, and they can compare multiple theories of tie formation.</p>
+<p>Several types of inferential network analysis methods exist. <strong>Latent space modeling</strong> places nodes in a high- or low-dimensional space and presumes that ties are more likely between nodes that lie close to each other. This approach is often effective in uncovering hidden groups or communities when node-level attributes do not fully capture the factors driving tie formation. Other approaches, such as <strong>Stochastic Blockmodels</strong>, group nodes into blocks or clusters and estimate probabilities of edges within and between blocks. Still others, like <strong>Stochastic Actor-Oriented Models</strong> or <strong>temporal ERGMs</strong>, explicitly incorporate time and allow us to track evolving ties. Each framework combines statistical inference with structural theory, granting researchers a principled way to test hypotheses on how local interaction rules shape overall connectivity.</p>
+</section>
+<section id="exponential-random-graph-models-ergms">
+<h2>Exponential Random Graph Models (ERGMs)<a class="headerlink" href="#exponential-random-graph-models-ergms" title="Link to this heading">#</a></h2>
+<p><strong>Exponential Random Graph Models (ERGMs)</strong> is a popular method in inferential network analysis. They conceptualize each possible tie as a random variable, guided by hypothesized local configurations or node attributes. For example, researchers may posit that if actor A is connected to actor B, and actor B is connected to actor C, then there is an increased likelihood of a tie between A and C (transitivity). In addition to these endogenous tendencies, exogenous actor covariates (like gender or organizational role) can also be incorporated.</p>
+<p>Robins et al. (2007) provide detailed introduction to ERGMs. They explain how these models leverage local dependence assumptions, describes typical network configurations (such as reciprocated dyads or star configurations), and outlines parameter interpretation.</p>
+<p>Del Valle et al. (2020) provide a concrete example, by examining how certain network effects shaped the creation of learning-oriented conversations in online communities.</p>
+<section id="running-ergm-analysis">
+<h3>Running ERGM analysis<a class="headerlink" href="#running-ergm-analysis" title="Link to this heading">#</a></h3>
+<p>In practice, fitting an ERGM involves defining the network data (such as a binary adjacency matrix for all nodes) and selecting terms that represent your hypotheses. If the research question involves reciprocity, then you include a mutual dyad parameter; if triadic closure is important, you include a triangle parameter. You can also include node-level covariates if you believe that certain attributes—like age, occupation, or forum moderator status—affect tie formation.</p>
+<p>After specifying the model, researchers typically use Markov chain Monte Carlo maximum likelihood procedures to estimate parameters. This step requires software that can handle the inherent complexity of ERGMs, such as the <code class="docutils literal notranslate"><span class="pre">ergm</span></code> package in the <code class="docutils literal notranslate"><span class="pre">statnet</span></code> suite for R. During estimation, one must watch for degeneracy, which occurs when a model places most of its probability mass on either an empty or a complete network. It is also essential to validate the model by simulating networks from the fitted parameters and comparing their global characteristics (like degree distribution or clustering) to those of the observed data.</p>
+<p>Interpreting and refining the model is a natural final stage. Large, positive parameter estimates for reciprocity or triangles suggest that such local structures are more frequent than chance would imply. Negative parameters would mean the opposite. Researchers often iterate by adding or removing parameters, or by refining how attributes are coded, until the model fits well and aligns with theoretical expectations.</p>
+<p>This course does not require students to fit ERGMs. However, you are encouraged to seek additional resources if this topic is of interest to you.</p>
+</section>
 </section>
 </section>
 
@@ -490,6 +505,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="ch11-cognitive-semantic-networks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cognitive and Semantic Networks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="bibliography.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -507,7 +540,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-exploration">Tool Exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-inferential-network-analysis">Why Inferential Network Analysis?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-random-graph-models-ergms">Exponential Random Graph Models (ERGMs)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-ergm-analysis">Running ERGM analysis</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

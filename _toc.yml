@@ -41,9 +41,9 @@ parts:
 - caption: 10. Cognitive and Semantic Networks
   chapters:
   - file: ch11-cognitive-semantic-networks
-# - caption: 11. Inferential Network Analysis
-#   chapters:
-#   - file: ch11-inferential-network-analysis
+- caption: 11. Inferential Network Analysis
+  chapters:
+  - file: ch11-inferential-network-analysis
 # - caption: 12. Network Dynamics and Temporality
 #   chapters:
 #   - file: ch12-network-dynamics
