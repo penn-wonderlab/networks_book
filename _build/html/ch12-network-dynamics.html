@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Network Dynamics and Temporality &#8212; Applied Network Analysis in Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch12-network-dynamics';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Applied Network Analysis in Learning - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Applied Network Analysis in Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">0. Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1-intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1-setup-colab.html">Use Jupyter Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Networks in Learning Analytics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch2-networks-la.html">Networks in Learning Analytics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Learning in Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch3-learning-in-networks.html">Learning in networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Network Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. SNA Theory and Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch5-sna-intro.html">Social Network Analysis: Theory and Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Collect and Manage Network Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch6-collect-manage-data.html">Collect and Manage Network Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6-understand-data-structures.html">Understanding Network Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6-network-data-handson.html">Data Hands-on</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Sociograms and Density</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch7-sociograms-density.html">Sociograms, Density, and Network Connectivity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Centrality and Centralization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch8-centrality-positions.html">Positions and Influence</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Components, Cliques, Communities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch9-components.html">Components, Cliques, Communities</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Ego Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch10-ego-networks.html">Ego Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">10. Cognitive and Semantic Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch11-cognitive-semantic-networks.html">Cognitive and Semantic Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch12-network-dynamics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch12-network-dynamics.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Network Dynamics and Temporality</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-network-dynamics">Getting started with network dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-temporality-in-networks-matters">Why temporality in networks matters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-considering-time-in-networks">Approaches to considering time in networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-temporal-network-analysis">Tools for temporal network analysis</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="network-dynamics-and-temporality">
+<h1>Network Dynamics and Temporality<a class="headerlink" href="#network-dynamics-and-temporality" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>It’s About Time!</p>
+</div></blockquote>
+<p>So far in this class we’ve been mostly working with <code class="docutils literal notranslate"><span class="pre">static</span></code> networks or <code class="docutils literal notranslate"><span class="pre">snapshots</span></code> of dynamic networks. That’s enough for most of our needs.</p>
+<p>However, many networks are dynamic in nature. One important use of network analysis is to understand how a network would function – and evolve – given its current structure. Such a question is genuinely about network dynamics.</p>
+<p>In this week, we will:</p>
+<ul class="simple">
+<li><p>Explore ways to conceptual temporality in SNA (and network analysis in general)</p></li>
+<li><p>Learn how to construct temporal networks</p></li>
+<li><p>Learn approaches to visualizing and analyzing temporal networks</p></li>
+<li><p>Explore potential applications of temporal SNA to our projects</p></li>
+</ul>
+<p><strong>Note</strong>: You may see people using different words <em>temporal</em>, <em>dynamic</em>,  <em>longitudinal</em> interchangeably to describe social networks.</p>
+<section id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Stehlé, J., Voirin, N., Barrat, A., Cattuto, C., Isella, L., Pinton, J.-F., Quaggiotto, M., Broeck, W. V. den, Régis, C., Lina, B., &amp; Vanhems, P. (2011). High-Resolution Measurements of Face-to-Face Contact Patterns in a Primary School. PLOS ONE, 6(8), e23176. <a class="reference external" href="https://doi.org/10.1371/journal.pone.0023176">https://doi.org/10.1371/journal.pone.0023176</a></p></li>
+<li><p>Pilny, A., Schecter, A., Poole, M. S., &amp; Contractor, N. (2016). An illustration of the relational event model to analyze group interaction processes. Group Dynamics: Theory, Research, and Practice, 20(3), 181–195. <a class="reference external" href="https://doi.org/10.1037/gdn0000042">https://doi.org/10.1037/gdn0000042</a></p></li>
+</ol>
+</section>
+<section id="getting-started-with-network-dynamics">
+<h2>Getting started with network dynamics<a class="headerlink" href="#getting-started-with-network-dynamics" title="Link to this heading">#</a></h2>
+<section id="why-temporality-in-networks-matters">
+<h3>Why temporality in networks matters?<a class="headerlink" href="#why-temporality-in-networks-matters" title="Link to this heading">#</a></h3>
+<p>Watch a video below (also <a class="reference external" href="https://www.coursera.org/learn/model-thinking/lecture/1qEBU/schellings-segregation-model">link here</a>) about the <strong>Schelling’s Segregation Model</strong> <span id="id1">[<a class="reference internal" href="bibliography.html#id12" title="Thomas C Schelling. Models of Segregation. The American economic review, 59(2):488–493, 1969.">Schelling, 1969</a>]</span> to understand the importance of understanding network dynamics.</p>
+<video controls width="100%">
+<source src="https://d3c33hcgiwev3.cloudfront.net/L2B_Cropped.6e7e92c0648e11e4b597fd570fa7692c/full/360p/index.webm?Expires=1712188800&Signature=gXrxd4iuCKuNYY5X1WDI8zT~oXtckJh88Gs5eAuD7N~9KxTujCHDKdXyHNjSaghG01ZF5m~gM6E~icxwvy3fFUsjm2jxRAK0S371iUFjYo3-Ziu0AgCM~TjbIjEcLzucLcAVrlrXqacek~ZaZhkkaYbnmOYzmcvy1ryl1mkTgrM_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" type="video/webm">
+<source src="https://d3c33hcgiwev3.cloudfront.net/L2B_Cropped.6e7e92c0648e11e4b597fd570fa7692c/full/360p/index.webm?Expires=1712188800&Signature=gXrxd4iuCKuNYY5X1WDI8zT~oXtckJh88Gs5eAuD7N~9KxTujCHDKdXyHNjSaghG01ZF5m~gM6E~icxwvy3fFUsjm2jxRAK0S371iUFjYo3-Ziu0AgCM~TjbIjEcLzucLcAVrlrXqacek~ZaZhkkaYbnmOYzmcvy1ryl1mkTgrM_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" type="video/mp4">
+</video>
+<p>To further explore the Schelling’s Segregation Model:</p>
+<ol class="arabic simple">
+<li><p>Open <a class="reference external" href="http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/">http://nifty.stanford.edu/2014/mccown-schelling-model-segregation/</a></p></li>
+<li><p>Adjust Similarity threshold to 50% –&gt; Record rounds</p></li>
+<li><p>Adjust Similarity threshold to 75% –&gt; Record rounds</p></li>
+</ol>
+<p>How is the model related to network dynamics?</p>
+<img src="https://bookdown.org/chen/snaEd/images/schelling.gif" width="480px" />
+</section>
+<section id="approaches-to-considering-time-in-networks">
+<h3>Approaches to considering time in networks<a class="headerlink" href="#approaches-to-considering-time-in-networks" title="Link to this heading">#</a></h3>
+<p>Temporal information is reflected in networks in several ways:</p>
+<ul class="simple">
+<li><p>Timestamp of an event (when)</p></li>
+<li><p>Duration of an event (how long)</p></li>
+<li><p>Frequency of of events (how often)</p></li>
+<li><p>Time-order / contingency of events (in which temporal order)</p></li>
+</ul>
+<p>There are multiple ways to consider temporal information in network analysis:</p>
+<p><strong>1. Time‐aggregated networks</strong></p>
+<p>Consider email correspondences among members of an organization. Each week, members of the organization send each other emails. Each email has a timestamp and is directed from one member to one or several members. To generate <em>time‐aggregated networks</em>, one subsets the full record of email exchanges at different start and stop time points and retain any interactions that begin or stop within the window. One straightforward example is to create aggregate email interactions by week and create weekly aggregated networks. By doing so, one can then compare time-aggregated networks across weeks.</p>
+<p>A slightly more complex example of time-aggregated networks is to apply a <em>sliding window</em> on the dataset. To get a sense of how it works, click on the ‘Play’ button of the interactive visualization on <a class="reference external" href="https://bookdown.org/chen/snaEd/assets/file70664c4ffc8d.html">this page</a>. The slider/window will begin to slide rightward, while the window size remains constant. Each snappost you see is a time-aggregated network within its corresponding window.</p>
+<!-- <iframe src="img/file70664c4ffc8d.html" style="width:100%; height:400px;"></iframe> -->
+<p>The sliding window approach can be further enriched. According to <span id="id2">[<a class="reference internal" href="bibliography.html#id13" title="P Gloor, Rob Laubacher, Yan Zhao, and S Dynes. Temporal visualization and analysis of social networks. In NAACSOS Conference, June, 27–29. Citeseer, 2004.">Gloor <em>et al.</em>, 2004</a>]</span>, instead of strictly restricting to events within a time window, you can choose to incorporate information about previous events to each time window. This technique is akin to adding a memory to the time-aggregated networks.</p>
+<!-- <img src="img/gloor-2004-fig1.png" width="80%"/> -->
+<p><img alt="" src="_images/gloor-2004-fig1.png" /></p>
+<!-- <img src="img/gloor-2004-fig2.png" width="80%"/> -->
+<p><img alt="" src="_images/gloor-2004-fig2.png" /></p>
+<p><strong>2. Time‐ordered networks</strong></p>
+<p>According to <span id="id3">[<a class="reference internal" href="bibliography.html#id14" title="Benjamin Blonder, Tina W. Wey, Anna Dornhaus, Richard James, and Andrew Sih. Temporal dynamics and network analysis. Methods in Ecology and Evolution, 3(6):958–972, 2012. doi:10.1111/j.2041-210X.2012.00236.x.">Blonder <em>et al.</em>, 2012</a>]</span>, “Time‐ordered networks represent data observed for a set of interactions that occur at certain times, thereby retaining complete information on the ordering, duration and timing of events.”</p>
+<p>This approach retains more detailed temporal information and can be used to answer various questions about flow dynamics. You can read more in <span id="id4">[]</span> if interested.</p>
+<p><strong>3. SNA measures with ‘a temporal flavor’</strong></p>
+<p>SNA concepts and measures we have explored so far can be extended to temporal networks.</p>
+<p>See the following example from <span id="id5">[<a class="reference internal" href="bibliography.html#id15">Mascolo, 2013</a>]</span>. If it is a static network (the lower-right corner), the shortest path between <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> is <code class="docutils literal notranslate"><span class="pre">[A,</span> <span class="pre">B,</span> <span class="pre">D,</span> <span class="pre">E,</span> <span class="pre">G]</span></code>. When we consider the temporal network (see the time-sliced network above), A needs to go through <code class="docutils literal notranslate"><span class="pre">C</span></code> at time 2 in order to reach <code class="docutils literal notranslate"><span class="pre">G</span></code>; at time 3, the direct path between <code class="docutils literal notranslate"><span class="pre">E</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> is no longer available and <code class="docutils literal notranslate"><span class="pre">E</span></code> needs to go through <code class="docutils literal notranslate"><span class="pre">F</span></code> to reach <code class="docutils literal notranslate"><span class="pre">G</span></code>. As a result, the temporal shorted path between <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">G</span></code> becomes <code class="docutils literal notranslate"><span class="pre">[A,</span> <span class="pre">C,</span> <span class="pre">B,</span> <span class="pre">D,</span> <span class="pre">E,</span> <span class="pre">F,</span> <span class="pre">G]</span></code>.</p>
+<p>This is just one example concept that requires reconsideration in temporal networks.</p>
+<p><img alt="" src="_images/Mascolo-2013.png" /></p>
+</section>
+<section id="tools-for-temporal-network-analysis">
+<h3>Tools for temporal network analysis<a class="headerlink" href="#tools-for-temporal-network-analysis" title="Link to this heading">#</a></h3>
+<p>In Python, the <strong><a class="reference external" href="https://pypi.org/project/networkx-temporal/">networkx-temporal</a></strong> package extends NetworkX functions for dynamic/temporal networks.</p>
+<p>If interested, please seek relevant tutorials and learn to work with temporal networks by yourself.</p>
+<p>In R, there are a number of packages, such as <code class="docutils literal notranslate"><span class="pre">networkDynamic</span></code>, <code class="docutils literal notranslate"><span class="pre">tsna</span></code>, and <code class="docutils literal notranslate"><span class="pre">ndtv</span></code>, which are very useful for temporal network analysis and visualization.</p>
+<p>If you are interested, check out this amazing tutorial about <a class="reference external" href="https://programminghistorian.org/en/lessons/temporal-network-analysis-with-r">Temporal Network Analysis with R</a>.</p>
+<p>In addition, novel social network analysis methods such as relational event modeling (REM) are powerful for analyzing moment-to-moment event data. You will learn more about REM in this week’s readings.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#readings">Readings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-network-dynamics">Getting started with network dynamics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-temporality-in-networks-matters">Why temporality in networks matters?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approaches-to-considering-time-in-networks">Approaches to considering time in networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-temporal-network-analysis">Tools for temporal network analysis</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bodong Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

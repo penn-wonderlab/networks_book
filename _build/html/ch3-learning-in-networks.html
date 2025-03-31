@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Learning in networks &#8212; Applied Network Analysis in Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch3-learning-in-networks';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Network Science" href="ch4-network-science.html" />
+    <link rel="prev" title="Networks in Learning Analytics" href="ch2-networks-la.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Applied Network Analysis in Learning - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Applied Network Analysis in Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">0. Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch1-intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1-setup-colab.html">Use Jupyter Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">1. Networks in Learning Analytics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch2-networks-la.html">Networks in Learning Analytics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2. Learning in Networks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Learning in networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">3. Network Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch4-network-science.html">Network Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch4-lab-read-data-1.html">Getting Started with Network Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">4. SNA Theory and Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch5-sna-intro.html">Social Network Analysis: Theory and Concepts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">5. Collect and Manage Network Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch6-collect-manage-data.html">Collect and Manage Network Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6-understand-data-structures.html">Understanding Network Data Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch6-network-data-handson.html">Data Hands-on</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">6. Sociograms and Density</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch7-sociograms-density.html">Sociograms, Density, and Network Connectivity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">7. Centrality and Centralization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch8-centrality-positions.html">Positions and Influence</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">8. Components, Cliques, Communities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch9-components.html">Components, Cliques, Communities</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">9. Ego Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch10-ego-networks.html">Ego Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">10. Cognitive and Semantic Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch11-cognitive-semantic-networks.html">Cognitive and Semantic Networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Biblography</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/penn-wonderlab/networks_book/issues/new?title=Issue%20on%20page%20%2Fch3-learning-in-networks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ch3-learning-in-networks.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Learning in networks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-ideas-about-networks">Basic ideas about networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Learning in networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theories-of-learning-in-networks">Theories of learning in networks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p">P</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m">M</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">m</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="learning-in-networks">
+<h1>Learning in networks<a class="headerlink" href="#learning-in-networks" title="Link to this heading">#</a></h1>
+<section id="basic-ideas-about-networks">
+<h2>Basic ideas about networks<a class="headerlink" href="#basic-ideas-about-networks" title="Link to this heading">#</a></h2>
+<p>Extending our discussions in the past week, I created a video to elaborate on a number of basic ideas about networks and social networks.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MoVtUVzLS-k?si=0BlYpaHdBybJUK3T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+<section id="id1">
+<h2>Learning in networks<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>This week, we are focused on thinking about learning in or through networks.</p>
+<p>The use of network analysis to examine learning needs to be informed by theories of learning and contexts in which learning happens.</p>
+<p>During this week, you are engaged to explore several different theories that emphasize a “network worldview” and are widely applied to guide network analysis.</p>
+<p>Required readings:</p>
+<ul class="simple">
+<li><p>Haythornthwaite, C. (2015). Rethinking learning spaces: Networks, structures, and possibilities for learning in the twenty-first century. Communication Research and Practice, 1(4), 292–306. <a class="reference external" href="https://doi.org/10.1080/22041451.2015.1105773">https://doi.org/10.1080/22041451.2015.1105773</a></p></li>
+<li><p>Jones, C. (2015). Networked learning: An educational paradigm for the age of digital networks (Ch. 3). Springer International Publishing. <a class="reference external" href="https://doi.org/10.1007/978-3-319-01934-5">https://doi.org/10.1007/978-3-319-01934-5</a></p></li>
+<li><p>Poquet, O., &amp; Chen, B. (2024). Integrating Theories of Learning and Social Networks in Learning Analytics. In K. Bartimote, S. K. Howard, &amp; D. Gašević (Eds.), Theory Informing and Arising from Learning Analytics (pp. 139–151). Springer Nature Switzerland. <a class="reference external" href="https://doi.org/10.1007/978-3-031-60571-0_9">https://doi.org/10.1007/978-3-031-60571-0_9</a></p></li>
+</ul>
+<section id="theories-of-learning-in-networks">
+<h3>Theories of learning in networks<a class="headerlink" href="#theories-of-learning-in-networks" title="Link to this heading">#</a></h3>
+<p>Network analysis of learning does not necessitate network-based theories of learning. For example, researchers can assess a learner’s knowledge by analyzing concept maps generated by students <span id="id2">[<a class="reference internal" href="bibliography.html#id2" title="Cynthia S.Q. Siew. Using network science to analyze concept maps of psychology undergraduates. Applied Cognitive Psychology, 33(4):662–668, 2019. doi:10.1002/acp.3484.">Siew, 2019</a>]</span>. This use of network analysis does not involve consideration of learning in or through networks.</p>
+<p>However, there are learning theories that conceptualize learning from a network perspective. In other words, they have distint opinions about how learning is fundamentally a network process, how networks support learning, and/or  how learning shapes networks. Exploring these theoretical ideas would help in two ways:</p>
+<ol class="arabic simple">
+<li><p>Theories of learning would help unleash the full potential of network analysis. While network analysis techniques are helpful, theories of learning that bring a network perspective provide additional tools for network analysts to grapple with the learning phenonemon.</p></li>
+<li><p>Theories of learning would provide grounding for network construction. As explained in Haythornthwaite (2015) and Poquet &amp; Chen (in press), constructing networks from learning data is not always straightforward. Theories of learning offer guidance and justification for the construciton of network models to represent learning.</p></li>
+</ol>
+<p>As illustrated by this figure from Poquet &amp; Chen (2024), a social network of learners can be constructed in different ways based on distinctive views of learning including knowledge building, networked learning, and connectivism.</p>
+<p>At the core of each network model, we ask: What is about the <em>generative processes of learning</em> according to the network-based view of learning? The answer to this question differs across these three theories.</p>
+<ul class="simple">
+<li><p>Knowledge building emphasizes the interaction between ideas and people</p></li>
+<li><p>Networked learning cares about content relationships and and situations where they form</p></li>
+<li><p>Connectivism considers learning as connecting, and cares the “pipe” more than “content in the pipe”</p></li>
+</ul>
+<p><img alt="" src="_images/wk3-models.png" /></p>
+</section>
+</section>
+<section id="three-levels-of-consideration-when-applying-network-analysis-to-learning">
+<h2>Three levels of consideration when applying network analysis to learning<a class="headerlink" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning" title="Link to this heading">#</a></h2>
+<!-- - P: philosophy, worldviews, paradigms. This level is about how we think about "what is real" and "how people examine reality". These questions apply to analysis of learning.
+- M (big M): methodology. This level deals with a *systematic* body of knowledge that provide general research strategies to guide a research project. A methodology intends to coordinate every step of the process, e.g., sampling, data collection, analysis, reporting. 
+- m (small m): methods/techniques. A method is a way of reaching some predefined goal. One example of using network analysis as a method is to simply use a centrality measure to depict students in a social network.  -->
+<p>Our discussion is aluding to three levels of considerations that researchers often need to be aware of. You could find more information in text such as <span id="id3">[<a class="reference internal" href="bibliography.html#id6" title="Katrin Niglas. The Multidimensional Model of Research Methodology: An Integrated Set of Continua. In Abbas Tashakkori and Charles Teddlie, editors, SAGE Handbook of Mixed Methods in Social &amp; Behavioral Research, pages 215–236. SAGE, Thousand Oaks, June 2010.">Niglas, 2010</a>]</span> or some other research methodology courses. Please note that this framework was <em>constructed</em> to help us grapple with the complex terrain of research, and it is highly debatable.</p>
+<section id="p">
+<h3>P<a class="headerlink" href="#p" title="Link to this heading">#</a></h3>
+<p>philosophy, worldviews, paradigms</p>
+</section>
+<section id="m">
+<h3>M<a class="headerlink" href="#m" title="Link to this heading">#</a></h3>
+<p>methodology</p>
+</section>
+<section id="id4">
+<h3>m<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>methods/techniques</p>
+<p>Below, I try to explain these three levels of considerations:</p>
+<ul class="simple">
+<li><p><strong>m</strong>, or methods/techniques: The “small <em>m</em>” in SNA constitutes methods or techniques we apply in SNA research. Imagine we are using SNA to investigate friendship of a network of high-schoolers (think about “Gossip Girls” if you’ve watched that TV series). A technique in this SNA research could be a questionnaire used to collect friendship data among students; it could be the <a class="reference external" href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">force-directed layout</a> we use to visualize this network; it could be the measure of <em>betweenness centrality</em> we use to characterize high-schoolers; it could also be a network modeling algorithm we apply to model the flow of gossips. In a nutshell, these techniques are more about <strong>what</strong> we concretely do in an SNA research.</p></li>
+<li><p><strong>M</strong>: When SNA is referred to as a “big <em>M</em>” Methodology, it is treated as a systematic approach of investigating a phenomenon. Beyond simply applying these techniques, a methodology is also concerned with <strong>why</strong> a technique gets used. In other words, understanding SNA as a methodology means learning to make informed decisions in any stage of an SNA project. For example, why using a questionnaire instead of observations or interviews? In which cases should one use a <em>circle layout</em> instead of a force-directed layout? Why a specific SNA measure is appropriate for addressing a research question? In a nutshell, the big <em>M</em> is concerned with <strong>how</strong> knowledge could be best gained by following many SNA methodologists and researchers have created so far.</p></li>
+<li><p><strong>P</strong>, worldviews, philosophical schools of thoughts, paradigms: In SNA, some scholars go further to argue SNA offers a unique way of “seeing the world.” In Carolan (2014) chapter 2 you will read about the <strong>relational perspective</strong> that represent a particular worldview that emphasizes relations instead of attributes. You will also read about <strong>relational realism</strong> that is referred to as an ontology grounding SNA. To a great extent, SNA offers a new research paradigm. As put by Barry Wellman, a guru in SNA from the University of Toronto, “It is a comprehensive paradigmatic way of taking social structure seriously by studying directly how patterns of ties allocate resources in a social system” (see, Carolan, 2014, p. 33).</p></li>
+</ul>
+<p>In this course, we are mostly concerned with the “big M” level. We will not dive too deep into the <strong>P</strong> level, and we will not settle with specific techniques. Together, we will learn how to apply various techniques to systematically produce knowledge about a phenomenon.</p>
+<p>Also, SNA (or network analysis in general) does not need to be <em>quantitative</em>. As a matter of fact, SNA grew, in large part, out of the efforts of ethnographers to make sense of complex relational data. While modern SNA provides strong support for quantitative inquiry, SNA can be combined with qualitative methods in various ways.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch2-networks-la.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Networks in Learning Analytics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch4-network-science.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Network Science</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-ideas-about-networks">Basic ideas about networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Learning in networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theories-of-learning-in-networks">Theories of learning in networks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-levels-of-consideration-when-applying-network-analysis-to-learning">Three levels of consideration when applying network analysis to learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#p">P</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#m">M</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">m</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bodong Chen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

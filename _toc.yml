@@ -1,0 +1,58 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: 0. Getting Started
+  chapters:
+  - file: ch1-intro
+  - file: ch1-setup-colab
+- caption: 1. Networks in Learning Analytics
+  chapters:
+  - file: ch2-networks-la
+- caption: 2. Learning in Networks
+  chapters:
+  - file: ch3-learning-in-networks
+- caption: 3. Network Science
+  chapters:
+  - file: ch4-network-science
+  - file: ch4-lab-read-data-1
+- caption: 4. SNA Theory and Concepts
+  chapters:
+  - file: ch5-sna-intro
+- caption: 5. Collect and Manage Network Data
+  chapters:
+  - file: ch6-collect-manage-data
+  - file: ch6-understand-data-structures
+  - file: ch6-network-data-handson
+- caption: 6. Sociograms and Density
+  chapters:
+  - file: ch7-sociograms-density
+- caption: 7. Centrality and Centralization
+  chapters:
+  - file: ch8-centrality-positions
+- caption: 8. Components, Cliques, Communities
+  chapters:
+  - file: ch9-components
+- caption: 9. Ego Networks
+  chapters:
+  - file: ch10-ego-networks
+- caption: 10. Cognitive and Semantic Networks
+  chapters:
+  - file: ch11-cognitive-semantic-networks
+# - caption: 11. Inferential Network Analysis
+#   chapters:
+#   - file: ch11-inferential-network-analysis
+# - caption: 12. Network Dynamics and Temporality
+#   chapters:
+#   - file: ch12-network-dynamics
+# - caption: 13. Multidimensional Networks
+#   chapters:
+#   - file: ch13-multidimensional
+# - caption: 14. Ethics and Values in Network Analysis of Learning
+#   chapters:
+#   - file: ch14-ethics
+- caption: Biblography
+  chapters:
+  - file: bibliography
